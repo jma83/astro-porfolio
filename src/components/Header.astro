@@ -1,8 +1,52 @@
 ---
+
 ---
 
-<header>
-  <div class="">
-    <h2>Melendi</h2>
+<header class="jm-header">
+  <div class="jm-header__container">
+    <div class="jm-header__content">
+      <a href="/" class="p-4">JMA</a>
+      <nav>
+        <ul class="flex flex-row gap-4">
+          <li class="jm-header__list-item">
+            <a href="/" class="jm-header__list-item-link">Inicio</a>
+          </li>
+          <li class="jm-header__list-item">
+            <a href="#" class="jm-header__list-item-link">Sobre mi</a>
+          </li>
+          <li class="jm-header__list-item">
+            <a href="#" class="jm-header__list-item-link">Estudios</a>
+          </li>
+          <li class="jm-header__list-item">
+            <a href="#" class="jm-header__list-item-link">Experiencia</a>
+          </li>
+          <li class="jm-header__list-item">
+            <a href="#" class="jm-header__list-item-link">Proyectos</a>
+          </li>
+          <li class="jm-header__list-item">
+            <a href="#" class="jm-header__list-item-link">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
+
+<style>
+  .jm-header {
+    @apply w-full bg-white text-black;
+  }
+
+  .jm-header__container {
+    @apply w-full flex justify-center items-start px-4;
+  }
+
+  .jm-header__content {
+    @apply w-full max-w-6xl flex justify-between items-center;
+    @apply text-sm;
+  }
+
+  .jm-header__list-item-link {
+    @apply px-1 py-4;
+  }
+</style>
