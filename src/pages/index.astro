@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Home from "../components/Home.astro";
 
-console.log("Es una prueba")
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="AAA.">
-    Pagina principal
-    <Card />
+<Layout title={t("layout.title")}>
+  <Home />
 </Layout>

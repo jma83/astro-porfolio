@@ -1,0 +1,36 @@
+---
+
+---
+
+<section class="jm-home">
+  <div class="jm-home__content">
+    <span class="jm-home__introduction">¡Encantado! Soy</span>
+    <h1 class="jm-home__title">Javier Martínez Arias</h1>
+  </div>
+</section>
+
+<style>
+  .jm-home {
+    @apply w-full flex;
+
+    background: rgb(0, 34, 64);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 34, 64, 1) 0%,
+      rgba(0, 68, 128, 1) 95%
+    );
+    height: 100vh;
+  }
+
+  .jm-home__content {
+    @apply w-full flex flex-col justify-center items-center text-white;
+  }
+
+  .jm-home__introduction {
+    @apply font-medium text-2xl mb-2;
+  }
+
+  .jm-home__title {
+    @apply text-6xl font-bold;
+  }
+</style>
