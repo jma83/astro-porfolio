@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Home from "../components/sections/Home.astro";
 import About from "../components/sections/About.astro";
+import Path from "../components/sections/Path.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -11,4 +12,5 @@ const t = useTranslations(lang);
 <Layout title={t("layout.title")}>
   <Home />
   <About />
+  <Path />
 </Layout>

@@ -1,5 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="jm-about">
@@ -9,33 +12,20 @@
     </div>
     <div class="jm-about__content">
       <div class="jm-about__content-description">
-        <h2 class="jm-about__title">Sobre mí</h2>
-        <p class="jm-about__paragraph">
-          Graduado en <b>Ingeniería Multimedia</b> en la <i
-            >Universidad de Alicante</i
-          >
-           y en el <b>Máster en Informática Móvil</b> en la <i
-            >Universidad Pontificia de Salamanca.</i
-          >
-        </p>
-        <p class="jm-about__paragraph">
-          Apasionado por el mundo de la informática, con expectativas de seguir
-          creciendo en el sector del desarrollo de software (web y mobile).
-        </p>
-        <p class="jm-about__paragraph">
-          Entre mis hobbies: la programación, los videojuegos, los viajes y el
-          deporte.
-        </p>
+        <h2 class="jm-about__title">{t("about.title")}</h2>
+        <p class="jm-about__paragraph" set:html={t("about.description1")} />
+        <p class="jm-about__paragraph">{t("about.description2")}</p>
+        <p class="jm-about__paragraph">{t("about.description3")}</p>
       </div>
       <ul class="jm-about__list jm-about__paragraph">
         <li class="jm-about__list-item">
-          <span>Nombre:</span><span>Javier Martínez Arias</span>
+          <span>{t("about.list_item1")}</span><span>Javier Martínez Arias</span>
         </li>
         <li class="jm-about__list-item">
-          <span>Fecha de nacimiento:</span><span>10/09/1996</span>
+          <span>{t("about.list_item2")}</span><span>10/09/1996</span>
         </li>
         <li class="jm-about__list-item">
-          <span>Ciudad:</span><span>Elche (Alicante)</span>
+          <span>{t("about.list_item3")}</span><span>Elche (Alicante)</span>
         </li>
       </ul>
     </div>
@@ -72,9 +62,7 @@
   }
 
   .jm-about__list {
-    @apply gap-y-2;
-    display: flex;
-    flex-direction: column;
+    @apply flex flex-col gap-y-2;
   }
 
   .jm-about__list-item {
@@ -82,15 +70,11 @@
   }
 
   .jm-about__list-item span:first-child {
-    flex: 1; /* Take up available space */
-    min-width: 0; /* Allow content to shrink if necessary */
-    margin-right: 10px; /* Adjust spacing between labels and values */
+    @apply flex-1 min-w-0 mr-4;
   }
 
   .jm-about__list-item span:last-child {
-    flex: 2; /* Take up available space (adjust as needed) */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Optionally truncate long text */
+    @apply flex-1 overflow-hidden overflow-ellipsis;
   }
 
   .jm-about__list-item > span:first-child {

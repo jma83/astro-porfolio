@@ -16,6 +16,16 @@ export const ui = {
     "nav.projects": "Proyectos",
     "nav.contact": "Contacto",
     "home.introduction": "¡Encantado! Soy",
+    "about.title": "Sobre mí",
+    "about.description1":
+      "Graduado en <b>Ingeniería Multimedia</b> en la <i>Universidad de Alicante</i> y en el <b>Máster en Informática Móvil</b> en la <i>Universidad Pontificia de Salamanca.</i>",
+    "about.description2":
+      "Apasionado por el mundo de la informática, con expectativas de seguir creciendo en el sector del desarrollo de software (web y mobile).",
+    "about.description3":
+      "Entre mis hobbies: la programación, los videojuegos, los viajes y el deporte.",
+    "about.list_item1": "Nombre:",
+    "about.list_item2": "Fecha de nacimiento:",
+    "about.list_item3": "Ciudad:",
   },
   en: {
     "layout.title": "Javier Martinez Arias | Developer | Portfolio",
