@@ -1,0 +1,18 @@
+---
+const props = Astro.props;
+const { icon, dateRange, title, location, description } = props.data;
+---
+
+<div class="jm-path-experience-card">
+  <div class="jm-path-experience-card__image">{icon}</div>
+  <div class="jm-path-experience-card__container">
+    <div class="jm-path-experience-card__header">
+      <span>{dateRange}</span>
+      <h3>{title}</h3>
+    </div>
+    <div class="jm-path-experience-card__content">
+      <h4>{location}</h4>
+      <p>{description}</p>
+    </div>
+  </div>
+</div>

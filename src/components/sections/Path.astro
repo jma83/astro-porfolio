@@ -1,105 +1,144 @@
 ---
+import PathCard from "./path/PathCard.astro";
+import PathLanguageCard from "./path/PathLanguageCard.astro";
+interface PathCardData {
+  title: string;
+  icon?: Element;
+}
 
+interface PathCardMainData extends PathCardData {
+  description?: string;
+  location: string;
+  dateRange: string;
+}
+
+interface PathExperienceCardData extends PathCardMainData {
+  techIcons: Element[];
+}
+
+interface PathLanguageCardData {
+  title: string;
+  icon?: Element;
+  date: string;
+  certificate: string;
+}
+
+const pathStudiesData: PathCardMainData[] = [
+  {
+    dateRange: "2020-2022",
+    title: "Máster en Informática móvil",
+    location: "Universidad Pontificia de Salamanca",
+    description:
+      "Especializado en el desarrollo de aplicaciones Android, IOS e híbridas",
+  },
+  {
+    dateRange: "2014-2019",
+    title: "Ingeniería Multimedia",
+    location: "Universidad de Alicante",
+    description:
+      "Especializado en desarrollo de páginas web, videojuegos y creación de contenidos multimedia (imágen, video, etc.)",
+  },
+  {
+    dateRange: "2012-2014",
+    title: "Bachillerato tecnológico\n",
+    location: "Instituto IES Victoria Kent (Elche)",
+  },
+];
+
+const pathExperienceData: PathExperienceCardData[] = [
+  {
+    title: "Desarollador Frontend",
+    location: "Mamby Investments",
+    description:
+      "Desarrollo frontend de una aplicación web con Nuxt.js, Vue.js, Typescript y CSS. Aplicación de una plataforma de creación de contenido.",
+    dateRange: "marzo 2021 - actualidad",
+    techIcons: [],
+  },
+  {
+    title: "Desarollador web Java",
+    location: "Mamby Investments",
+    description:
+      "Desarrollo frontend de una aplicación web con Nuxt.js, Vue.js, Typescript y CSS",
+    dateRange: "junio 2020 - marzo 2021",
+    techIcons: [],
+  },
+  {
+    title: "Desarollador web y host",
+    location: "Everis Murcia",
+    description:
+      "Desarrollo y mantenimiento de aplicaciones de telefonía utilizando JSP, Javascript y Java, para la parte web, y Cobol así como la gestión de bases de datos DB2 y SQL Server para la parte Host.",
+    dateRange: "junio 2019 - junio 2020",
+    techIcons: [],
+  },
+  {
+    title: "Desarrollador web",
+    location: "Aire Networks",
+    description:
+      "Desarrollo y mantenimiento de un ERP de telefonía utilizando HTML, CSS, Javascript, PHP y gestión de bases de datos con MySQL",
+    dateRange: "julio 2018 - abril 2019",
+    techIcons: [],
+  },
+  {
+    title: "Desarrollador web en prácticas",
+    location: "Aire Networks",
+    description:
+      "Desarrollo y mantenimiento de un ERP de telefonía utilizando HTML, CSS, Javascript, PHP y gestión de bases de datos con MySQL",
+    dateRange: "mayo 2018 - julio 2018",
+    techIcons: [],
+  },
+];
+
+const pathLanguagesData: PathLanguageCardData[] = [
+  {
+    title: "Español",
+    certificate: "Lengua materna",
+    date: "",
+  },
+  {
+    title: "Inglés",
+    date: "2015",
+    certificate: "First Certificate (B2) - Cambridge",
+  },
+  {
+    title: "Valenciano",
+    date: "2012",
+    certificate: "Mitjà (C1) - Junta Qualificadora (JQCV)",
+  },
+];
 ---
 
 <section class="jm-path">
   <div class="jm-path__container">
     <div class="relative">
-      <nav class="sticky left-0 top-16 p-4">
+      <nav class="sticky left-0 top-64 p-4 mt-20">
         <ul>
           <li><a href="#">Estudios</a></li>
           <li><a href="#">Experiencia</a></li>
-          <li><a href="#">Tecnologias</a></li>
+          <li><a href="#">Tecnologías</a></li>
         </ul>
       </nav>
     </div>
     <div class="jm-path__content">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius labore,
-      magnam? Aliquam dolor eius in iste laboriosam laudantium minus nam nostrum
-      quaerat quia! Ab accusantium aliquid, beatae cumque delectus enim
-      explicabo illum incidunt, ipsum, maxime nihil odio officiis perferendis
-      qui repudiandae sit tempore temporibus voluptatem! Assumenda, consequatur
-      corporis cum dolorum et illo officiis optio quae sed vel? Ab aliquid
-      aspernatur, at dolorum, harum incidunt ipsa libero non perferendis quas
-      quis quod ratione rem rerum sint. Ab aperiam at, deleniti doloremque eaque
-      eum illo iste laborum magni, nostrum nulla numquam obcaecati porro quasi,
-      saepe sequi soluta ut? Assumenda consectetur culpa dignissimos, dolorum,
-      facere hic laboriosam minima molestias nihil pariatur porro reprehenderit
-      unde ut? Consectetur facilis harum inventore, ipsa obcaecati possimus
-      quibusdam sapiente soluta? A eaque eum nostrum quaerat temporibus. Aperiam
-      aspernatur atque beatae consequuntur cupiditate dolor exercitationem
-      facere incidunt ipsam itaque labore laudantium, magnam magni maiores,
-      nesciunt, nulla repellat totam ullam veniam voluptates. Asperiores commodi
-      cupiditate iure nihil officia omnis perferendis porro praesentium vitae.
-      Architecto at autem culpa cum dicta dolor dolorem eaque eligendi et,
-      facilis fugiat id illum ipsa iste laboriosam maiores nostrum placeat quis
-      quo repellat tenetur veniam veritatis voluptates? Accusantium beatae
-      cupiditate distinctio ea eaque eius enim error eum excepturi fuga harum
-      illo incidunt iste itaque iusto magnam mollitia nam non obcaecati odio
-      omnis perspiciatis possimus quae quam quia quos recusandae repellendus
-      repudiandae sapiente ullam unde vel, voluptate voluptatum? Dolorum iure,
-      quae. Delectus, maxime numquam! A accusantium esse excepturi iste
-      perspiciatis quibusdam sit voluptate voluptatem? A architecto cum
-      cupiditate eligendi numquam, similique. Distinctio eveniet iure minima
-      modi necessitatibus neque placeat provident recusandae tempore temporibus!
-      Esse eveniet minus necessitatibus quia ratione similique suscipit
-      voluptatem. Aliquam aspernatur assumenda atque beatae esse exercitationem
-      expedita explicabo, inventore maiores minima modi, nesciunt quam quia.
-      Animi architecto dolor eligendi expedita laudantium maxime quis. Amet
-      culpa deserunt dicta, dolore eligendi esse est magnam natus, officiis quis
-      ratione temporibus ullam, vero. Atque debitis ducimus illo labore
-      necessitatibus porro. Consectetur consequuntur dolore doloribus ea fugit
-      illo itaque numquam quisquam. Aspernatur debitis molestias officia.
-      Accusamus atque aut consectetur doloremque dolores eius eveniet explicabo
-      harum hic id iste itaque laudantium magni modi nam pariatur perferendis
-      qui, ratione rem saepe tenetur unde voluptas voluptates voluptatibus
-      voluptatum? Accusantium adipisci aliquam aperiam architecto blanditiis
-      corporis cumque, cupiditate deleniti eligendi ex exercitationem facere
-      illum incidunt iusto labore magnam maiores natus nihil pariatur
-      perspiciatis placeat possimus quasi quo quos reiciendis sapiente similique
-      sint tempora vel voluptas. Autem, dolorem eius enim impedit iure mollitia
-      quod sapiente. Blanditiis ex itaque placeat quas soluta temporibus
-      voluptate! Amet culpa dignissimos dolorum, excepturi sapiente ut
-      veritatis. Animi, autem ea eaque eos esse est exercitationem maiores
-      necessitatibus placeat, recusandae tenetur ullam unde veniam vero
-      voluptatem. Cumque doloremque eius fugit harum in incidunt ipsum
-      laboriosam nihil, nulla, odio quae tempora tempore totam ullam, veritatis.
-      A animi, architecto aut beatae cumque dolor dolorem ea facilis impedit
-      ipsam nobis odio officia provident quam quisquam rem sapiente sint sit
-      veniam voluptas! Accusamus dolor ea earum eius et facilis inventore nemo
-      nihil nisi nobis, nostrum rem repellendus reprehenderit vitae voluptatem?
-      Atque, consequuntur exercitationem expedita minus nesciunt nulla porro
-      recusandae! Alias architecto consectetur distinctio laborum minima odit
-      quam rem! Architecto dolorem est porro quas repudiandae sequi voluptas.
-      Dolor hic perspiciatis quibusdam. Eaque impedit neque odit quasi
-      repellendus temporibus voluptates! Amet incidunt magnam nostrum pariatur
-      sit! Aperiam commodi dicta et harum laboriosam magnam nam nostrum, quae
-      quia quisquam. Accusamus aliquid autem consequuntur cum deleniti eligendi
-      eveniet hic illo iusto magni nam necessitatibus nemo obcaecati odio quasi
-      rerum sint totam vel veritatis, voluptates! Aspernatur assumenda autem
-      consequatur dolores, dolorum est excepturi exercitationem expedita fugiat
-      harum id illo iste magnam nesciunt nisi nulla placeat, porro provident
-      quidem quod, repellat reprehenderit temporibus tenetur veniam vitae! Ad
-      aliquid amet assumenda, ducimus iure laboriosam molestiae nulla odio
-      voluptatum! Accusamus hic repellat voluptate. A aut, deserunt dolores
-      eveniet explicabo ipsam modi nesciunt nihil nisi qui, quia quod rem
-      repellat tempora temporibus? Alias animi assumenda, commodi consequatur
-      consequuntur corporis delectus eveniet ipsam magni minus mollitia odio,
-      quidem reiciendis sint tempora tempore tenetur ut vel? Corporis, cumque
-      dolorum eius enim exercitationem illo ipsum iure libero magnam nesciunt
-      officia omnis perspiciatis quam, quidem quod recusandae reiciendis rerum
-      sint tempora velit. Cumque iusto laboriosam numquam omnis perferendis
-      quaerat quas repellendus sunt veritatis voluptate. Assumenda autem, culpa
-      cum, delectus ducimus earum error est ex facilis fugit harum illum impedit
-      in, ipsam ipsum iusto labore laboriosam libero nihil odio officiis quam
-      quasi ratione recusandae reprehenderit repudiandae sed suscipit tempora
-      tempore tenetur unde velit veritatis vitae? Consequatur deleniti ducimus
-      eos, neque quisquam similique voluptatem! Accusamus aliquam aut
-      dignissimos eaque inventore laborum laudantium obcaecati quae repellat
-      ullam. Blanditiis eaque et, molestiae nihil non officiis ut voluptas!
-      Fugit iure natus nihil, perferendis quas temporibus velit voluptatibus!
-      Aut pariatur sit vel voluptates! Amet aspernatur cumque cupiditate
-      deserunt doloribus facilis ipsa, ipsam maiores perspiciatis?
+      <h2 class="jm-path__title">Trayectoria</h2>
+      <h3>Estudios</h3>
+      {
+        pathStudiesData.map((studyData) => {
+          return <PathCard data={studyData} />;
+        })
+      }
+      <h3>Idiomas</h3>
+      {
+        pathLanguagesData.map((languageData) => {
+          return <PathLanguageCard data={languageData} />;
+        })
+      }
+      <h3>Experiencia</h3>
+      {
+        pathExperienceData.map((experienceData) => {
+          return <PathCard data={experienceData} />;
+        })
+      }
+      <h3>Tecnologías</h3>
     </div>
   </div>
 </section>
@@ -117,9 +156,17 @@
     @apply flex flex-col justify-between pt-4 pb-8 px-4 gap-y-4;
   }
 
+  .jm-path__title {
+    @apply text-4xl font-bold mb-6;
+  }
+
   @screen md {
     .jm-path {
       @apply px-8 py-16;
     }
+  }
+
+  h3 {
+    @apply font-bold;
   }
 </style>
