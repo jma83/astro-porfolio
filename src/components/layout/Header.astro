@@ -1,0 +1,74 @@
+---
+import HeaderNav from "./HeaderNav.astro";
+import MenuIcon from "../icons/MenuIcon.astro";
+let isScrollDown: boolean = false;
+---
+
+<script>
+  let isScrollDown = false; // Initialize isActive to false
+
+  window.addEventListener("scroll", () => {
+    isScrollDown = window.scrollY > 10;
+  });
+</script>
+
+<header class="jm-header" class:list={isScrollDown ? "fixed" : "absolute"}>
+  <div class="jm-header__container">
+    <div class="jm-header__content">
+      <a href="/public" class="jm-header__brand-link">
+        <span class="text-white">JMA</span>
+      </a>
+      <HeaderNav />
+      <button class="jm-header__menu-icon">
+        <MenuIcon classList="w-8 h-8" />
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .jm-header {
+    @apply w-full text-white top-0 left-0;
+  }
+
+  .jm-header__container {
+    @apply w-full pr-4 flex justify-center items-start;
+  }
+
+  @screen md {
+    .jm-header__container {
+      @apply px-4;
+    }
+  }
+
+  .jm-header__content {
+    @apply w-full max-w-6xl flex justify-between items-center;
+    @apply font-normal text-base;
+  }
+
+  .jm-header__brand-link {
+    @apply p-4 relative text-2xl font-extrabold;
+  }
+
+  .jm-header__brand-link:after {
+    @apply bg-primary-500;
+  }
+
+  .jm-header__menu-icon {
+    @apply block visible h-auto;
+  }
+
+  .jm-header__navigation-bar {
+    @apply hidden invisible h-0;
+  }
+
+  @screen md {
+    .jm-header__menu-icon {
+      @apply hidden invisible h-0;
+    }
+
+    .jm-header__navigation-bar {
+      @apply block visible h-auto;
+    }
+  }
+</style>

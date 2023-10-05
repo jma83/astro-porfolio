@@ -1,0 +1,59 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="jm-home">
+  <div class="jm-home__content">
+    <span class="jm-home__introduction">{t("home.introduction")}</span>
+    <h1 class="jm-home__title">Javier Martínez Arias</h1>
+    <h2 class="jm-home__subtitle">Desarrollador Frontend</h2>
+  </div>
+</section>
+
+<style>
+  .jm-home {
+    @apply w-full flex;
+
+    background: rgb(0, 34, 64);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 34, 64, 1) 0%,
+      rgba(0, 68, 128, 1) 95%
+    );
+    height: 100vh;
+  }
+
+  .jm-home__content {
+    @apply w-full flex flex-col justify-center items-center text-white text-center p-4 gap-6;
+  }
+
+  .jm-home__introduction {
+    @apply font-extrabold text-base uppercase tracking-widest text-primary-500;
+    letter-spacing: 0.25rem;
+  }
+
+  .jm-home__title {
+    @apply text-4xl font-bold;
+  }
+
+  .jm-home__subtitle {
+    @apply text-xl font-semibold uppercase;
+  }
+
+  @screen md {
+    .jm-home__introduction {
+      @apply text-xl;
+    }
+
+    .jm-home__title {
+      @apply text-6xl;
+    }
+
+    .jm-home__subtitle {
+      @apply text-3xl;
+    }
+  }
+</style>

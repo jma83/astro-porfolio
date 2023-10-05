@@ -15,6 +15,7 @@ export const ui = {
     "nav.experience": "Experiencia",
     "nav.projects": "Proyectos",
     "nav.contact": "Contacto",
+    "home.introduction": "¡Encantado! Soy",
   },
   en: {
     "layout.title": "Javier Martinez Arias | Developer | Portfolio",
@@ -24,5 +25,6 @@ export const ui = {
     "nav.experience": "Experience",
     "nav.projects": "Projects",
     "nav.contact": "Contact",
+    "home.introduction": "Nice to meet you! I'm",
   },
 } as const;

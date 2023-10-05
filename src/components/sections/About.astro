@@ -1,0 +1,121 @@
+---
+
+---
+
+<section class="jm-about">
+  <div class="jm-about__container">
+    <div class="jm-about__image-container">
+      <img src="/images/aboutPortfolio.jpg" alt="Developer portrair photo" />
+    </div>
+    <div class="jm-about__content">
+      <div class="jm-about__content-description">
+        <h2 class="jm-about__title">Sobre mí</h2>
+        <p class="jm-about__paragraph">
+          Graduado en <b>Ingeniería Multimedia</b> en la <i
+            >Universidad de Alicante</i
+          >
+           y en el <b>Máster en Informática Móvil</b> en la <i
+            >Universidad Pontificia de Salamanca.</i
+          >
+        </p>
+        <p class="jm-about__paragraph">
+          Apasionado por el mundo de la informática, con expectativas de seguir
+          creciendo en el sector del desarrollo de software (web y mobile).
+        </p>
+        <p class="jm-about__paragraph">
+          Entre mis hobbies: la programación, los videojuegos, los viajes y el
+          deporte.
+        </p>
+      </div>
+      <ul class="jm-about__list jm-about__paragraph">
+        <li class="jm-about__list-item">
+          <span>Nombre:</span><span>Javier Martínez Arias</span>
+        </li>
+        <li class="jm-about__list-item">
+          <span>Fecha de nacimiento:</span><span>10/09/1996</span>
+        </li>
+        <li class="jm-about__list-item">
+          <span>Ciudad:</span><span>Elche (Alicante)</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .jm-about {
+    @apply w-full flex justify-center items-center bg-white py-8;
+  }
+
+  .jm-about__container {
+    @apply w-full max-w-6xl flex flex-col-reverse flex-grow justify-start items-center gap-x-16;
+  }
+
+  .jm-about__image-container {
+    @apply w-full object-contain flex justify-center;
+  }
+
+  .jm-about__content {
+    @apply flex flex-col justify-between pt-4 pb-8 px-4 gap-y-4;
+  }
+
+  .jm-about__content-description {
+    @apply w-full flex flex-col gap-y-1;
+  }
+
+  .jm-about__title {
+    @apply text-4xl font-bold mb-6;
+  }
+
+  .jm-about__paragraph {
+    @apply font-normal leading-6 text-base text-gray-600;
+  }
+
+  .jm-about__list {
+    @apply gap-y-2;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .jm-about__list-item {
+    @apply flex justify-between items-center gap-x-4;
+  }
+
+  .jm-about__list-item span:first-child {
+    flex: 1; /* Take up available space */
+    min-width: 0; /* Allow content to shrink if necessary */
+    margin-right: 10px; /* Adjust spacing between labels and values */
+  }
+
+  .jm-about__list-item span:last-child {
+    flex: 2; /* Take up available space (adjust as needed) */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Optionally truncate long text */
+  }
+
+  .jm-about__list-item > span:first-child {
+    @apply font-bold;
+  }
+
+  @screen md {
+    .jm-about {
+      @apply px-8 py-16;
+    }
+
+    .jm-about__container {
+      @apply flex-row;
+    }
+
+    .jm-about__content {
+      @apply gap-y-8;
+    }
+
+    .jm-about__title {
+      @apply text-5xl;
+    }
+
+    .jm-about__paragraph {
+      @apply text-lg leading-7;
+    }
+  }
+</style>

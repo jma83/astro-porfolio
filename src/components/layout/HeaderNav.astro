@@ -1,0 +1,45 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<nav class="jm-header__navigation-bar">
+  <ul class="flex flex-row gap-4">
+    <li class="jm-header__list-item">
+      <a href="/public" class="jm-header__list-item-link">{t("nav.home")}</a>
+    </li>
+    <li class="jm-header__list-item">
+      <a href="#" class="jm-header__list-item-link">{t("nav.about")}</a>
+    </li>
+    <li class="jm-header__list-item">
+      <a href="#" class="jm-header__list-item-link">{t("nav.studies")}</a>
+    </li>
+    <li class="jm-header__list-item">
+      <a href="#" class="jm-header__list-item-link">{t("nav.experience")}</a>
+    </li>
+    <li class="jm-header__list-item">
+      <a href="#" class="jm-header__list-item-link">{t("nav.projects")}</a>
+    </li>
+    <li class="jm-header__list-item">
+      <a href="#" class="jm-header__list-item-link">{t("nav.contact")}</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .jm-header__list-item-link {
+    @apply px-1 py-4;
+  }
+
+  .jm-header__navigation-bar {
+    @apply hidden invisible h-0;
+  }
+
+  @screen md {
+    .jm-header__navigation-bar {
+      @apply block visible h-auto;
+    }
+  }
+</style>
