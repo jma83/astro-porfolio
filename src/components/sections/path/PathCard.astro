@@ -1,10 +1,21 @@
 ---
+import ImageLogo from "../../icons/ImageLogo.astro";
 const props = Astro.props;
 const { icon, dateRange, title, location, description } = props.data;
 ---
 
 <div class="jm-path-experience-card">
-  <div class="jm-path-experience-card__image">{icon}</div>
+  {
+    icon != null ? (
+      <ImageLogo
+        src={icon.src}
+        alt={icon.alt}
+        classes={["mr-2", icon.classes]}
+      />
+    ) : (
+      <Fragment />
+    )
+  }
   <div class="jm-path-experience-card__container">
     <div class="jm-path-experience-card__header">
       <span>{dateRange}</span>
@@ -16,3 +27,9 @@ const { icon, dateRange, title, location, description } = props.data;
     </div>
   </div>
 </div>
+
+<style>
+  .jm-path-experience-card {
+    @apply flex flex-row;
+  }
+</style>

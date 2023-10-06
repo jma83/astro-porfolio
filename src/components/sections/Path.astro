@@ -1,9 +1,16 @@
 ---
 import PathCard from "./path/PathCard.astro";
 import PathLanguageCard from "./path/PathLanguageCard.astro";
+
+interface IconData {
+  src: string;
+  alt: string;
+  classes: string;
+}
+
 interface PathCardData {
   title: string;
-  icon?: Element;
+  icon?: IconData;
 }
 
 interface PathCardMainData extends PathCardData {
@@ -13,12 +20,12 @@ interface PathCardMainData extends PathCardData {
 }
 
 interface PathExperienceCardData extends PathCardMainData {
-  techIcons: Element[];
+  techIcons: IconData[];
 }
 
 interface PathLanguageCardData {
   title: string;
-  icon?: Element;
+  icon?: IconData;
   date: string;
   certificate: string;
 }
@@ -53,13 +60,23 @@ const pathExperienceData: PathExperienceCardData[] = [
       "Desarrollo frontend de una aplicación web con Nuxt.js, Vue.js, Typescript y CSS. Aplicación de una plataforma de creación de contenido.",
     dateRange: "marzo 2021 - actualidad",
     techIcons: [],
+    icon: {
+      src: "/images/mamby_logo.jpeg",
+      alt: "Everis logo",
+      classes: "",
+    },
   },
   {
     title: "Desarollador web Java",
-    location: "Mamby Investments",
+    location: "Everis Alicante",
     description:
-      "Desarrollo frontend de una aplicación web con Nuxt.js, Vue.js, Typescript y CSS",
+      "Desarrollo y mantenimiento de aplicaciones de banca utilizando JSP, Java, Spring Webflow y Oracle SQL",
     dateRange: "junio 2020 - marzo 2021",
+    icon: {
+      src: "/images/everis_logo.jpeg",
+      alt: "Everis logo",
+      classes: "",
+    },
     techIcons: [],
   },
   {
@@ -67,7 +84,12 @@ const pathExperienceData: PathExperienceCardData[] = [
     location: "Everis Murcia",
     description:
       "Desarrollo y mantenimiento de aplicaciones de telefonía utilizando JSP, Javascript y Java, para la parte web, y Cobol así como la gestión de bases de datos DB2 y SQL Server para la parte Host.",
-    dateRange: "junio 2019 - junio 2020",
+    dateRange: "junio 2019 - junio 2020 ·",
+    icon: {
+      src: "/images/everis_logo.jpeg",
+      alt: "Everis logo",
+      classes: "",
+    },
     techIcons: [],
   },
   {
@@ -75,15 +97,25 @@ const pathExperienceData: PathExperienceCardData[] = [
     location: "Aire Networks",
     description:
       "Desarrollo y mantenimiento de un ERP de telefonía utilizando HTML, CSS, Javascript, PHP y gestión de bases de datos con MySQL",
-    dateRange: "julio 2018 - abril 2019",
+    dateRange: "julio 2018 - marzo 2019 · 9 meses",
     techIcons: [],
+    icon: {
+      src: "/images/airenetworks_logo.jpeg",
+      alt: "Aire Networks logo",
+      classes: "",
+    },
   },
   {
     title: "Desarrollador web en prácticas",
     location: "Aire Networks",
     description:
       "Desarrollo y mantenimiento de un ERP de telefonía utilizando HTML, CSS, Javascript, PHP y gestión de bases de datos con MySQL",
-    dateRange: "mayo 2018 - julio 2018",
+    dateRange: "mayo 2018 - julio 2018 · 3 meses",
+    icon: {
+      src: "/images/airenetworks_logo.jpeg",
+      alt: "Aire Networks logo",
+      classes: "",
+    },
     techIcons: [],
   },
 ];
