@@ -1,16 +1,38 @@
 ---
+import ImageLogo from "../../icons/ImageLogo.astro";
 const props = Astro.props;
 const { icon, title, date, certificate } = props.data;
 ---
 
-<div class="jm-path-studies-card">
-  <div class="jm-path-studies-card__image">{icon}</div>
-  <div class="jm-path-studies-card__content">
+<div class="flex flex-row">
+  {
+    icon != null ? (
+      <ImageLogo
+        src={icon.src}
+        alt={icon.alt}
+        classes={["mr-3", icon.classes]}
+      />
+    ) : (
+      <Fragment />
+    )
+  }
+  <div class="jm-path-studies-card__container">
     <div class="jm-path-studies-card__header">
       <h3>{title}</h3>
     </div>
-    <div>
+    <div class="jm-path-studies-card__content">
       <h4 class="flex gap-1"><span>{date}</span>{certificate}</h4>
     </div>
   </div>
 </div>
+
+<style>
+  .jm-path-studies-card__header > h3 {
+    @apply font-bold;
+    font-size: 1.33rem;
+  }
+
+  .jm-path-studies-card__content > h4 {
+    @apply text-lg font-semibold text-gray-700;
+  }
+</style>

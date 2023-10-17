@@ -4,24 +4,24 @@ const props = Astro.props;
 const { icon, dateRange, title, location, description } = props.data;
 ---
 
-<div class="jm-path-experience-card">
+<div class="jm-path-card">
   {
     icon != null ? (
       <ImageLogo
         src={icon.src}
         alt={icon.alt}
-        classes={["mr-2", icon.classes]}
+        classes={["mr-3", icon.classes]}
       />
     ) : (
       <Fragment />
     )
   }
-  <div class="jm-path-experience-card__container">
-    <div class="jm-path-experience-card__header">
+  <div class="jm-path-card__container">
+    <div class="jm-path-card__header">
       <span>{dateRange}</span>
       <h3>{title}</h3>
     </div>
-    <div class="jm-path-experience-card__content">
+    <div class="jm-path-card__content">
       <h4>{location}</h4>
       <p>{description}</p>
     </div>
@@ -29,7 +29,27 @@ const { icon, dateRange, title, location, description } = props.data;
 </div>
 
 <style>
-  .jm-path-experience-card {
+  .jm-path-card {
     @apply flex flex-row;
+  }
+
+  .jm-path-card__header > h3 {
+    @apply text-2xl font-bold;
+  }
+
+  .jm-path-card__header > span {
+    @apply text-base font-semibold text-primary-500;
+  }
+
+  .jm-path-card__content {
+    @apply mt-1;
+  }
+
+  .jm-path-card__content > h4 {
+    @apply text-lg font-semibold text-gray-700;
+  }
+
+  .jm-path-card__content > p {
+    @apply text-base text-gray-600;
   }
 </style>

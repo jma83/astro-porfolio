@@ -37,6 +37,11 @@ const pathStudiesData: PathCardMainData[] = [
     location: "Universidad Pontificia de Salamanca",
     description:
       "Especializado en el desarrollo de aplicaciones Android, IOS e híbridas",
+    icon: {
+      src: "/images/upsa_logo.jpeg",
+      alt: "UPSA - Máster en Informática Móvil",
+      classes: "",
+    },
   },
   {
     dateRange: "2014-2019",
@@ -44,11 +49,21 @@ const pathStudiesData: PathCardMainData[] = [
     location: "Universidad de Alicante",
     description:
       "Especializado en desarrollo de páginas web, videojuegos y creación de contenidos multimedia (imágen, video, etc.)",
+    icon: {
+      src: "/images/ua_logo.jpeg",
+      alt: "UA - Grado en Ingeniería Multimedia",
+      classes: "",
+    },
   },
   {
     dateRange: "2012-2014",
-    title: "Bachillerato tecnológico\n",
+    title: "Bachillerato tecnológico",
     location: "Instituto IES Victoria Kent (Elche)",
+    icon: {
+      src: "/images/vk_logo.jpg",
+      alt: "IES Victoria Kent - Bachillerato tecnológico",
+      classes: "",
+    },
   },
 ];
 
@@ -58,7 +73,7 @@ const pathExperienceData: PathExperienceCardData[] = [
     location: "Mamby Investments",
     description:
       "Desarrollo frontend de una aplicación web con Nuxt.js, Vue.js, Typescript y CSS. Aplicación de una plataforma de creación de contenido.",
-    dateRange: "marzo 2021 - actualidad",
+    dateRange: "marzo 2021 - septiembre 2023 (2 años y ",
     techIcons: [],
     icon: {
       src: "/images/mamby_logo.jpeg",
@@ -71,7 +86,7 @@ const pathExperienceData: PathExperienceCardData[] = [
     location: "Everis Alicante",
     description:
       "Desarrollo y mantenimiento de aplicaciones de banca utilizando JSP, Java, Spring Webflow y Oracle SQL",
-    dateRange: "junio 2020 - marzo 2021",
+    dateRange: "junio 2020 - marzo 2021 (10 meses)",
     icon: {
       src: "/images/everis_logo.jpeg",
       alt: "Everis logo",
@@ -84,7 +99,7 @@ const pathExperienceData: PathExperienceCardData[] = [
     location: "Everis Murcia",
     description:
       "Desarrollo y mantenimiento de aplicaciones de telefonía utilizando JSP, Javascript y Java, para la parte web, y Cobol así como la gestión de bases de datos DB2 y SQL Server para la parte Host.",
-    dateRange: "junio 2019 - junio 2020 ·",
+    dateRange: "junio 2019 - junio 2020 (1 año)",
     icon: {
       src: "/images/everis_logo.jpeg",
       alt: "Everis logo",
@@ -97,7 +112,7 @@ const pathExperienceData: PathExperienceCardData[] = [
     location: "Aire Networks",
     description:
       "Desarrollo y mantenimiento de un ERP de telefonía utilizando HTML, CSS, Javascript, PHP y gestión de bases de datos con MySQL",
-    dateRange: "julio 2018 - marzo 2019 · 9 meses",
+    dateRange: "julio 2018 - marzo 2019 (9 meses)",
     techIcons: [],
     icon: {
       src: "/images/airenetworks_logo.jpeg",
@@ -110,7 +125,7 @@ const pathExperienceData: PathExperienceCardData[] = [
     location: "Aire Networks",
     description:
       "Desarrollo y mantenimiento de un ERP de telefonía utilizando HTML, CSS, Javascript, PHP y gestión de bases de datos con MySQL",
-    dateRange: "mayo 2018 - julio 2018 · 3 meses",
+    dateRange: "mayo 2018 - julio 2018 (3 meses)",
     icon: {
       src: "/images/airenetworks_logo.jpeg",
       alt: "Aire Networks logo",
@@ -124,17 +139,32 @@ const pathLanguagesData: PathLanguageCardData[] = [
   {
     title: "Español",
     certificate: "Lengua materna",
-    date: "",
+    date: "·",
+    icon: {
+      src: "/images/spanish_logo.png",
+      alt: "Spanish logo",
+      classes: "",
+    },
   },
   {
     title: "Inglés",
     date: "2015",
     certificate: "First Certificate (B2) - Cambridge",
+    icon: {
+      src: "/images/english_logo.png",
+      alt: "English logo",
+      classes: "",
+    },
   },
   {
     title: "Valenciano",
     date: "2012",
     certificate: "Mitjà (C1) - Junta Qualificadora (JQCV)",
+    icon: {
+      src: "/images/valencian_logo.png",
+      alt: "Valencian logo",
+      classes: "",
+    },
   },
 ];
 ---
@@ -150,28 +180,53 @@ const pathLanguagesData: PathLanguageCardData[] = [
         </ul>
       </nav>
     </div>
-    <div class="jm-path__content">
+    <main class="jm-path__content">
       <h2 class="jm-path__title">Trayectoria</h2>
-      <h3>Estudios</h3>
-      {
-        pathStudiesData.map((studyData) => {
-          return <PathCard data={studyData} />;
-        })
-      }
-      <h3>Idiomas</h3>
-      {
-        pathLanguagesData.map((languageData) => {
-          return <PathLanguageCard data={languageData} />;
-        })
-      }
-      <h3>Experiencia</h3>
-      {
-        pathExperienceData.map((experienceData) => {
-          return <PathCard data={experienceData} />;
-        })
-      }
-      <h3>Tecnologías</h3>
-    </div>
+      <section>
+        <h3>Estudios</h3>
+        {
+          pathStudiesData.map((studyData, index) => {
+            return (
+              <div class="jm-path__section-card">
+                <PathCard data={studyData} />
+                {index !== pathStudiesData.length - 1 ? <hr /> : <Fragment />}
+              </div>
+            );
+          })
+        }
+        <h4>Idiomas</h4>
+        {
+          pathLanguagesData.map((languageData, index) => {
+            return (
+              <div class="jm-path__section-card">
+                <PathLanguageCard data={languageData} />
+                {index !== pathLanguagesData.length - 1 ? <hr /> : <Fragment />}
+              </div>
+            );
+          })
+        }
+      </section>
+      <section>
+        <h3>Experiencia</h3>
+        {
+          pathExperienceData.map((experienceData, index) => {
+            return (
+              <div class="jm-path__section-card">
+                <PathCard data={experienceData} />
+                {index !== pathExperienceData.length - 1 ? (
+                  <hr />
+                ) : (
+                  <Fragment />
+                )}
+              </div>
+            );
+          })
+        }
+      </section>
+      <section>
+        <h3>Tecnologías</h3>
+      </section>
+    </main>
   </div>
 </section>
 
@@ -192,6 +247,10 @@ const pathLanguagesData: PathLanguageCardData[] = [
     @apply text-4xl font-bold mb-6;
   }
 
+  .jm-path__section-card {
+    @apply flex flex-col gap-4 mt-5 mb-6;
+  }
+
   @screen md {
     .jm-path {
       @apply px-8 py-16;
@@ -199,6 +258,15 @@ const pathLanguagesData: PathLanguageCardData[] = [
   }
 
   h3 {
-    @apply font-bold;
+    @apply font-bold text-2xl text-blue-700;
+  }
+
+  h4 {
+    @apply font-bold text-blue-700;
+    font-size: 1.33rem;
+  }
+
+  .jm-path__content > section {
+    @apply mb-4;
   }
 </style>
