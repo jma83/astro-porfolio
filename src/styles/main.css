@@ -10,11 +10,20 @@
         font-display: swap;
         src: url('/fonts/poppins.woff2') format('woff2');
     }
+
     @font-face {
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
         font-display: swap;
         src: url('/fonts/poppins2.woff2') format('woff2');
+    }
+
+    img {
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
     }
 }

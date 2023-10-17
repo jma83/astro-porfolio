@@ -1,135 +1,101 @@
 ---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import PathCard from "./path/PathCard.astro";
 import PathLanguageCard from "./path/PathLanguageCard.astro";
+import {
+  PathCardMainData,
+  PathExperienceCardData,
+  PathLanguageCardData,
+} from "../../types/Path";
 
-interface IconData {
-  src: string;
-  alt: string;
-  classes: string;
-}
-
-interface PathCardData {
-  title: string;
-  icon?: IconData;
-}
-
-interface PathCardMainData extends PathCardData {
-  description?: string;
-  location: string;
-  dateRange: string;
-}
-
-interface PathExperienceCardData extends PathCardMainData {
-  techIcons: IconData[];
-}
-
-interface PathLanguageCardData {
-  title: string;
-  icon?: IconData;
-  date: string;
-  certificate: string;
-}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const pathStudiesData: PathCardMainData[] = [
   {
     dateRange: "2020-2022",
-    title: "Máster en Informática móvil",
-    location: "Universidad Pontificia de Salamanca",
-    description:
-      "Especializado en el desarrollo de aplicaciones Android, IOS e híbridas",
+    title: t("path.upsa.title"),
+    location: t("path.upsa.location"),
+    description: t("path.upsa.description"),
     icon: {
-      src: "/images/upsa_logo.jpeg",
-      alt: "UPSA - Máster en Informática Móvil",
-      classes: "",
+      src: "/images/path/studies/upsa_logo.jpeg",
+      alt: "UPSA Logo",
     },
   },
   {
     dateRange: "2014-2019",
-    title: "Ingeniería Multimedia",
-    location: "Universidad de Alicante",
-    description:
-      "Especializado en desarrollo de páginas web, videojuegos y creación de contenidos multimedia (imágen, video, etc.)",
+    title: t("path.ua.title"),
+    location: t("path.ua.location"),
+    description: t("path.ua.description"),
     icon: {
-      src: "/images/ua_logo.jpeg",
-      alt: "UA - Grado en Ingeniería Multimedia",
-      classes: "",
+      src: "/images/path/studies/ua_logo.jpeg",
+      alt: "UA Logo",
     },
   },
   {
     dateRange: "2012-2014",
-    title: "Bachillerato tecnológico",
-    location: "Instituto IES Victoria Kent (Elche)",
+    title: t("path.vk.title"),
+    location: t("path.vk.location"),
     icon: {
-      src: "/images/vk_logo.jpg",
-      alt: "IES Victoria Kent - Bachillerato tecnológico",
-      classes: "",
+      src: "/images/path/studies/vk_logo.jpg",
+      alt: "IES Victoria Kent Logo",
     },
   },
 ];
 
 const pathExperienceData: PathExperienceCardData[] = [
   {
-    title: "Desarollador Frontend",
-    location: "Mamby Investments",
-    description:
-      "Desarrollo frontend de una aplicación web con Nuxt.js, Vue.js, Typescript y CSS. Aplicación de una plataforma de creación de contenido.",
-    dateRange: "marzo 2021 - septiembre 2023 (2 años y ",
+    title: t("path.mamby.title"),
+    location: t("path.mamby.location"),
+    description: t("path.mamby.description"),
+    dateRange: t("path.mamby.dateRange"),
     techIcons: [],
     icon: {
-      src: "/images/mamby_logo.jpeg",
+      src: "/images/path/experience/mamby_logo.jpeg",
       alt: "Everis logo",
-      classes: "",
     },
   },
   {
-    title: "Desarollador web Java",
-    location: "Everis Alicante",
-    description:
-      "Desarrollo y mantenimiento de aplicaciones de banca utilizando JSP, Java, Spring Webflow y Oracle SQL",
-    dateRange: "junio 2020 - marzo 2021 (10 meses)",
+    title: t("path.everis2.title"),
+    location: t("path.everis2.location"),
+    description: t("path.everis2.description"),
+    dateRange: t("path.everis2.dateRange"),
     icon: {
-      src: "/images/everis_logo.jpeg",
+      src: "/images/path/experience/everis_logo.jpeg",
       alt: "Everis logo",
-      classes: "",
     },
     techIcons: [],
   },
   {
-    title: "Desarollador web y host",
-    location: "Everis Murcia",
-    description:
-      "Desarrollo y mantenimiento de aplicaciones de telefonía utilizando JSP, Javascript y Java, para la parte web, y Cobol así como la gestión de bases de datos DB2 y SQL Server para la parte Host.",
-    dateRange: "junio 2019 - junio 2020 (1 año)",
+    title: t("path.everis.title"),
+    location: t("path.everis.location"),
+    description: t("path.everis.description"),
+    dateRange: t("path.everis.dateRange"),
     icon: {
-      src: "/images/everis_logo.jpeg",
+      src: "/images/path/experience/everis_logo.jpeg",
       alt: "Everis logo",
-      classes: "",
     },
     techIcons: [],
   },
   {
-    title: "Desarrollador web",
-    location: "Aire Networks",
-    description:
-      "Desarrollo y mantenimiento de un ERP de telefonía utilizando HTML, CSS, Javascript, PHP y gestión de bases de datos con MySQL",
-    dateRange: "julio 2018 - marzo 2019 (9 meses)",
+    title: t("path.aire2.title"),
+    location: t("path.aire.location"),
+    description: t("path.aire.description"),
+    dateRange: t("path.aire2.dateRange"),
     techIcons: [],
     icon: {
-      src: "/images/airenetworks_logo.jpeg",
+      src: "/images/path/experience/airenetworks_logo.jpeg",
       alt: "Aire Networks logo",
-      classes: "",
     },
   },
   {
-    title: "Desarrollador web en prácticas",
-    location: "Aire Networks",
-    description:
-      "Desarrollo y mantenimiento de un ERP de telefonía utilizando HTML, CSS, Javascript, PHP y gestión de bases de datos con MySQL",
-    dateRange: "mayo 2018 - julio 2018 (3 meses)",
+    title: t("path.aire.title"),
+    location: t("path.aire.location"),
+    description: t("path.aire.description"),
+    dateRange: t("path.aire.dateRange"),
     icon: {
-      src: "/images/airenetworks_logo.jpeg",
+      src: "/images/path/experience/airenetworks_logo.jpeg",
       alt: "Aire Networks logo",
-      classes: "",
     },
     techIcons: [],
   },
@@ -137,33 +103,30 @@ const pathExperienceData: PathExperienceCardData[] = [
 
 const pathLanguagesData: PathLanguageCardData[] = [
   {
-    title: "Español",
-    certificate: "Lengua materna",
+    title: t("path.spanish.title"),
+    certificate: t("path.spanish.certificate"),
     date: "·",
     icon: {
-      src: "/images/spanish_logo.png",
+      src: "/images/path/studies/spanish_logo.png",
       alt: "Spanish logo",
-      classes: "",
     },
   },
   {
-    title: "Inglés",
+    title: t("path.english.title"),
     date: "2015",
-    certificate: "First Certificate (B2) - Cambridge",
+    certificate: t("path.english.certificate"),
     icon: {
-      src: "/images/english_logo.png",
+      src: "/images/path/studies/english_logo.png",
       alt: "English logo",
-      classes: "",
     },
   },
   {
-    title: "Valenciano",
+    title: t("path.valencian.title"),
     date: "2012",
-    certificate: "Mitjà (C1) - Junta Qualificadora (JQCV)",
+    certificate: t("path.valencian.certificate"),
     icon: {
-      src: "/images/valencian_logo.png",
+      src: "/images/path/studies/valencian_logo.png",
       alt: "Valencian logo",
-      classes: "",
     },
   },
 ];
@@ -172,18 +135,18 @@ const pathLanguagesData: PathLanguageCardData[] = [
 <section class="jm-path">
   <div class="jm-path__container">
     <div class="relative">
-      <nav class="sticky left-0 top-64 p-4 mt-20">
+      <nav class="sticky left-0 top-64 p-4 mt-20 mr-8">
         <ul>
-          <li><a href="#">Estudios</a></li>
-          <li><a href="#">Experiencia</a></li>
-          <li><a href="#">Tecnologías</a></li>
+          <li><a href="#studies">{t("path.studies")}</a></li>
+          <li><a href="#experience">{t("path.experience")}</a></li>
+          <li><a href="#tech">{t("path.tech")}</a></li>
         </ul>
       </nav>
     </div>
     <main class="jm-path__content">
-      <h2 class="jm-path__title">Trayectoria</h2>
-      <section>
-        <h3>Estudios</h3>
+      <h2 class="jm-path__title">{t("path.title")}</h2>
+      <section id="studies">
+        <h3>{t("path.studies")}</h3>
         {
           pathStudiesData.map((studyData, index) => {
             return (
@@ -194,7 +157,7 @@ const pathLanguagesData: PathLanguageCardData[] = [
             );
           })
         }
-        <h4>Idiomas</h4>
+        <h4>{t("path.languages")}</h4>
         {
           pathLanguagesData.map((languageData, index) => {
             return (
@@ -206,8 +169,8 @@ const pathLanguagesData: PathLanguageCardData[] = [
           })
         }
       </section>
-      <section>
-        <h3>Experiencia</h3>
+      <section id="experience">
+        <h3>{t("path.experience")}</h3>
         {
           pathExperienceData.map((experienceData, index) => {
             return (
@@ -223,8 +186,8 @@ const pathLanguagesData: PathLanguageCardData[] = [
           })
         }
       </section>
-      <section>
-        <h3>Tecnologías</h3>
+      <section id="tech">
+        <h3>{t("path.tech")}</h3>
       </section>
     </main>
   </div>
@@ -268,5 +231,9 @@ const pathLanguagesData: PathLanguageCardData[] = [
 
   .jm-path__content > section {
     @apply mb-4;
+  }
+
+  li {
+    @apply font-medium text-lg;
   }
 </style>
