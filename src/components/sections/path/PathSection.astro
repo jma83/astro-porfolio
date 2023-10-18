@@ -1,0 +1,31 @@
+---
+import PathCard from "./PathCard.astro";
+
+const props = Astro.props;
+const { sectionId, title, items } = props;
+---
+
+<section id={sectionId}>
+  <h3>{title}</h3>
+  {
+    items.map((item, index) => {
+      return (
+        <div class="jm-path__section-card">
+          <PathCard data={item} />
+          {index !== items.length - 1 ? <hr /> : <Fragment />}
+        </div>
+      );
+    })
+  }
+  <slot />
+</section>
+
+<style>
+  .jm-path__section-card {
+    @apply flex flex-col gap-4 mt-5 mb-6;
+  }
+
+  h3 {
+    @apply font-bold text-2xl text-blue-700;
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import { PathMenuData } from "../../../types/Path";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const props = Astro.props;
+
+const { menuItems } = props;
+---
+
+<div class="relative">
+  <nav class="sticky left-0 top-64 p-4 mt-20 mr-8 gap-4">
+    <ul>
+      {
+        menuItems.map((menuItem: PathMenuData) => (
+          <li>
+            <a href={menuItem.href}>{menuItem.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</div>
+
+<style>
+  li {
+    @apply font-medium text-lg;
+  }
+</style>

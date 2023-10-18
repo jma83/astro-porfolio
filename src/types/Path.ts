@@ -25,3 +25,8 @@ export interface PathLanguageCardData {
   date: string;
   certificate: string;
 }
+
+export interface PathMenuData {
+  title: string;
+  href: string;
+}

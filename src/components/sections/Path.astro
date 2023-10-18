@@ -1,191 +1,46 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import PathCard from "./path/PathCard.astro";
-import PathLanguageCard from "./path/PathLanguageCard.astro";
-import {
-  PathCardMainData,
-  PathExperienceCardData,
-  PathLanguageCardData,
-} from "../../types/Path";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+import {
+  getPathExperienceItems,
+  getPathLanguagesItems,
+  getPathStudiesItems,
+} from "../../static/pathItems";
+import PathSection from "./path/PathSection.astro";
+import PathSectionLanguage from "./path/PathSectionLanguage.astro";
+import getPathMenuItems from "../../static/pathMenuItems";
+import PathSideMenu from "./path/PathSideMenu.astro";
 
-const pathStudiesData: PathCardMainData[] = [
-  {
-    dateRange: "2020-2022",
-    title: t("path.upsa.title"),
-    location: t("path.upsa.location"),
-    description: t("path.upsa.description"),
-    icon: {
-      src: "/images/path/studies/upsa_logo.jpeg",
-      alt: "UPSA Logo",
-    },
-  },
-  {
-    dateRange: "2014-2019",
-    title: t("path.ua.title"),
-    location: t("path.ua.location"),
-    description: t("path.ua.description"),
-    icon: {
-      src: "/images/path/studies/ua_logo.jpeg",
-      alt: "UA Logo",
-    },
-  },
-  {
-    dateRange: "2012-2014",
-    title: t("path.vk.title"),
-    location: t("path.vk.location"),
-    icon: {
-      src: "/images/path/studies/vk_logo.jpg",
-      alt: "IES Victoria Kent Logo",
-    },
-  },
-];
-
-const pathExperienceData: PathExperienceCardData[] = [
-  {
-    title: t("path.mamby.title"),
-    location: t("path.mamby.location"),
-    description: t("path.mamby.description"),
-    dateRange: t("path.mamby.dateRange"),
-    techIcons: [],
-    icon: {
-      src: "/images/path/experience/mamby_logo.jpeg",
-      alt: "Everis logo",
-    },
-  },
-  {
-    title: t("path.everis2.title"),
-    location: t("path.everis2.location"),
-    description: t("path.everis2.description"),
-    dateRange: t("path.everis2.dateRange"),
-    icon: {
-      src: "/images/path/experience/everis_logo.jpeg",
-      alt: "Everis logo",
-    },
-    techIcons: [],
-  },
-  {
-    title: t("path.everis.title"),
-    location: t("path.everis.location"),
-    description: t("path.everis.description"),
-    dateRange: t("path.everis.dateRange"),
-    icon: {
-      src: "/images/path/experience/everis_logo.jpeg",
-      alt: "Everis logo",
-    },
-    techIcons: [],
-  },
-  {
-    title: t("path.aire2.title"),
-    location: t("path.aire.location"),
-    description: t("path.aire.description"),
-    dateRange: t("path.aire2.dateRange"),
-    techIcons: [],
-    icon: {
-      src: "/images/path/experience/airenetworks_logo.jpeg",
-      alt: "Aire Networks logo",
-    },
-  },
-  {
-    title: t("path.aire.title"),
-    location: t("path.aire.location"),
-    description: t("path.aire.description"),
-    dateRange: t("path.aire.dateRange"),
-    icon: {
-      src: "/images/path/experience/airenetworks_logo.jpeg",
-      alt: "Aire Networks logo",
-    },
-    techIcons: [],
-  },
-];
-
-const pathLanguagesData: PathLanguageCardData[] = [
-  {
-    title: t("path.spanish.title"),
-    certificate: t("path.spanish.certificate"),
-    date: "·",
-    icon: {
-      src: "/images/path/studies/spanish_logo.png",
-      alt: "Spanish logo",
-    },
-  },
-  {
-    title: t("path.english.title"),
-    date: "2015",
-    certificate: t("path.english.certificate"),
-    icon: {
-      src: "/images/path/studies/english_logo.png",
-      alt: "English logo",
-    },
-  },
-  {
-    title: t("path.valencian.title"),
-    date: "2012",
-    certificate: t("path.valencian.certificate"),
-    icon: {
-      src: "/images/path/studies/valencian_logo.png",
-      alt: "Valencian logo",
-    },
-  },
-];
+const pathStudiesData = getPathStudiesItems(t);
+const pathLanguagesData = getPathLanguagesItems(t);
+const pathExperienceData = getPathExperienceItems(t);
+const pathMenuItems = getPathMenuItems(t);
+console.log("pathMenuItems", pathMenuItems);
 ---
 
 <section class="jm-path">
   <div class="jm-path__container">
-    <div class="relative">
-      <nav class="sticky left-0 top-64 p-4 mt-20 mr-8">
-        <ul>
-          <li><a href="#studies">{t("path.studies")}</a></li>
-          <li><a href="#experience">{t("path.experience")}</a></li>
-          <li><a href="#tech">{t("path.tech")}</a></li>
-        </ul>
-      </nav>
-    </div>
+    <PathSideMenu menuItems={pathMenuItems} />
     <main class="jm-path__content">
       <h2 class="jm-path__title">{t("path.title")}</h2>
-      <section id="studies">
-        <h3>{t("path.studies")}</h3>
-        {
-          pathStudiesData.map((studyData, index) => {
-            return (
-              <div class="jm-path__section-card">
-                <PathCard data={studyData} />
-                {index !== pathStudiesData.length - 1 ? <hr /> : <Fragment />}
-              </div>
-            );
-          })
-        }
-        <h4>{t("path.languages")}</h4>
-        {
-          pathLanguagesData.map((languageData, index) => {
-            return (
-              <div class="jm-path__section-card">
-                <PathLanguageCard data={languageData} />
-                {index !== pathLanguagesData.length - 1 ? <hr /> : <Fragment />}
-              </div>
-            );
-          })
-        }
-      </section>
-      <section id="experience">
-        <h3>{t("path.experience")}</h3>
-        {
-          pathExperienceData.map((experienceData, index) => {
-            return (
-              <div class="jm-path__section-card">
-                <PathCard data={experienceData} />
-                {index !== pathExperienceData.length - 1 ? (
-                  <hr />
-                ) : (
-                  <Fragment />
-                )}
-              </div>
-            );
-          })
-        }
-      </section>
+      <PathSection
+        sectionId="studies"
+        title={t("path.studies")}
+        items={pathStudiesData}
+      >
+        <PathSectionLanguage
+          sectionId="languages"
+          title={t("path.languages")}
+          items={pathLanguagesData}
+        />
+      </PathSection>
+      <PathSection
+        sectionId="experience"
+        title={t("path.experience")}
+        items={pathExperienceData}
+      />
       <section id="tech">
         <h3>{t("path.tech")}</h3>
       </section>
@@ -210,30 +65,13 @@ const pathLanguagesData: PathLanguageCardData[] = [
     @apply text-4xl font-bold mb-6;
   }
 
-  .jm-path__section-card {
-    @apply flex flex-col gap-4 mt-5 mb-6;
-  }
-
   @screen md {
     .jm-path {
       @apply px-8 py-16;
     }
   }
 
-  h3 {
-    @apply font-bold text-2xl text-blue-700;
-  }
-
-  h4 {
-    @apply font-bold text-blue-700;
-    font-size: 1.33rem;
-  }
-
   .jm-path__content > section {
     @apply mb-4;
-  }
-
-  li {
-    @apply font-medium text-lg;
   }
 </style>

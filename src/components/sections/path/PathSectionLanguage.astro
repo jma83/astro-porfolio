@@ -1,0 +1,31 @@
+---
+import PathLanguageCard from "./PathLanguageCard.astro";
+
+const props = Astro.props;
+const { sectionId, title, items } = props;
+---
+
+<section id={sectionId}>
+  <h4>{title}</h4>
+  {
+    items.map((item, index) => {
+      return (
+        <div class="jm-path__section-card">
+          <PathLanguageCard data={item} />
+          {index !== items.length - 1 ? <hr /> : <Fragment />}
+        </div>
+      );
+    })
+  }
+</section>
+
+<style>
+  .jm-path__section-card {
+    @apply flex flex-col gap-4 mt-5 mb-6;
+  }
+
+  h4 {
+    @apply font-bold text-blue-700;
+    font-size: 1.33rem;
+  }
+</style>
