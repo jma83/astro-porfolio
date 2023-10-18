@@ -17,7 +17,6 @@ const pathStudiesData = getPathStudiesItems(t);
 const pathLanguagesData = getPathLanguagesItems(t);
 const pathExperienceData = getPathExperienceItems(t);
 const pathMenuItems = getPathMenuItems(t);
-console.log("pathMenuItems", pathMenuItems);
 ---
 
 <section class="jm-path">
@@ -54,7 +53,7 @@ console.log("pathMenuItems", pathMenuItems);
   }
 
   .jm-path__container {
-    @apply w-full max-w-6xl flex flex-grow justify-start gap-x-16;
+    @apply w-full max-w-6xl flex flex-col flex-grow justify-start gap-x-16;
   }
 
   .jm-path__content {
@@ -68,6 +67,10 @@ console.log("pathMenuItems", pathMenuItems);
   @screen md {
     .jm-path {
       @apply px-8 py-16;
+    }
+
+    .jm-path__container {
+      @apply flex flex-row;
     }
   }
 

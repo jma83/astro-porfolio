@@ -10,8 +10,8 @@ const { menuItems } = props;
 ---
 
 <div class="relative">
-  <nav class="sticky left-0 top-64 p-4 mt-20 mr-8 gap-4">
-    <ul>
+  <nav class="sticky left-0 top-64 p-4 mt-20 mr-8">
+    <ul class="flex flex-col gap-y-1">
       {
         menuItems.map((menuItem: PathMenuData) => (
           <li>
@@ -25,6 +25,6 @@ const { menuItems } = props;
 
 <style>
   li {
-    @apply font-medium text-lg;
+    @apply font-medium text-lg py-1;
   }
 </style>
