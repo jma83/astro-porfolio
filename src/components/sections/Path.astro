@@ -8,10 +8,12 @@ import {
   getPathLanguagesItems,
   getPathStudiesItems,
 } from "../../static/pathItems";
-import PathSection from "./path/PathSection.astro";
-import PathSectionLanguage from "./path/PathSectionLanguage.astro";
 import getPathMenuItems from "../../static/pathMenuItems";
+import PathSectionMain from "./path/PathSectionMain.astro";
+import PathSectionLanguage from "./path/PathSectionLanguage.astro";
 import PathSideMenu from "./path/PathSideMenu.astro";
+import getPathTechItems from "../../static/pathTechItems";
+import PathSectionTech from "./path/PathSectionTech.astro";
 
 const pathStudiesData = getPathStudiesItems(t);
 const pathLanguagesData = getPathLanguagesItems(t);
@@ -24,7 +26,7 @@ const pathMenuItems = getPathMenuItems(t);
     <PathSideMenu menuItems={pathMenuItems} />
     <main class="jm-path__content">
       <h2 class="jm-path__title">{t("path.title")}</h2>
-      <PathSection
+      <PathSectionMain
         sectionId="studies"
         title={t("path.studies")}
         items={pathStudiesData}
@@ -34,15 +36,13 @@ const pathMenuItems = getPathMenuItems(t);
           title={t("path.languages")}
           items={pathLanguagesData}
         />
-      </PathSection>
-      <PathSection
+      </PathSectionMain>
+      <PathSectionMain
         sectionId="experience"
         title={t("path.experience")}
         items={pathExperienceData}
       />
-      <section id="tech">
-        <h3>{t("path.tech")}</h3>
-      </section>
+      <PathSectionTech />
     </main>
   </div>
 </section>

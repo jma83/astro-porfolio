@@ -1,0 +1,33 @@
+---
+import PathCard from "./PathCard.astro";
+import { IconData } from "../../../types/Path";
+import HorizontalScroll from "../../shared/HorizontalScroll.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import getPathTechItems from "../../../static/pathTechItems";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const pathTechItems = getPathTechItems();
+---
+
+<section id="tech">
+  <h3>{t("path.tech")}</h3>
+  <HorizontalScroll>
+    {
+      pathTechItems.map((img: IconData) => (
+        <li class="jm-path__tech-item">
+          <img src={img.src} alt={img.alt} />
+        </li>
+      ))
+    }
+  </HorizontalScroll>
+</section>
+
+<style>
+  .jm-path__tech-item {
+    flex: 0 0 auto;
+    width: 50px;
+    margin-right: 20px;
+  }
+</style>

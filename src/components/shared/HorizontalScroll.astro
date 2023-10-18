@@ -1,0 +1,26 @@
+<ul class="scroll-container">
+  <slot />
+</ul>
+
+<style>
+  .scroll-container {
+    @apply flex flex-row flex-nowrap w-full items-center;
+    @apply whitespace-nowrap overflow-x-scroll;
+    max-width: 1280px;
+  }
+
+  ::-webkit-scrollbar {
+    @apply hidden h-0 w-0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply hidden;
+  }
+
+  @screen md {
+    .scroll-container {
+      @apply flex-wrap;
+      overflow-x: unset;
+    }
+  }
+</style>
