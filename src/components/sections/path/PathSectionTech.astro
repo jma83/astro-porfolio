@@ -2,33 +2,75 @@
 import { IconData } from "../../../types/Path";
 import HorizontalScroll from "../../shared/HorizontalScroll.astro";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
-import { getPathTechItems } from "../../../static/pathTechItems";
+import {
+  getPathTechLanguagesItems,
+  getPathTechFrameworksItems,
+  getPathTechPrograms,
+} from "../../../static/pathTechItems";
 import PathTechIcon from "./icons/PathTechIcon.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const pathTechItems = getPathTechItems();
+const pathTechLangItems = getPathTechLanguagesItems();
+const pathTechFrameworksItems = getPathTechFrameworksItems();
+const pathTechProgramsItems = getPathTechPrograms();
 ---
 
 <section id="tech">
   <h3>{t("path.tech")}</h3>
-  <div>
-    <HorizontalScroll>
-      {
-        pathTechItems.map((img: IconData) => (
-          <li>
-            <PathTechIcon img={img} classes="w-12 mx-2" />
-          </li>
-        ))
-      }
-    </HorizontalScroll>
-  </div>
+  <section>
+    <h4>{t("path.tech.languages")}</h4>
+    <div>
+      <HorizontalScroll>
+        {
+          pathTechLangItems.map((img: IconData) => (
+            <li>
+              <PathTechIcon img={img} classes="w-12 mx-2" />
+            </li>
+          ))
+        }
+      </HorizontalScroll>
+    </div>
+  </section>
+  <section>
+    <h4>{t("path.tech.frameworks")}</h4>
+
+    <div>
+      <HorizontalScroll>
+        {
+          pathTechFrameworksItems.map((img: IconData) => (
+            <li>
+              <PathTechIcon img={img} classes="w-12 mx-2" />
+            </li>
+          ))
+        }
+      </HorizontalScroll>
+    </div>
+  </section>
+  <section>
+    <h4>{t("path.tech.programs")}</h4>
+    <div>
+      <HorizontalScroll>
+        {
+          pathTechProgramsItems.map((img: IconData) => (
+            <li>
+              <PathTechIcon img={img} classes="w-12 mx-2" />
+            </li>
+          ))
+        }
+      </HorizontalScroll>
+    </div>
+  </section>
 </section>
 
 <style>
   h3 {
     @apply font-bold text-2xl text-blue-700;
+  }
+
+  h4 {
+    @apply font-semibold text-lg text-gray-700 mt-4;
   }
 
   li {

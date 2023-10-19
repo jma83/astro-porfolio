@@ -27,6 +27,10 @@ export const ui = {
     "path.experience": "Experiencia",
     "path.languages": "Idiomas",
     "path.tech": "Tecnologías",
+    "path.tech.languages": "Princpipales lenguajes de programación",
+    "path.tech.programs": "Principales programas con los que he trabajado",
+    "path.tech.frameworks":
+      "Principales librerias/frameworks con los que he trabajado",
     "path.upsa.title": "Máster en Informática móvil",
     "path.upsa.location": "Universidad Pontificia de Salamanca",
     "path.upsa.description":
@@ -90,6 +94,9 @@ export const ui = {
     "path.studies": "Studies",
     "path.experience": "Experience",
     "path.tech": "Technologies",
+    "path.tech.languages": "Main programming languages",
+    "path.tech.programs": "Main programs that I have worked with",
+    "path.tech.frameworks": "Main libraries/frameworks i have worked with",
     "path.languages": "Languages",
     "path.upsa.title": "Master in Mobile Computing",
     "path.upsa.location": "Pontifical University of Salamanca",
