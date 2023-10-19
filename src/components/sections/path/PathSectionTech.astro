@@ -1,9 +1,9 @@
 ---
-import PathCard from "./PathCard.astro";
 import { IconData } from "../../../types/Path";
 import HorizontalScroll from "../../shared/HorizontalScroll.astro";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
-import getPathTechItems from "../../../static/pathTechItems";
+import { getPathTechItems } from "../../../static/pathTechItems";
+import PathTechIcon from "./icons/PathTechIcon.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -13,21 +13,25 @@ const pathTechItems = getPathTechItems();
 
 <section id="tech">
   <h3>{t("path.tech")}</h3>
-  <HorizontalScroll>
-    {
-      pathTechItems.map((img: IconData) => (
-        <li class="jm-path__tech-item">
-          <img src={img.src} alt={img.alt} />
-        </li>
-      ))
-    }
-  </HorizontalScroll>
+  <div>
+    <HorizontalScroll>
+      {
+        pathTechItems.map((img: IconData) => (
+          <li>
+            <PathTechIcon img={img} classes="w-12 mx-2" />
+          </li>
+        ))
+      }
+    </HorizontalScroll>
+  </div>
 </section>
 
 <style>
-  .jm-path__tech-item {
+  h3 {
+    @apply font-bold text-2xl text-blue-700;
+  }
+
+  li {
     flex: 0 0 auto;
-    width: 50px;
-    margin-right: 20px;
   }
 </style>

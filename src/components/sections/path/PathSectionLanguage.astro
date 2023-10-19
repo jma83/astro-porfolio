@@ -1,5 +1,5 @@
 ---
-import PathLanguageCard from "./PathLanguageCard.astro";
+import PathLanguageCard from "./cards/PathLanguageCard.astro";
 
 const props = Astro.props;
 const { sectionId, title, items } = props;
@@ -21,7 +21,7 @@ const { sectionId, title, items } = props;
 
 <style>
   .jm-path__section-card {
-    @apply flex flex-col gap-4 mt-5 mb-6;
+    @apply flex flex-col gap-4 mt-5 mb-8;
   }
 
   h4 {

@@ -1,0 +1,78 @@
+---
+import ImageLogo from "../../../icons/ImageLogo.astro";
+import { IconData } from "../../../../types/Path";
+import HorizontalScroll from "../../../shared/HorizontalScroll.astro";
+import PathTechIcon from "../icons/PathTechIcon.astro";
+const props = Astro.props;
+const res = props.data;
+const { icon, dateRange, title, location, description, techIcons = [] } = res;
+---
+
+<div class="jm-path-card">
+  {
+    icon != null ? (
+      <ImageLogo
+        src={icon.src}
+        alt={icon.alt}
+        classes={["mr-3", icon.classes]}
+      />
+    ) : (
+      <Fragment />
+    )
+  }
+  <div class="jm-path-card__container">
+    <div class="jm-path-card__header">
+      <span>{dateRange}</span>
+      <h3>{title}</h3>
+    </div>
+    <div class="jm-path-card__content">
+      <h4>{location}</h4>
+      <p>{description}</p>
+    </div>
+    <div class="relative">
+      {
+        techIcons.length > 0 ? (
+          <HorizontalScroll>
+            {techIcons.map((img: IconData) => (
+              <li>
+                <PathTechIcon img={img} classes="w-6 mx-1" />
+              </li>
+            ))}
+          </HorizontalScroll>
+        ) : (
+          <Fragment />
+        )
+      }
+    </div>
+  </div>
+
+  <style>
+    .jm-path-card {
+      @apply flex flex-row;
+    }
+
+    .jm-path-card__header > h3 {
+      @apply text-2xl font-bold;
+    }
+
+    .jm-path-card__header > span {
+      @apply text-base font-semibold text-primary-500;
+    }
+
+    .jm-path-card__content {
+      @apply mt-1;
+    }
+
+    .jm-path-card__content > h4 {
+      @apply text-lg font-semibold text-gray-700;
+    }
+
+    .jm-path-card__content > p {
+      @apply text-base text-gray-600;
+    }
+
+    li {
+      flex: 0 0 auto;
+    }
+  </style>
+</div>

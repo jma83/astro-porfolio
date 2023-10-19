@@ -1,0 +1,12 @@
+---
+import Tooltip from "../../../shared/Tooltip.astro";
+
+const props = Astro.props;
+const { img, classes } = props;
+---
+
+<Tooltip message={img.alt}>
+  <div class="jm-path-tech-icon__container">
+    <img src={img.src} alt={img.alt} class:list={classes} />
+  </div>
+</Tooltip>

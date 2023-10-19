@@ -3,6 +3,22 @@ import {
   type PathExperienceCardData,
   type PathLanguageCardData,
 } from "../types/Path";
+import {
+  capacitorLogo,
+  cobolLogo,
+  cssLogo,
+  db2Logo,
+  htmlLogo,
+  javaLogo,
+  jsLogo,
+  nuxtLogo,
+  oracleLogo,
+  phpLogo,
+  springLogo,
+  tailwindLogo,
+  tsLogo,
+  vueLogo,
+} from "./pathTechItems.ts";
 
 export const getPathStudiesItems = (t: Function): PathCardMainData[] => [
   {
@@ -44,7 +60,15 @@ export const getPathExperienceItems = (
     location: t("path.mamby.location"),
     description: t("path.mamby.description"),
     dateRange: t("path.mamby.dateRange"),
-    techIcons: [],
+    techIcons: [
+      nuxtLogo,
+      vueLogo,
+      tsLogo,
+      htmlLogo,
+      cssLogo,
+      tailwindLogo,
+      capacitorLogo,
+    ],
     icon: {
       src: "/images/path/experience/mamby_logo.jpeg",
       alt: "Everis logo",
@@ -59,7 +83,7 @@ export const getPathExperienceItems = (
       src: "/images/path/experience/everis_logo.jpeg",
       alt: "Everis logo",
     },
-    techIcons: [],
+    techIcons: [javaLogo, jsLogo, springLogo, oracleLogo],
   },
   {
     title: t("path.everis.title"),
@@ -70,7 +94,7 @@ export const getPathExperienceItems = (
       src: "/images/path/experience/everis_logo.jpeg",
       alt: "Everis logo",
     },
-    techIcons: [],
+    techIcons: [javaLogo, jsLogo, cobolLogo, db2Logo],
   },
   {
     title: t("path.aire2.title"),
@@ -92,7 +116,7 @@ export const getPathExperienceItems = (
       src: "/images/path/experience/airenetworks_logo.jpeg",
       alt: "Aire Networks logo",
     },
-    techIcons: [],
+    techIcons: [htmlLogo, cssLogo, jsLogo, phpLogo],
   },
 ];
 
