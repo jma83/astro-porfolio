@@ -1,11 +1,10 @@
----
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+<script>
+  import { translate } from "../../stores/i18nStore";
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
----
+  let t = translate.get();
+</script>
 
-<nav class="jm-header__navigation-bar">
+<nav class="hidden invisible h-0 md:block md:visible md:h-auto;">
   <ul class="flex flex-row gap-4">
     <li class="jm-header__list-item">
       <a href="/public" class="jm-header__list-item-link">{t("nav.home")}</a>
@@ -28,15 +27,5 @@ const t = useTranslations(lang);
 <style>
   .jm-header__list-item-link {
     @apply px-1 py-4;
-  }
-
-  .jm-header__navigation-bar {
-    @apply hidden invisible h-0;
-  }
-
-  @screen md {
-    .jm-header__navigation-bar {
-      @apply block visible h-auto;
-    }
   }
 </style>

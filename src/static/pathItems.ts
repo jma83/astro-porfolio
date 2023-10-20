@@ -5,21 +5,23 @@ import {
 } from "../types/Path";
 import {
   capacitorLogo,
+  nuxtLogo,
+  springLogo,
+  tailwindLogo,
+  vueLogo,
+} from "./pathTechFrameworkItems.ts";
+import {
   cobolLogo,
   cssLogo,
   db2Logo,
   htmlLogo,
   javaLogo,
   jsLogo,
-  nuxtLogo,
   oracleLogo,
   phpLogo,
-  springLogo,
   sqlServerLogo,
-  tailwindLogo,
   tsLogo,
-  vueLogo,
-} from "./pathTechItems.ts";
+} from "./pathTechLanguageItems.ts";
 
 export const getPathStudiesItems = (t: Function): PathCardMainData[] => [
   {

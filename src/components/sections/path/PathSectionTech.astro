@@ -1,20 +1,18 @@
 ---
 import { IconData } from "../../../types/Path";
 import HorizontalScroll from "../../shared/HorizontalScroll.astro";
-import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
-import {
-  getPathTechLanguagesItems,
-  getPathTechFrameworksItems,
-  getPathTechPrograms,
-} from "../../../static/pathTechItems";
+import { getPathTechFrameworksItems } from "../../../static/pathTechFrameworkItems";
 import PathTechIcon from "./icons/PathTechIcon.astro";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+import { getPathTechLanguagesItems } from "../../../static/pathTechLanguageItems";
+import { getPathTechSoftwareItems } from "../../../static/pathTechSoftwareItems";
+import { getPathTechIDEItems } from "../../../static/pathTechIDEItems";
+import { translate } from "../../../stores/i18nStore";
+const t = translate.get();
 
 const pathTechLangItems = getPathTechLanguagesItems();
 const pathTechFrameworksItems = getPathTechFrameworksItems();
-const pathTechProgramsItems = getPathTechPrograms();
+const pathTechSoftwareItems = getPathTechSoftwareItems();
+const pathTechIDEItems = getPathTechIDEItems();
 ---
 
 <section id="tech">
@@ -53,7 +51,21 @@ const pathTechProgramsItems = getPathTechPrograms();
     <div>
       <HorizontalScroll>
         {
-          pathTechProgramsItems.map((img: IconData) => (
+          pathTechSoftwareItems.map((img: IconData) => (
+            <li>
+              <PathTechIcon img={img} classes="w-12 mx-2" />
+            </li>
+          ))
+        }
+      </HorizontalScroll>
+    </div>
+  </section>
+  <section>
+    <h4>{t("path.tech.ides")}</h4>
+    <div>
+      <HorizontalScroll>
+        {
+          pathTechIDEItems.map((img: IconData) => (
             <li>
               <PathTechIcon img={img} classes="w-12 mx-2" />
             </li>

@@ -4,9 +4,14 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Home from "../components/sections/Home.astro";
 import About from "../components/sections/About.astro";
 import Path from "../components/sections/Path.astro";
+import Projects from "../components/sections/Projects.astro";
+import { translate } from "../stores/i18nStore";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+console.log("t", t);
+console.log("lang", lang);
+translate.set(t);
 ---
 
 <Layout title={t("layout.title")}>
@@ -14,4 +19,5 @@ const t = useTranslations(lang);
   <About />
   <hr />
   <Path />
+  <Projects />
 </Layout>

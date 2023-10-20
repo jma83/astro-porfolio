@@ -1,8 +1,6 @@
 ---
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+import { translate } from "../../stores/i18nStore";
+const t = translate.get();
 ---
 
 <section class="jm-about">
@@ -11,7 +9,7 @@ const t = useTranslations(lang);
       <img
         src="/images/about/aboutPortfolio.jpg"
         alt="Developer portrair photo"
-        class="rounded"
+        class="rounded grayscale hover:grayscale-0"
       />
     </div>
     <div class="jm-about__content">

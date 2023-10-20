@@ -27,10 +27,10 @@ export const ui = {
     "path.experience": "Experiencia",
     "path.languages": "Idiomas",
     "path.tech": "Tecnologías",
-    "path.tech.languages": "Princpipales lenguajes de programación",
-    "path.tech.programs": "Principales programas con los que he trabajado",
-    "path.tech.frameworks":
-      "Principales librerias/frameworks con los que he trabajado",
+    "path.tech.languages": "Princpipales lenguajes de programación:",
+    "path.tech.programs": "Principales herramientas de software:",
+    "path.tech.ides": "Principales entornos de desarrollo:",
+    "path.tech.frameworks": "Principales librerias/frameworks:",
     "path.upsa.title": "Máster en Informática móvil",
     "path.upsa.location": "Universidad Pontificia de Salamanca",
     "path.upsa.description":
@@ -96,6 +96,7 @@ export const ui = {
     "path.tech": "Technologies",
     "path.tech.languages": "Main programming languages",
     "path.tech.programs": "Main programs that I have worked with",
+    "path.tech.ides": "Main development environments (IDES):",
     "path.tech.frameworks": "Main libraries/frameworks i have worked with",
     "path.languages": "Languages",
     "path.upsa.title": "Master in Mobile Computing",
@@ -116,6 +117,7 @@ export const ui = {
     "path.valencian.certificate": "Mitjà (C1) - Junta Qualificadora (JQCV)",
     "path.mamby.title": "Frontend Developer",
     "path.mamby.location": "Mamby Investments",
+    "path.mamby.dateRange": "march 2021 - september 2023 (2 years y 7 months)",
     "path.mamby.description":
       "Frontend development of a web application with Nuxt.js, Vue.js, Typescript and CSS. Implementation of a content creation platform.",
     "path.everis2.title": "Java Web Developer",

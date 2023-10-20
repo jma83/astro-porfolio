@@ -1,8 +1,6 @@
 ---
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+import { translate } from "../../stores/i18nStore";
+const t = translate.get();
 ---
 
 <section class="jm-home">

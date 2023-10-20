@@ -1,8 +1,7 @@
 ---
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { translate } from "../../stores/i18nStore";
+const t = translate.get();
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 import {
   getPathExperienceItems,
   getPathLanguagesItems,
