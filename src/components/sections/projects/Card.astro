@@ -1,14 +1,42 @@
 ---
 const props = Astro.props;
 
-const { src, alt, classes = "" } = props.data;
+const { src, alt, classes = "", title, subtitle } = props.data;
 ---
 
-<div class="w-full border border-gray-900 relative flex">
+<div class="jm-card">
   <img src={src} alt={alt} class="object-cover" class:list={classes} />
-  <div
-    class="w-full absolute left-0 top-0 bg-green-500 invisible hidden hover:visible hover:block z-10"
-  >
-    <p>Holi</p>
+  <div class="jm-card__content">
+    <h3>{title}</h3>
+    <p>{subtitle}</p>
   </div>
 </div>
+
+<style>
+  .jm-card {
+    @apply w-full border border-gray-900 relative flex justify-center;
+  }
+
+  .jm-card__content {
+    @apply w-full h-full absolute top-0 left-0 bg-primary-500 m-auto z-10 flex flex-col justify-center items-center text-center;
+    @apply invisible opacity-0  transition duration-200 px-4;
+  }
+
+  @screen md {
+    .jm-card__content {
+      @apply px-16;
+    }
+  }
+
+  .jm-card__content > h3 {
+    @apply text-white font-semibold text-lg opacity-100;
+  }
+
+  .jm-card__content > p {
+    @apply text-white font-normal text-base opacity-100;
+  }
+
+  .jm-card:hover > .jm-card__content {
+    @apply visible opacity-80;
+  }
+</style>

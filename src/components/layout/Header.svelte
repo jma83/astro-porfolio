@@ -9,8 +9,6 @@
   }
 
   onMount(() => {
-    console.log("onMount");
-    isScrollDown = true;
     document.addEventListener("scroll", onScroll);
   })
 
