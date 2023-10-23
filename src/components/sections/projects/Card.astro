@@ -1,7 +1,14 @@
 ---
+const props = Astro.props;
 
+const { src, alt, classes = "" } = props.data;
 ---
 
-<div class="p-8 border border-gray-900">
-  <img src="" alt="" class="" />
+<div class="w-full border border-gray-900 relative flex">
+  <img src={src} alt={alt} class="object-cover" class:list={classes} />
+  <div
+    class="w-full absolute left-0 top-0 bg-green-500 invisible hidden hover:visible hover:block z-10"
+  >
+    <p>Holi</p>
+  </div>
 </div>

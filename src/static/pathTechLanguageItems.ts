@@ -1,4 +1,4 @@
-import { type IconData } from "../types/Path.ts";
+import type IconData from "../types/IconData.ts";
 
 export const htmlLogo: IconData = {
   src: "/images/path/tech/html_logo.png",

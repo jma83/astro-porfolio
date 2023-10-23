@@ -1,4 +1,4 @@
-import { type IconData } from "../types/Path";
+import type IconData from "../types/IconData.ts";
 
 export const vueLogo: IconData = {
   src: "/images/path/tech/vue_logo.png",

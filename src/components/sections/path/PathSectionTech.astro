@@ -1,5 +1,4 @@
 ---
-import { IconData } from "../../../types/Path";
 import HorizontalScroll from "../../shared/HorizontalScroll.astro";
 import { getPathTechFrameworksItems } from "../../../static/pathTechFrameworkItems";
 import PathTechIcon from "./icons/PathTechIcon.astro";
@@ -7,6 +6,7 @@ import { getPathTechLanguagesItems } from "../../../static/pathTechLanguageItems
 import { getPathTechSoftwareItems } from "../../../static/pathTechSoftwareItems";
 import { getPathTechIDEItems } from "../../../static/pathTechIDEItems";
 import { translate } from "../../../stores/i18nStore";
+import IconData from "@types/IconData";
 const t = translate.get();
 
 const pathTechLangItems = getPathTechLanguagesItems();

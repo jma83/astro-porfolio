@@ -1,4 +1,4 @@
-import { type IconData } from "../types/Path.ts";
+import type IconData from "../types/IconData.ts";
 
 export const confluenceLogo: IconData = {
   src: "/images/path/tech/confluence_logo.webp",

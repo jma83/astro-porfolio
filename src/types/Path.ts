@@ -1,8 +1,4 @@
-export interface IconData {
-  src: string;
-  alt: string;
-  classes?: string;
-}
+import type IconData from "./IconData.ts";
 
 export interface PathCardData {
   title: string;

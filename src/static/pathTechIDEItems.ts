@@ -1,4 +1,4 @@
-import { type IconData } from "../types/Path.ts";
+import type IconData from "../types/IconData.ts";
 
 export const intellijIdeaLogo: IconData = {
   src: "/images/path/tech/Intellij-idea_logo.png",
