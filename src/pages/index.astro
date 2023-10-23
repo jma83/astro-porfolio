@@ -9,8 +9,6 @@ import { translate } from "../stores/i18nStore";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-console.log("t", t);
-console.log("lang", lang);
 translate.set(t);
 ---
 

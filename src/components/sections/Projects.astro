@@ -1,12 +1,40 @@
 ---
-
+import Card from "./projects/Card.astro";
 ---
 
-<div class="jm-projects">HOLI</div>
+<section class="jm-projects">
+  <div class="jm-projects__container">
+    <h2>Proyectos</h2>
+  </div>
+  <main class="jm-projects__content">
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+  </main>
+</section>
 
 <style>
   .jm-projects {
-    @apply w-full flex;
+    @apply w-full flex justify-center items-center bg-white py-8;
+  }
+
+  @screen md {
+    .jm-projects {
+      @apply py-16;
+    }
+  }
+
+  h2 {
+    @apply text-4xl font-bold mb-6 text-white;
+  }
+
+  .jm-projects {
+    @apply w-full flex flex-col;
 
     background: rgb(0, 34, 64);
     background: linear-gradient(
@@ -14,6 +42,21 @@
       rgba(0, 34, 64, 1) 0%,
       rgba(0, 68, 128, 1) 95%
     );
-    height: 100vh;
+  }
+
+  .jm-projects__container {
+    @apply w-full flex flex-col text-center mb-4;
+    max-width: 72rem;
+  }
+
+  .jm-projects__content {
+    @apply w-full grid gap-0.5;
+    grid-template-columns: 1fr;
+  }
+
+  @screen md {
+    .jm-projects__content {
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 30rem), 1fr));
+    }
   }
 </style>

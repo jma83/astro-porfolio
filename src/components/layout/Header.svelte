@@ -1,18 +1,17 @@
 <script>
-  import HeaderNav from "./HeaderNav.svelte";
-  import MenuIcon from "../icons/MenuIcon.svelte";
   import { onDestroy, onMount } from "svelte";
 
   let isScrollDown = false; // Initialize isActive to false
 
   const onScroll = () => {
-    isScrollDown = window.scrollY > 10;
+    isScrollDown = window.scrollY > 500;
     console.log("isScrollDown", isScrollDown);
   }
 
   onMount(() => {
     console.log("onMount");
-    window.addEventListener("scroll", onScroll);
+    isScrollDown = true;
+    document.addEventListener("scroll", onScroll);
   })
 
   onDestroy(() => {
@@ -22,15 +21,15 @@
   })
 </script>
 
-<header class="jm-header" class:isScrollDown={isScrollDown ? "fixed" : "absolute"}>
+<header class="jm-header" class:jm-header__fixed={isScrollDown} class:absolute={!isScrollDown}>
   <div class="jm-header__container md:px-4">
-    <div class="jm-header__content">
+    <div class="jm-header__content items-center md:items-baseline">
       <a href="/public" class="jm-header__brand-link">
         <span class="text-white">JMA</span>
       </a>
-      <HeaderNav />
+      <slot />
       <button class="block visible h-auto md:hidden md:invisible md:h-0">
-        <MenuIcon classList="w-8 h-8" />
+        <slot name="icon" />
       </button>
     </div>
   </div>
@@ -38,7 +37,7 @@
 
 <style>
   .jm-header {
-    @apply w-full text-white top-0 left-0 ;
+    @apply w-full text-white top-0 left-0 z-50;
     background: rgb(0, 34, 64);
     background: linear-gradient(
             90deg,
@@ -47,12 +46,16 @@
     );
   }
 
+  .jm-header__fixed {
+    @apply fixed shadow-lg;
+  }
+
   .jm-header__container {
     @apply w-full pr-4 flex justify-center items-start;
   }
 
   .jm-header__content {
-    @apply w-full max-w-6xl flex justify-between items-center;
+    @apply w-full max-w-6xl flex justify-between;
     @apply font-normal text-base;
   }
 

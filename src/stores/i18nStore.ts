@@ -1,3 +1,3 @@
-import { atom } from "nanostores";
+import { atom, type WritableAtom } from "nanostores";
 
-export const translate = atom(() => {});
+export const translate: WritableAtom<Function> = atom(() => {});
