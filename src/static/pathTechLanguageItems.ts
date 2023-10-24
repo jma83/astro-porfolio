@@ -85,6 +85,11 @@ export const dartLogo: IconData = {
   alt: "Dart",
 };
 
+export const assemblyLogo: IconData = {
+  src: "/images/path/tech/asm_logo.png",
+  alt: "Assembly",
+};
+
 export const getPathTechLanguagesItems = (): IconData[] => [
   htmlLogo,
   cssLogo,
@@ -103,4 +108,5 @@ export const getPathTechLanguagesItems = (): IconData[] => [
   swiftLogo,
   cobolLogo,
   db2Logo,
+  assemblyLogo,
 ];

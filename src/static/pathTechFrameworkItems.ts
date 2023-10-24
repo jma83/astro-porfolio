@@ -60,11 +60,22 @@ export const flutterLogo: IconData = {
   alt: "Flutter",
 };
 
+export const openglLogo: IconData = {
+  src: "/images/path/tech/opengl_logo.png",
+  alt: "OpenGL",
+};
+
+export const astroLogo: IconData = {
+  src: "/images/path/tech/astro_logo.png",
+  alt: "Astro",
+};
+
 export const getPathTechFrameworksItems = (): IconData[] => [
   vueLogo,
   nuxtLogo,
   reactLogo,
   svelteLogo,
+  astroLogo,
   tailwindLogo,
   capacitorLogo,
   flutterLogo,
@@ -73,4 +84,5 @@ export const getPathTechFrameworksItems = (): IconData[] => [
   cypressLogo,
   socketIoLogo,
   jestLogo,
+  openglLogo,
 ];

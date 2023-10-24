@@ -40,6 +40,21 @@ export const dockerLogo: IconData = {
   alt: "Docker",
 };
 
+export const firebaseLogo: IconData = {
+  src: "/images/path/tech/firebase_logo.png",
+  alt: "Firebase",
+};
+
+export const androidLogo: IconData = {
+  src: "/images/path/tech/android_logo.png",
+  alt: "Android",
+};
+
+export const iosLogo: IconData = {
+  src: "/images/path/tech/ios_logo.png",
+  alt: "IOS",
+};
+
 export const getPathTechSoftwareItems = () => [
   jiraLogo,
   confluenceLogo,
@@ -49,4 +64,5 @@ export const getPathTechSoftwareItems = () => [
   gitLogo,
   svnLogo,
   dockerLogo,
+  firebaseLogo,
 ];

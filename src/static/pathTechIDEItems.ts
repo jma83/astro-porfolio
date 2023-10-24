@@ -15,6 +15,11 @@ export const blenderLogo: IconData = {
   alt: "Blender",
 };
 
+export const dsmax: IconData = {
+  src: "/images/path/tech/3dsmax_logo.png",
+  alt: "3ds Max",
+};
+
 export const vsLogo: IconData = {
   src: "/images/path/tech/vs_logo.png",
   alt: "Visual Studio",
@@ -59,6 +64,7 @@ export const getPathTechIDEItems = () => [
   intellijIdeaLogo,
   eclipseLogo,
   blenderLogo,
+  dsmax,
   vsLogo,
   vsCodeLogo,
   webstormLogo,
