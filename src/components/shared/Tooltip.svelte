@@ -1,13 +1,13 @@
----
-const props = Astro.props;
-const { message, isTop = true } = props;
----
+<script>
+  export let message = "";
+  export let isTop = true;
+</script>
 
 <div class="mm-tooltip">
   <slot />
   <div
     class="mm-tooltip__container"
-    class:list={isTop ? "mm-tooltip__container--top" : ""}
+    class:mm-tooltip__container--top={isTop}
   >
     {message}
     <div class="mm-tooltip__arrow-down"></div>

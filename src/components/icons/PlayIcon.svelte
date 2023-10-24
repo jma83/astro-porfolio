@@ -1,12 +1,11 @@
----
-const props = Astro.props;
-const { classList } = props;
----
+<script>
+  export let classList = ""
+</script>
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
   class="icon icon-tabler icon-tabler-player-play"
-  class:list={classList}
+  class:classList
   width="24"
   height="24"
   viewBox="0 0 24 24"

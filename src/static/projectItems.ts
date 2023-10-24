@@ -3,6 +3,7 @@ import {
   flutterLogo,
   openglLogo,
   reactLogo,
+  vueLogo,
 } from "@static/pathTechFrameworkItems.ts";
 import {
   assemblyLogo,
@@ -30,13 +31,12 @@ import {
   unityLogo,
 } from "@static/pathTechIDEItems.ts";
 
-interface IconProjectData extends IconData {
+export interface IconProjectData extends IconData {
   title: string;
   subtitle: string;
   pathTech: IconData[];
-  hasGithub: boolean;
-  hasInfo: boolean;
-  hasDemo: boolean;
+  github?: string;
+  demo: boolean;
 }
 
 const projectItems: IconProjectData[] = [
@@ -46,9 +46,8 @@ const projectItems: IconProjectData[] = [
     title: "Plogging Challenge - App en Flutter para Android e IOS!",
     subtitle: "App Android e IOS",
     pathTech: [flutterLogo, dartLogo, firebaseLogo, androidLogo, iosLogo],
-    hasGithub: true,
-    hasInfo: true,
-    hasDemo: false,
+    github: "https://github.com/jma83/TFM_flutter_plogging_app",
+    demo: false,
   },
   {
     src: "/images/projects/project_rick-and-morty.png",
@@ -56,9 +55,8 @@ const projectItems: IconProjectData[] = [
     title: "Rickpedia - App en ReactNative para Android e IOS!",
     subtitle: "App Android e IOS",
     pathTech: [reactLogo, cssLogo, androidLogo, iosLogo],
-    hasGithub: true,
-    hasInfo: true,
-    hasDemo: false,
+    github: "https://github.com/jma83/ReactNativeProject",
+    demo: false,
   },
   {
     src: "/images/projects/project_fit-up.png",
@@ -66,9 +64,8 @@ const projectItems: IconProjectData[] = [
     title: "FitUp - App de entrenamientos para Android!",
     subtitle: "App Android",
     pathTech: [javaLogo, kotlinLogo, androidLogo],
-    hasGithub: true,
-    hasInfo: true,
-    hasDemo: false,
+    github: "https://github.com/jma83/PracticaAndroid-FitUp",
+    demo: false,
   },
   {
     src: "/images/projects/project_books.png",
@@ -76,19 +73,17 @@ const projectItems: IconProjectData[] = [
     title: "Books - App en Swift para IOS!",
     subtitle: "App IOS",
     pathTech: [iosLogo, swiftLogo],
-    hasGithub: true,
-    hasInfo: true,
-    hasDemo: false,
+    github: "https://github.com/jma83/PracticaIOS",
+    demo: false,
   },
   {
     src: "/images/projects/project_movie-guessr.png",
     alt: "Movie Guessr game",
     title: "MovieGuessr - Juego para web en JS!",
     subtitle: "Página web",
-    pathTech: [htmlLogo, cssLogo, jsLogo],
-    hasGithub: true,
-    hasInfo: true,
-    hasDemo: true,
+    pathTech: [vueLogo, htmlLogo, cssLogo, jsLogo],
+    github: "https://github.com/jma83/WordGuesser",
+    demo: true,
   },
   {
     src: "/images/projects/project_volley-force.png",
@@ -96,9 +91,8 @@ const projectItems: IconProjectData[] = [
     title: "VolleyForce - Juego en 1 semana en Unity",
     subtitle: "Videojuego",
     pathTech: [unityLogo, cSharpLogo],
-    hasGithub: true,
-    hasInfo: true,
-    hasDemo: true,
+    github: "https://github.com/jma83/VolleyBall_Project",
+    demo: true,
   },
   {
     src: "/images/projects/project_hunger.png",
@@ -106,9 +100,8 @@ const projectItems: IconProjectData[] = [
     title: "Ahorcado - Juego para web en JS!",
     subtitle: "Página web",
     pathTech: [reactLogo, cssLogo],
-    hasGithub: true,
-    hasInfo: true,
-    hasDemo: true,
+    github: "https://github.com/jma83/AhorcadoWebReact",
+    demo: true,
   },
   {
     src: "/images/projects/project_three-in-line.png",
@@ -116,9 +109,8 @@ const projectItems: IconProjectData[] = [
     title: "3 en raya - Juego para web en JS!",
     subtitle: "Página web",
     pathTech: [htmlLogo, cssLogo, jsLogo],
-    hasGithub: true,
-    hasInfo: true,
-    hasDemo: true,
+    github: "https://github.com/jma83/TresEnLinea",
+    demo: true,
   },
   {
     src: "/images/projects/project_age-of-karts.png",
@@ -126,9 +118,8 @@ const projectItems: IconProjectData[] = [
     title: "Age of Karts - Videojuego en C++ y OpenGL",
     subtitle: "Videojuego",
     pathTech: [cPlusLogo, openglLogo],
-    hasGithub: true,
-    hasInfo: true,
-    hasDemo: false,
+    github: "https://github.com/tomrock8/Age-of-karts",
+    demo: false,
   },
   {
     src: "/images/projects/project_football.png",
@@ -136,9 +127,7 @@ const projectItems: IconProjectData[] = [
     title: "Juego de fútbol Web - Utilizando Canvas y Vanilla js",
     subtitle: "Página web",
     pathTech: [htmlLogo, cssLogo, jsLogo],
-    hasGithub: true,
-    hasInfo: true,
-    hasDemo: true,
+    demo: true,
   },
   {
     src: "/images/projects/project_ar-hunters.png",
@@ -146,9 +135,8 @@ const projectItems: IconProjectData[] = [
     title: "ARHunters - Videojuego de Realidad aumentada para Android",
     subtitle: "Videojuego Android",
     pathTech: [unityLogo, cSharpLogo],
-    hasGithub: true,
-    hasInfo: true,
-    hasDemo: false,
+    github: "https://github.com/jma83/TFG_AR",
+    demo: false,
   },
   {
     src: "/images/projects/project_lightning-video.png",
@@ -156,9 +144,7 @@ const projectItems: IconProjectData[] = [
     title: "Generar Rayos entre dedos - Postproducción digital",
     subtitle: "Edición de video",
     pathTech: [aeLogo, prLogo],
-    hasGithub: false,
-    hasInfo: true,
-    hasDemo: true,
+    demo: true,
   },
   {
     src: "/images/projects/project_blender-models.png",
@@ -166,9 +152,7 @@ const projectItems: IconProjectData[] = [
     title: "Modelado objetos 3D en Blender",
     subtitle: "Modelado 3D",
     pathTech: [blenderLogo],
-    hasGithub: false,
-    hasInfo: true,
-    hasDemo: false,
+    demo: false,
   },
   {
     src: "/images/projects/project_pixar-animation.png",
@@ -176,9 +160,7 @@ const projectItems: IconProjectData[] = [
     title: "Animación Pixar Modificada (Modelado y Animación 3D)",
     subtitle: "Modelado y animación 3D",
     pathTech: [dsmax],
-    hasGithub: false,
-    hasInfo: true,
-    hasDemo: true,
+    demo: true,
   },
   {
     src: "/images/projects/project_pixel-brawl.png",
@@ -186,9 +168,7 @@ const projectItems: IconProjectData[] = [
     title: "Amstrad CPC: Pixel Brawl (Ensablador)",
     subtitle: "Videojuego",
     pathTech: [assemblyLogo],
-    hasGithub: false,
-    hasInfo: true,
-    hasDemo: false,
+    demo: false,
   },
   {
     src: "/images/projects/project_saloon-scene.png",
@@ -196,9 +176,7 @@ const projectItems: IconProjectData[] = [
     title: "Escena interior de Saloon",
     subtitle: "Modelado 3D",
     pathTech: [dsmax],
-    hasGithub: false,
-    hasInfo: true,
-    hasDemo: false,
+    demo: false,
   },
   {
     src: "/images/projects/project_lego-scene.png",
@@ -206,9 +184,7 @@ const projectItems: IconProjectData[] = [
     title: "Escena casa de Lego",
     subtitle: "Modelado 3D",
     pathTech: [dsmax],
-    hasGithub: false,
-    hasInfo: true,
-    hasDemo: false,
+    demo: false,
   },
   {
     src: "/images/projects/project_hardware-zone.png",
@@ -216,9 +192,7 @@ const projectItems: IconProjectData[] = [
     title: "Hardwarezone - Web de compras online con Wordpress",
     subtitle: "Página web",
     pathTech: [htmlLogo, cssLogo, phpLogo],
-    hasGithub: false,
-    hasInfo: true,
-    hasDemo: false,
+    demo: false,
   },
   {
     src: "/images/projects/project_dragon-ware.png",
@@ -226,9 +200,7 @@ const projectItems: IconProjectData[] = [
     title: "DragonWare - Web de compras online con Wix",
     subtitle: "Página web",
     pathTech: [htmlLogo, cssLogo],
-    hasGithub: false,
-    hasInfo: true,
-    hasDemo: true,
+    demo: true,
   },
   {
     src: "/images/projects/project_own-mind.png",
@@ -236,9 +208,7 @@ const projectItems: IconProjectData[] = [
     title: "OwnMind - Red social con vanilla js",
     subtitle: "Página web",
     pathTech: [htmlLogo, cssLogo, jsLogo],
-    hasGithub: false,
-    hasInfo: true,
-    hasDemo: true,
+    demo: true,
   },
   {
     src: "/images/projects/project_picstories.png",
@@ -246,9 +216,7 @@ const projectItems: IconProjectData[] = [
     title: "PicStories - Red social con PHP",
     subtitle: "Página web",
     pathTech: [htmlLogo, cssLogo, phpLogo],
-    hasGithub: false,
-    hasInfo: true,
-    hasDemo: false,
+    demo: false,
   },
   {
     src: "/images/projects/project_frozen-hearts.png",
@@ -257,9 +225,7 @@ const projectItems: IconProjectData[] = [
       "Frozen Hearts - Videjouego multiplataforma desarrollado en GameMaker",
     subtitle: "Videojuego Android y Windows",
     pathTech: [cPlusLogo],
-    hasGithub: false,
-    hasInfo: true,
-    hasDemo: false,
+    demo: false,
   },
   {
     src: "/images/projects/project_olympic.png",
@@ -267,9 +233,7 @@ const projectItems: IconProjectData[] = [
     title: "Olympic - Red social con WordPress",
     subtitle: "Página web",
     pathTech: [htmlLogo, cssLogo, phpLogo],
-    hasGithub: false,
-    hasInfo: true,
-    hasDemo: false,
+    demo: false,
   },
   {
     src: "/images/projects/project_fridge.png",
@@ -277,9 +241,7 @@ const projectItems: IconProjectData[] = [
     title: "Nevera web - Comienzos con HTML, CSS y JS",
     subtitle: "Página web",
     pathTech: [htmlLogo, cssLogo, jsLogo],
-    hasGithub: false,
-    hasInfo: true,
-    hasDemo: false,
+    demo: false,
   },
 ];
 

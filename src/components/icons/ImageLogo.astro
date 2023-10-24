@@ -3,7 +3,13 @@ const props = Astro.props;
 const { src, alt, classes } = props;
 ---
 
-<img src={src} alt={alt} class="jm-image-logo" class:list={classes} />
+<img
+  src={src}
+  alt={alt}
+  loading="lazy"
+  class="jm-image-logo"
+  class:list={classes}
+/>
 
 <style>
   .jm-image-logo {

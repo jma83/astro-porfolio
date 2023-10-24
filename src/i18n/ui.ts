@@ -69,6 +69,7 @@ export const ui = {
     "path.aire2.dateRange": "julio 2018 - marzo 2019 (9 meses)",
     "path.aire.title": "Desarrollador web en prácticas",
     "path.aire.dateRange": "mayo 2018 - julio 2018 (3 meses)",
+    "projects.title": "Proyectos personales",
   },
   en: {
     "layout.title": "Javier Martinez Arias | Developer | Portfolio",
@@ -137,5 +138,6 @@ export const ui = {
     "path.aire2.dateRange": "July 2018 - March 2019 (9 months)",
     "path.aire.title": "Trainee Web Developer",
     "path.aire.dateRange": "May 2018 - July 2018 (3 months)",
+    "projects.title": "Personal Projects",
   },
 } as const;

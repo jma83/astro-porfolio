@@ -1,7 +1,14 @@
 <script>
   import { onDestroy, onMount } from "svelte";
+  import HeaderNav from "@components/layout/HeaderNav.svelte";
+  import {useTranslations} from "@i18n/utils";
 
+  export let lang;
+  let t;
   let isScrollDown = false; // Initialize isActive to false
+
+  $: t = useTranslations(lang);
+
 
   const onScroll = () => {
     isScrollDown = window.scrollY > 500;
@@ -25,7 +32,7 @@
       <a href="/public" class="jm-header__brand-link">
         <span class="text-white">JMA</span>
       </a>
-      <slot />
+      <HeaderNav t={t} />
       <button class="block visible h-auto md:hidden md:invisible md:h-0">
         <slot name="icon" />
       </button>

@@ -1,8 +1,6 @@
----
-import { translate } from "@stores/i18nStore";
-
-let t = translate.get();
----
+<script>
+  export let t;
+</script>
 
 <nav class="hidden invisible md:block md:visible md:h-auto;">
   <ul class="flex flex-row gap-4">
