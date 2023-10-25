@@ -2,7 +2,6 @@
   import Card from "@components/sections/projects/Card.svelte";
   import {onMount} from "svelte";
   import { useTranslations } from "@i18n/utils";
-  import {translate} from "@stores/i18nStore";
   import ModalProject from "@components/sections/projects/ModalProject.svelte";
   export let items = []
 
@@ -14,7 +13,6 @@
 
 
   onMount(() => {
-    translate.set(t);
     console.log("mounted!", lang)
   })
 
@@ -31,7 +29,7 @@
 </script>
 
 
-<section class="jm-projects py-8 md:py-16">
+<section class="jm-projects py-8 md:py-20" id="projects">
   <div class="jm-projects__container">
     <h2>{t("projects.title")}</h2>
   </div>

@@ -9,10 +9,16 @@
     const handleClose = () => {
         dispatch('close');
     };
+
+    let title;
+
+    $: title = data?.title || "";
 </script>
 
-<Modal showModal={showModal} on:close={handleClose}>
-   <div>
-       Holis {data.alt}
+
+<Modal showModal={showModal} title={title} on:close={handleClose}>
+   <div class="mt-4">
+       <p>{@html data.description}</p>
+       <img src={data.src} class="mt-4" />
    </div>
 </Modal>

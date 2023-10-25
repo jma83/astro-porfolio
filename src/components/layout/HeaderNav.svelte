@@ -8,16 +8,16 @@
       <a href="/#" class="jm-header__list-item-link">{t("nav.home")}</a>
     </li>
     <li class="jm-header__list-item">
-      <a href="#" class="jm-header__list-item-link">{t("nav.about")}</a>
+      <a href="#about" class="jm-header__list-item-link">{t("nav.about")}</a>
     </li>
     <li class="jm-header__list-item">
-      <a href="#" class="jm-header__list-item-link">{t("nav.path")}</a>
+      <a href="#path" class="jm-header__list-item-link">{t("nav.path")}</a>
     </li>
     <li class="jm-header__list-item">
-      <a href="#" class="jm-header__list-item-link">{t("nav.projects")}</a>
+      <a href="#projects" class="jm-header__list-item-link">{t("nav.projects")}</a>
     </li>
     <li class="jm-header__list-item">
-      <a href="#" class="jm-header__list-item-link">{t("nav.contact")}</a>
+      <a href="#contact" class="jm-header__list-item-link">{t("nav.contact")}</a>
     </li>
   </ul>
 </nav>

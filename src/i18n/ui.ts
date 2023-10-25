@@ -27,7 +27,7 @@ export const ui = {
     "path.experience": "Experiencia",
     "path.languages": "Idiomas",
     "path.tech": "Tecnologías",
-    "path.tech.languages": "Princpipales lenguajes de programación:",
+    "path.tech.languages": "Principales lenguajes de programación:",
     "path.tech.programs": "Principales herramientas de software:",
     "path.tech.ides": "Principales entornos de desarrollo:",
     "path.tech.frameworks": "Principales librerias/frameworks:",
@@ -70,6 +70,7 @@ export const ui = {
     "path.aire.title": "Desarrollador web en prácticas",
     "path.aire.dateRange": "mayo 2018 - julio 2018 (3 meses)",
     "projects.title": "Proyectos personales",
+    "contact.title": "Contacta conmigo",
   },
   en: {
     "layout.title": "Javier Martinez Arias | Developer | Portfolio",
@@ -139,5 +140,6 @@ export const ui = {
     "path.aire.title": "Trainee Web Developer",
     "path.aire.dateRange": "May 2018 - July 2018 (3 months)",
     "projects.title": "Personal Projects",
+    "contact.title": "Contact me",
   },
 } as const;

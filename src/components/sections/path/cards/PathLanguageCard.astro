@@ -4,7 +4,7 @@ const props = Astro.props;
 const { icon, title, date, certificate } = props.data;
 ---
 
-<div class="flex flex-row">
+<article class="flex flex-row">
   {
     icon != null ? (
       <ImageLogo
@@ -24,7 +24,7 @@ const { icon, title, date, certificate } = props.data;
       <h4 class="flex gap-1"><span>{date}</span>{certificate}</h4>
     </div>
   </div>
-</div>
+</article>
 
 <style>
   .jm-path-studies-card__header > h3 {

@@ -1,9 +1,9 @@
 ---
-import { translate } from "../../stores/i18nStore";
+import { translate } from "@stores/i18nStore";
 const t = translate.get();
 ---
 
-<section class="jm-about" id="#about">
+<section class="jm-about" id="about">
   <div class="jm-about__container">
     <div class="jm-about__image-container">
       <img
@@ -13,12 +13,12 @@ const t = translate.get();
       />
     </div>
     <div class="jm-about__content">
-      <div class="jm-about__content-description">
+      <article class="jm-about__content-description">
         <h2 class="jm-about__title">{t("about.title")}</h2>
         <p class="jm-about__paragraph" set:html={t("about.description1")} />
         <p class="jm-about__paragraph">{t("about.description2")}</p>
         <p class="jm-about__paragraph">{t("about.description3")}</p>
-      </div>
+      </article>
       <ul class="jm-about__list jm-about__paragraph">
         <li class="jm-about__list-item">
           <span>{t("about.list_item1")}</span><span>Javier Martínez Arias</span>
