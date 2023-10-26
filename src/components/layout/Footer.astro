@@ -1,9 +1,115 @@
 ---
-
+import LinkedInIcon from "../icons/LinkedInIcon.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
+import EmailIcon from "../icons/EmailIcon.astro";
+import FooterAuthor from "./footer/FooterAuthor.svelte";
 ---
 
-<footer class="">
-  <div>
-    <div><h3>Links</h3></div>
+<footer class="jm-footer">
+  <div class="jm-footer__container">
+    <div class="jm-footer__content">
+      <div class="w-full flex flex-col">
+        <h3>Links</h3>
+        <ul class="flex flex-col gap-6">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#path">Trayectoria</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="w-full flex flex-col">
+        <h3>Especialización</h3>
+        <ul class="flex flex-col gap-4">
+          <li>Frontend</li>
+          <li>Desarrollo web</li>
+          <li>Desarrollo apps móviles</li>
+          <li>Desarrollo videjuegos</li>
+        </ul>
+      </div>
+      <div class="w-full flex flex-col">
+        <h3>Consultas</h3>
+        <ul class="flex flex-col gap-4">
+          <li><a href="mailto:jma96.elx@gmail.com">Email</a></li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/javier-mart%C3%ADnez-arias-6555b8166/"
+              >Linkedin</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <ul class="jm-footer__contact-list">
+      <li class="jm-footer__contact-list-item">
+        <a target="_blank" href="mailto:jma96.elx@gmail.com">
+          <EmailIcon classList="w-5 h-5 fill-current" />
+        </a>
+      </li>
+      <li class="jm-footer__contact-list-item">
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/javier-mart%C3%ADnez-arias-6555b8166/"
+        >
+          <LinkedInIcon classList="w-5 h-5 fill-current" />
+        </a>
+      </li>
+      <li class="jm-footer__contact-list-item">
+        <a target="_blank" href="https://github.com/jma83">
+          <GithubIcon classList="w-5 h-5 fill-current" />
+        </a>
+      </li>
+    </ul>
+    <FooterAuthor />
   </div>
 </footer>
+
+<style>
+  .jm-footer {
+    @apply w-full text-white p-4 flex justify-center;
+    background: rgb(0, 8, 15);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 8, 15, 1) 0%,
+      rgba(0, 34, 64, 1) 90%
+    );
+  }
+
+  .jm-footer__container {
+    @apply w-full max-w-6xl flex flex-col py-24;
+  }
+
+  .jm-footer__content {
+    @apply w-full flex justify-between;
+    @apply font-normal text-base w-full flex flex-row self-center;
+  }
+
+  .jm-footer__contact-list {
+    @apply flex flex-row gap-4 mt-20;
+  }
+
+  .jm-footer__contact-list-item {
+    @apply flex text-gray-400   cursor-pointer;
+  }
+
+  .jm-footer__contact-list-item:hover {
+    @apply text-gray-100;
+  }
+
+  .jm-footer__contact-list-item > a {
+    @apply p-4 bg-gray-800 rounded-full;
+  }
+
+  a:hover {
+    @apply underline;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold mb-10;
+  }
+
+  li {
+    list-style: url("/images/arrow.svg") outside;
+    margin-left: 1.5rem;
+  }
+</style>

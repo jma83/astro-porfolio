@@ -1,5 +1,5 @@
 <script>
-  import GithubIcon from "@components/icons/GithubIcon.svelte";
+  import GithubIcon from "@components/icons/GithubMinimalIcon.svelte";
   import PlayIcon from "@components/icons/PlayIcon.svelte";
   import SeeMoreIcon from "@components/icons/SeeMoreIcon.svelte";
   import Tooltip from "@components/shared/Tooltip.svelte";
