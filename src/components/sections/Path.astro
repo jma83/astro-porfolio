@@ -10,7 +10,7 @@ import {
 import getPathMenuItems from "../../static/pathMenuItems";
 import PathSectionMain from "./path/PathSectionMain.astro";
 import PathSectionLanguage from "./path/PathSectionLanguage.astro";
-import PathSideMenu from "./path/PathSideMenu.astro";
+import PathSideMenu from "./path/PathSideMenu.svelte";
 import PathSectionTech from "./path/PathSectionTech.astro";
 
 const pathStudiesData = getPathStudiesItems(t);
@@ -21,7 +21,7 @@ const pathMenuItems = getPathMenuItems(t);
 
 <section class="jm-path" id="path">
   <div class="jm-path__container">
-    <PathSideMenu menuItems={pathMenuItems} />
+    <PathSideMenu menuItems={pathMenuItems} t={t} client:load />
     <main class="jm-path__content">
       <h2 class="jm-path__title">{t("path.title")}</h2>
       <PathSectionMain

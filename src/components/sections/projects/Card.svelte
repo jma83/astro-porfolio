@@ -72,6 +72,7 @@
 <style>
   .jm-card {
     @apply w-full border border-gray-900 relative flex justify-center;
+    min-height: 350px;
   }
 
   .jm-card__content {

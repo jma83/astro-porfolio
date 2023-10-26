@@ -81,6 +81,10 @@ export const ui = {
     "projects.rickpedia.subtitle": "App Android e IOS",
     "projects.rickpedia.description":
       "Desarrollo de una app de enciclopedia sobre la serie Rick y Morty, con React Native. Práctica realizada durante el máster en informática móvil en la UPSA.",
+    "projects.fitup.title": "FitUp - App de entrenamientos para Android!",
+    "projects.fitup.subtitle": "App Android",
+    "projects.fitup.description":
+      "Desarrollo de una app de entrenamientos para Android, con Java y Kotlin. Práctica realizada durante el máster en informática móvil en la UPSA.",
     // contact
     "contact.title": "Contacta conmigo",
     "contact.subtitle":

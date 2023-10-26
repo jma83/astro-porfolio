@@ -7,7 +7,7 @@ import FooterAuthor from "./footer/FooterAuthor.svelte";
 
 <footer class="jm-footer">
   <div class="jm-footer__container">
-    <div class="jm-footer__content">
+    <div class="jm-footer__content flex-wrap md:flex-nowrap">
       <div class="w-full flex flex-col">
         <h3>Links</h3>
         <ul class="flex flex-col gap-6">
@@ -40,10 +40,12 @@ import FooterAuthor from "./footer/FooterAuthor.svelte";
         </ul>
       </div>
     </div>
-    <div class="w-full flex flex-row justify-between items-center mt-20">
+    <div
+      class="w-full flex flex-row flex-wrap justify-between items-center mt-20 gap-8"
+    >
       <ul class="jm-footer__contact-list">
         <li class="jm-footer__contact-list-item">
-          <a target="_blank" href="mailto:jma96.elx@gmail.com">
+          <a href="mailto:jma96.elx@gmail.com">
             <EmailIcon classList="w-5 h-5 fill-current" />
           </a>
         </li>
@@ -61,7 +63,7 @@ import FooterAuthor from "./footer/FooterAuthor.svelte";
           </a>
         </li>
       </ul>
-      <div class="flex flex-row gap-4 mr-16">
+      <div class="flex flex-row gap-4 mr-16 ml-8">
         <div class="flex w-6 h-6 object-cover">
           <a href="/">
             <img src="/images/path/studies/spanish_logo.png" alt="Spanish" />
@@ -80,7 +82,7 @@ import FooterAuthor from "./footer/FooterAuthor.svelte";
 
 <style>
   .jm-footer {
-    @apply w-full text-white p-4 flex justify-center;
+    @apply w-full text-white p-8 flex justify-center;
     background: rgb(0, 8, 15);
     background: linear-gradient(
       90deg,
@@ -94,8 +96,8 @@ import FooterAuthor from "./footer/FooterAuthor.svelte";
   }
 
   .jm-footer__content {
-    @apply w-full flex justify-between;
-    @apply font-normal text-base w-full flex flex-row self-center;
+    @apply w-full justify-between;
+    @apply font-normal text-base w-full flex self-center gap-16;
   }
 
   .jm-footer__contact-list {

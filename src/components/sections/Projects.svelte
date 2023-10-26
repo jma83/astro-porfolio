@@ -29,7 +29,7 @@
 </script>
 
 
-<section class="jm-projects py-8 md:py-20" id="projects">
+<section class="jm-projects pb-8 pt-20 md:py-20" id="projects">
   <div class="jm-projects__container">
     <h2>{t("projects.title")}</h2>
   </div>
@@ -59,7 +59,7 @@
   }
 
   .jm-projects__container {
-    @apply w-full flex flex-col text-center mb-12;
+    @apply w-full flex flex-col text-center mb-12 px-4;
     max-width: 72rem;
   }
 

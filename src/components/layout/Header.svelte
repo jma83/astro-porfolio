@@ -5,16 +5,37 @@
 
   export let lang;
   let isScrollDown = false; // Initialize isActive to false
+  let scrollSectionAbout = { scroll: 0, id: "about" };
+  let scrollSectionPath = { scroll: 0, id: "path" };
+  let scrollSectionProjects = { scroll: 0, id: "projects" };
+  let scrollSectionContact = { scroll: 0, id: "contact" };
+  let scrollSectionHome = { scroll: 0, id: "home" };
+  let scrollSections = [];
+  let currentSection = "home";
 
   $: t = useTranslations(lang);
 
 
   const onScroll = () => {
     isScrollDown = window.scrollY > 500;
-    console.log("isScrollDown", isScrollDown);
+    checkCurrentScrollSection();
+  }
+
+  const checkCurrentScrollSection = () => {
+    const scrollY = window.scrollY + 250;
+    currentSection = scrollSections.find((section) => (scrollY > section.scroll)).id;
+  }
+
+  const initScrollSections = () => {
+    scrollSectionAbout.scroll = document.getElementById("about").offsetTop;
+    scrollSectionPath.scroll = document.getElementById("path").offsetTop;
+    scrollSectionProjects.scroll = document.getElementById("projects").offsetTop;
+    scrollSectionContact.scroll = document.getElementById("contact").offsetTop;
+    scrollSections = [scrollSectionContact, scrollSectionProjects, scrollSectionPath, scrollSectionAbout, scrollSectionHome];
   }
 
   onMount(() => {
+    initScrollSections();
     document.addEventListener("scroll", onScroll);
   })
 
@@ -31,7 +52,7 @@
       <a href="/public" class="jm-header__brand-link">
         <span class="text-white">JMA</span>
       </a>
-      <HeaderNav t={t} />
+      <HeaderNav t={t} currentSection={currentSection} />
       <button class="block visible h-auto md:hidden md:invisible md:h-0">
         <slot name="icon" />
       </button>
