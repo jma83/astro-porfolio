@@ -40,26 +40,40 @@ import FooterAuthor from "./footer/FooterAuthor.svelte";
         </ul>
       </div>
     </div>
-    <ul class="jm-footer__contact-list">
-      <li class="jm-footer__contact-list-item">
-        <a target="_blank" href="mailto:jma96.elx@gmail.com">
-          <EmailIcon classList="w-5 h-5 fill-current" />
-        </a>
-      </li>
-      <li class="jm-footer__contact-list-item">
-        <a
-          target="_blank"
-          href="https://www.linkedin.com/in/javier-mart%C3%ADnez-arias-6555b8166/"
-        >
-          <LinkedInIcon classList="w-5 h-5 fill-current" />
-        </a>
-      </li>
-      <li class="jm-footer__contact-list-item">
-        <a target="_blank" href="https://github.com/jma83">
-          <GithubIcon classList="w-5 h-5 fill-current" />
-        </a>
-      </li>
-    </ul>
+    <div class="w-full flex flex-row justify-between items-center mt-20">
+      <ul class="jm-footer__contact-list">
+        <li class="jm-footer__contact-list-item">
+          <a target="_blank" href="mailto:jma96.elx@gmail.com">
+            <EmailIcon classList="w-5 h-5 fill-current" />
+          </a>
+        </li>
+        <li class="jm-footer__contact-list-item">
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/javier-mart%C3%ADnez-arias-6555b8166/"
+          >
+            <LinkedInIcon classList="w-5 h-5 fill-current" />
+          </a>
+        </li>
+        <li class="jm-footer__contact-list-item">
+          <a target="_blank" href="https://github.com/jma83">
+            <GithubIcon classList="w-5 h-5 fill-current" />
+          </a>
+        </li>
+      </ul>
+      <div class="flex flex-row gap-4 mr-16">
+        <div class="flex w-6 h-6 object-cover">
+          <a href="/">
+            <img src="/images/path/studies/spanish_logo.png" alt="Spanish" />
+          </a>
+        </div>
+        <div class="flex w-6 h-6 object-cover">
+          <a href="/en">
+            <img src="/images/path/studies/english_logo.png" alt="English" />
+          </a>
+        </div>
+      </div>
+    </div>
     <FooterAuthor />
   </div>
 </footer>
@@ -85,7 +99,7 @@ import FooterAuthor from "./footer/FooterAuthor.svelte";
   }
 
   .jm-footer__contact-list {
-    @apply flex flex-row gap-4 mt-20;
+    @apply flex flex-row gap-4;
   }
 
   .jm-footer__contact-list-item {

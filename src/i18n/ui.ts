@@ -69,8 +69,31 @@ export const ui = {
     "path.aire2.dateRange": "julio 2018 - marzo 2019 (9 meses)",
     "path.aire.title": "Desarrollador web en prácticas",
     "path.aire.dateRange": "mayo 2018 - julio 2018 (3 meses)",
+    // projects
     "projects.title": "Proyectos personales",
+    "projects.plogging.title":
+      "Plogging Challenge - App en Flutter para Android e IOS!",
+    "projects.plogging.subtitle": "App Android e IOS",
+    "projects.plogging.description":
+      "Desarrollo de una app para Android e IOS en Flutter sobre rutas y navegación en torno al Plogging. Práctica realizada durante el máster en informática móvil en la UPSA.",
+    "projects.rickpedia.title":
+      "Rickpedia - App en ReactNative para Android e IOS",
+    "projects.rickpedia.subtitle": "App Android e IOS",
+    "projects.rickpedia.description":
+      "Desarrollo de una app de enciclopedia sobre la serie Rick y Morty, con React Native. Práctica realizada durante el máster en informática móvil en la UPSA.",
+    // contact
     "contact.title": "Contacta conmigo",
+    "contact.subtitle":
+      "Disponible para consultas ámbito profesional, a través de los siguientes medios.\n" +
+      "¡Responderé lo antes posible!",
+    // footer
+    "footer.links.title": "Links",
+    "footer.specialization.title": "Especialización",
+    "footer.specialization.frontend": "Frontend",
+    "footer.specialization.web": "Desarrollo web",
+    "footer.specialization.apps": "Desarrollo apps móviles",
+    "footer.specialization.games": "Desarrollo videojuegos",
+    "footer.consultation.title": "Consultas",
   },
   en: {
     "layout.title": "Javier Martinez Arias | Developer | Portfolio",
@@ -139,7 +162,9 @@ export const ui = {
     "path.aire2.dateRange": "July 2018 - March 2019 (9 months)",
     "path.aire.title": "Trainee Web Developer",
     "path.aire.dateRange": "May 2018 - July 2018 (3 months)",
+    // projects
     "projects.title": "Personal Projects",
+    // contact
     "contact.title": "Contact me",
   },
 } as const;

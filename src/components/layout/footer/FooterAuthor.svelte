@@ -3,4 +3,16 @@
     $:year = new Date().getFullYear();
 </script>
 
-<p class="text-gray-300 text-center mt-24">Copyright ©{year} All rights reserved | Made with Astro by Javier Martinez Arias</p>
+<p class="footer-author">
+    Copyright ©{year} All rights reserved | Made with <a href="https://astro.build/">Astro</a> by Javier Martinez Arias
+</p>
+
+<style>
+    .footer-author {
+        @apply text-gray-300 text-center mt-24;
+    }
+
+    .footer-author > a:hover  {
+        @apply underline;
+    }
+</style>

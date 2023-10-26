@@ -4,7 +4,6 @@
   import {useTranslations} from "@i18n/utils";
 
   export let lang;
-  let t;
   let isScrollDown = false; // Initialize isActive to false
 
   $: t = useTranslations(lang);
