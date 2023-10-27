@@ -85,6 +85,45 @@ export const ui = {
     "projects.fitup.subtitle": "App Android",
     "projects.fitup.description":
       "Desarrollo de una app de entrenamientos para Android, con Java y Kotlin. Práctica realizada durante el máster en informática móvil en la UPSA.",
+    "projects.books.title": "Books - App en Swift para IOS!",
+    "projects.books.description":
+      "Desarrollo de una app para IOS de libros con Swift. Práctica realizada durante el máster en informática móvil en la UPSA.",
+    "projects.books.subtitle": "App IOS",
+    "projects.moviegussr.title": "MovieGuessr - Juego para web en JS!",
+    "projects.moviegussr.description":
+      "Desarrollo de una página web de un juego de adivinar películas a partir de imagenes, con HTML, CSS, JS y Vue. Práctica realizada durante el máster en informática móvil en la UPSA.",
+    "projects.moviegussr.subtitle": "Página web",
+    "projects.volleyforce.title": "VolleyForce - Juego en 1 semana en Unity",
+    "projects.volleyforce.subtitle": "Videojuego",
+    "projects.volleyforce.description":
+      "Desarrollo de un videojuego de VolleyBall en una semana con Unity. Reto iniciado a partir de: <a href='https://www.mediavida.com/foro/gamedev/mv-retos-gamedev-edicion-i-641479'>https://www.mediavida.com/foro/gamedev/mv-retos-gamedev-edicion-i-641479</a>. Enlaces para jugarlo: <a href='https://bit.ly/2w8wzWM'>https://bit.ly/2w8wzWM</a> <a href='http://www.jmartdev.ovh/games/volleyball/'>http://www.jmartdev.ovh/games/volleyball/</a>",
+    "projects.hunger.title": "Ahorcado - Juego para web en JS!",
+    "projects.hunger.subtitle": "Página web",
+    "projects.hunger.description":
+      "Desarrollo de una página web del juego del ahorcado, con HTML, CSS, JS y React. Práctica realizada durante el máster en informática móvil en la UPSA.",
+    "projects.line3.title": "3 en raya",
+    "projects.line3.subtitle": "Página web",
+    "projects.line3.description":
+      "Desarrollo de una página web del juego 3 en raya, con HTML, CSS y JS. Jugador vs Jugador o Jugador vs IA. Práctica realizada durante el máster en informática móvil en la UPSA.",
+    "projects.ageofkarts.title": "Age of Karts - Videojuego en C++ y OpenGL",
+    "projects.ageofkarts.subtitle": "Videojuego",
+    "projects.ageofkarts.description":
+      "Age Of Karts. Videojuego de carreras de karts históricos, realizado en C++, Bullet (librería de físicas), OpenGL (motor gráfico própio basado en OpenGL), Raknet (partida online) y SFML (gestión de eventos). Grupo de 6 estudiantes de Ingeniería Multimedia en la UA. Twitter @SocketWar0. Canal de Youtube: <a href='https://www.youtube.com/channel/UCATVwJlJnV1g6ozQ5axnmYw' target='_blank'>https://www.youtube.com/channel/UCATVwJlJnV1g6ozQ5axnmYw</a>",
+    "projects.football.title":
+      "Juego de fútbol Web - Utilizando Canvas y Vanilla js",
+    "projects.football.subtitle": "Página web",
+    "projects.football.description":
+      "Juego de fútbol para Web. Trabajando con Lean Canvas #HTML #CSS #JAVASCRIPT Enlace: <a href='https://www.jmartdev.ovh/games/football/' target='_blank'>https://www.jmartdev.ovh/games/football/</a>",
+    "projects.arhunters.title":
+      "ARHunters - Videojuego de Realidad aumentada para Android",
+    "projects.arhunters.subtitle": "ARHunters - Videojuego Android",
+    "projects.arhunters.description":
+      "Trabajo de fin de Grado. Desarrollo de un Videojuego de Realidad Aumentada en Unity, para dispositivos móviles. Combina hasta 3 tipos de realidad aumentada en un juego para móviles: con marcadores, sin marcadores y basados en ubicación. Encuentra distintos eventos que te rodean a través de el mapa y tu posición. Sube de nivel y enfrentate a retos más desafiantes. ARHunters, ¡ya disponible en Google Play Store!",
+    "projects.lighting.title":
+      "Generar Rayos entre dedos - Postproducción digital",
+    "projects.lighting.subtitle": "Edición de video",
+    "projects.lighting.description":
+      "Postproducción digital con AfterEffects y Premiere. Enlace al video.",
     // contact
     "contact.title": "Contacta conmigo",
     "contact.subtitle":
