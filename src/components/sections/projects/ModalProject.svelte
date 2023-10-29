@@ -5,6 +5,7 @@
 
     export let data;
     export let showModal;
+    export let t;
 
     const handleClose = () => {
         dispatch('close');
@@ -16,9 +17,9 @@
 </script>
 
 
-<Modal showModal={showModal} title={title} on:close={handleClose}>
+<Modal showModal={showModal} title={t(title)} on:close={handleClose}>
    <div class="mt-4">
-       <p>{@html data.description}</p>
+       <p>{@html t(data.description)}</p>
        <img src={data.src} class="mt-4" />
    </div>
 </Modal>

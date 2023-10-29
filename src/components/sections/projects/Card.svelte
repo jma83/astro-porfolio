@@ -7,6 +7,7 @@
   const dispatch = createEventDispatcher();
 
   export let data;
+  export let t;
 
   const handleShowInfo = () => {
     console.log("hooaaa")
@@ -29,8 +30,8 @@
   <img src={src} alt={alt} class="object-cover" class:list={classes} />
   <div class="jm-card__bg"></div>
   <div class="jm-card__content md:px-16">
-    <h3>{title}</h3>
-    <p>{subtitle}</p>
+    <h3>{t(title)}</h3>
+    <p>{t(subtitle)}</p>
     <ul class="flex flex-row items-center rounded-full bg-gray-700 p-2 mt-2">
       {#each pathTech as img (img.alt)}
         <li>

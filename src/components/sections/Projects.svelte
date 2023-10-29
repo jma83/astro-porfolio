@@ -35,10 +35,10 @@
   </div>
   <main class="jm-projects__content">
     {#each items as item (item.alt)}
-      <Card data={item} on:showInfo={handleShow} />
+      <Card data={item} t={t} on:showInfo={handleShow} />
     {/each}
   </main>
-  <ModalProject showModal={showModal} data={modalData} on:close={handleClose} />
+  <ModalProject showModal={showModal} data={modalData} t={t} on:close={handleClose} />
 </section>
 
 <style>
