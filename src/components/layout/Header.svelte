@@ -4,7 +4,7 @@
   import {useTranslations} from "@i18n/utils";
 
   export let lang;
-  let isScrollDown = false; // Initialize isActive to false
+  let isScrollDown = null; // Initialize isActive to false
   let scrollSectionAbout = { scroll: 0, id: "about" };
   let scrollSectionPath = { scroll: 0, id: "path" };
   let scrollSectionProjects = { scroll: 0, id: "projects" };
@@ -46,7 +46,8 @@
   })
 </script>
 
-<header class="jm-header" class:jm-header__fixed={isScrollDown} class:absolute={!isScrollDown}>
+<header class="jm-header" class:jm-header--appear-fixed="{isScrollDown}"
+        class:jm-header__disappear-fixed="{isScrollDown === false}">
   <div class="jm-header__container md:px-4">
     <div class="jm-header__content items-center md:items-baseline">
       <a href="/public" class="jm-header__brand-link">
@@ -62,17 +63,54 @@
 
 <style>
   .jm-header {
-    @apply w-full text-white top-0 left-0 z-50;
+    @apply w-full absolute text-white top-0 left-0 z-50 transition-all;
     background: rgb(0, 34, 64);
     background: linear-gradient(
             90deg,
             rgba(0, 34, 64, 1) 0%,
             rgba(0, 68, 128, 1) 95%
     );
+
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in-out;
   }
 
-  .jm-header__fixed {
+  .jm-header--appear-fixed {
     @apply fixed shadow-lg;
+    animation-name: slide-down;
+    display: block;
+  }
+
+  .jm-header__disappear-fixed {
+    animation-name: slide-up;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    0% {
+      position: fixed;
+      transform: translateY(0);
+      opacity: 1;
+    }
+    99% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      position: absolute;
+      opacity: 1;
+    }
   }
 
   .jm-header__container {

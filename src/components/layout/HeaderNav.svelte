@@ -12,29 +12,43 @@
 <nav class="hidden invisible md:block md:visible md:h-auto;">
   <ul class="flex flex-row gap-4">
     <li class="jm-header__list-item" class:active={isHome}>
-      <a href="/#" class="jm-header__list-item-link" >{t("nav.home")}</a>
+      <a href="/#" class="jm-header__list-item-link"><span>{t("nav.home")}</span></a>
     </li>
     <li class="jm-header__list-item" class:active={isAbout}>
-      <a href="#about" class="jm-header__list-item-link">{t("nav.about")}</a>
+      <a href="#about" class="jm-header__list-item-link"><span>{t("nav.about")}</span></a>
     </li>
     <li class="jm-header__list-item" class:active={isPath}>
-      <a href="#path" class="jm-header__list-item-link">{t("nav.path")}</a>
+      <a href="#path" class="jm-header__list-item-link"><span>{t("nav.path")}</span></a>
     </li>
     <li class="jm-header__list-item" class:active={isProjects}>
-      <a href="#projects" class="jm-header__list-item-link">{t("nav.projects")}</a>
+      <a href="#projects" class="jm-header__list-item-link"><span>{t("nav.projects")}</span></a>
     </li>
     <li class="jm-header__list-item" class:active={isContact}>
-      <a href="#contact" class="jm-header__list-item-link">{t("nav.contact")}</a>
+      <a href="#contact" class="jm-header__list-item-link"><span>{t("nav.contact")}</span></a>
     </li>
   </ul>
 </nav>
 
 <style>
   .jm-header__list-item-link {
-    padding: 1rem 0.25rem 1rem 0.25rem;
+    @apply pt-4 pb-1 mx-1;
+    position: relative;
   }
 
   .jm-header__list-item.active {
-    @apply font-bold;
+    @apply font-semibold;
+  }
+
+  .jm-header__list-item-link span:before {
+    @apply flex w-full absolute bottom-0 left-0 bg-gray-200 transition-all duration-300 ease-in-out;
+    height: 1px;
+    transform: scaleX(0);
+    visibility: hidden;
+    content: "";
+  }
+
+  .jm-header__list-item.active > .jm-header__list-item-link span:before {
+    visibility: visible;
+    transform: scaleX(1);
   }
 </style>

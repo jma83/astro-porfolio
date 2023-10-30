@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Home from "@components/sections/Home.astro";
+import Home from "@components/sections/Home.svelte";
 import About from "@components/sections/About.astro";
 import Path from "@components/sections/Path.astro";
 import Projects from "@components/sections/Projects.svelte";
@@ -16,7 +16,7 @@ translate.set(t);
 ---
 
 <Layout title={t("layout.title")} lang={lang}>
-  <Home />
+  <Home client:load lang={lang} />
   <About />
   <hr />
   <Path />

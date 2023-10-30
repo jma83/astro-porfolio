@@ -37,7 +37,7 @@ export interface IconProjectData extends IconData {
   description: string;
   pathTech: IconData[];
   github?: string;
-  demo: boolean;
+  demo: boolean | string;
 }
 
 const projectItems: IconProjectData[] = [
@@ -243,11 +243,11 @@ const projectItems: IconProjectData[] = [
   {
     src: "/images/projects/project_frozen-hearts.png",
     alt: "Frozen Hearts game",
-    title: "projects.frozenearts.title",
-    subtitle: "projects.frozenearts.subtitle",
-    description: "projects.frozenearts.description",
+    title: "projects.frozenhearts.title",
+    subtitle: "projects.frozenhearts.subtitle",
+    description: "projects.frozenhearts.description",
     pathTech: [cPlusLogo],
-    demo: false,
+    demo: "https://drive.google.com/file/d/0B-zG7KrRq1YlaVFnb0xFaTZtc1U/view?resourcekey=0-lvrUry6hANIAercqRPnpKA",
   },
   {
     src: "/images/projects/project_olympic.png",

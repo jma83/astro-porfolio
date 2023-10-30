@@ -10,6 +10,11 @@ export const ui = {
     "nav.projects": "Proyectos",
     "nav.contact": "Contacto",
     "home.introduction": "¡Encantado! Soy",
+    "home.subtitle.main": "Desarrollo",
+    "home.subtitle.frontend": "Frontend",
+    "home.subtitle.web": "Páginas web",
+    "home.subtitle.app": "Apps móviles",
+    "home.subtitle.videogames": "Videojuegos",
     // about
     "about.title": "Sobre mí",
     "about.description1":
@@ -137,7 +142,7 @@ export const ui = {
     "projects.pixel.description": `Programación en ensamblador de juegos retro. Pixel Brawl #Amstrad #Z80 #Assembly <a href="https://www.youtube.com/watch?v=13IRG1vTddM" target="_blank">https://www.youtube.com/watch?v=13IRG1vTddM</a>`,
     "projects.saloon.title": "Escena interior de Saloon Western",
     "projects.saloon.subtitle": "Modelado 3D",
-    "projects.saloon.descritpion":
+    "projects.saloon.description":
       "Recreación de un Bar o Saloon del lejano Oeste en 3d. #3dsMax",
     "projects.lego.title": "Escena casa de Lego",
     "projects.lego.subtitle": "Modelado 3D",
@@ -159,11 +164,10 @@ export const ui = {
     "projects.picstories.subtitle": "Página web",
     "projects.picstories.description":
       "Programación Hipermedia 1. Página web Picstories: red social con fotos, álbumes, etc. #PHP #HTML #CSS. Página implementada en local a través de xampp.",
-    "projects.frozenhearts.title":
-      "Frozen Hearts - Videjouego multiplataforma desarrollado en GameMaker",
+    "projects.frozenhearts.title": "Frozen Hearts - Videjouego multiplataforma",
     "projects.frozenhearts.subtitle": "Videojuego",
     "projects.frozenhearts.description":
-      "Primer videojuego realizado con GameMaker, con temática de puzzles, basado en la mecánica de deslizamiento sobre el hielo. #C++",
+      "Primer videojuego realizado con GameMaker, con temática de puzzles, basado en la mecánica de deslizamiento sobre el hielo. Disponible en plataformas Android y Windows. #C++",
     "projects.olympic.title": "Olympic - Red social con WordPress",
     "projects.olympic.subtitle": "Página web",
     "projects.olympic.description":
@@ -194,6 +198,11 @@ export const ui = {
     "nav.projects": "Projects",
     "nav.contact": "Contact",
     "home.introduction": "Nice to meet you! I'm",
+    "home.subtitle.main": "I develop",
+    "home.subtitle.frontend": "Frontend",
+    "home.subtitle.web": "Web pages",
+    "home.subtitle.app": "Mobile apps",
+    "home.subtitle.videogames": "Videogames",
     // about
     "about.title": "About me",
     "about.description1":
@@ -319,7 +328,7 @@ export const ui = {
     "projects.pixel.description": `Retro game assembly programming. Pixel Brawl #Amstrad #Z80 #Assembly <a href="https://www.youtube.com/watch?v=13IRG1vTddM" target="_blank">https://www.youtube.com/watch?v=13IRG1vTddM </a>`,
     "projects.saloon.title": "Saloon Western interior scene",
     "projects.saloon.subtitle": "3D Modeling",
-    "projects.saloon.descritpion":
+    "projects.saloon.description":
       "Recreation of a Wild West Bar or Saloon in 3d. #3dsMax",
     "projects.lego.title": "Lego house scene",
     "projects.lego.subtitle": "3D Modeling",
@@ -340,8 +349,7 @@ export const ui = {
     "projects.picstories.subtitle": "Web page",
     "projects.picstories.description":
       "Hypermedia Programming 1. Picstories web page: social network with photos, albums, etc. #PHP #HTML #CSS. Page implemented locally through xampp.",
-    "projects.frozenhearts.title":
-      "Frozen Hearts - Cross-platform videogame developed in GameMaker",
+    "projects.frozenhearts.title": "Frozen Hearts - Cross-platform videogame",
     "projects.frozenhearts.subtitle": "Videogame",
     "projects.frozenhearts.description":
       "First videogame made with GameMaker, puzzle-themed, based on ice-sliding mechanics. #C++",

@@ -19,7 +19,13 @@
 
 <Modal showModal={showModal} title={t(title)} on:close={handleClose}>
    <div class="mt-4">
-       <p>{@html t(data.description)}</p>
+       <p class="jm-modal-project__paragraph">{@html t(data.description)}</p>
        <img src={data.src} class="mt-4" />
    </div>
 </Modal>
+
+<style>
+    .jm-modal-project__paragraph :global(a)  {
+        @apply text-primary-500;
+    }
+</style>
