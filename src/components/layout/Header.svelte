@@ -7,7 +7,7 @@
 
   export let lang;
   let isScrollDown = null; // Initialize isActive to false
-  let openMenu = false; // Initialize isActive to false
+  let openMenu = null; // Initialize isActive to false
   let scrollSectionAbout = { scroll: 0, id: "about" };
   let scrollSectionPath = { scroll: 0, id: "path" };
   let scrollSectionProjects = { scroll: 0, id: "projects" };
@@ -15,12 +15,16 @@
   let scrollSectionHome = { scroll: 0, id: "home" };
   let scrollSections = [];
   let currentSection = "home";
+  let screenSize = 1920;
+  let isMounted = false;
 
   $: t = useTranslations(lang);
 
 
   const onScroll = () => {
-    openMenu = false;
+    if (isMounted) {
+      openMenu = false;
+    }
     checkCurrentScrollSection();
 
     if (window.scrollY === 0) {
@@ -34,8 +38,11 @@
   }
 
   const onResize = () => {
+    screenSize = window.innerWidth;
     initScrollSections();
-    openMenu = false;
+    if (isMounted) {
+      openMenu = false;
+    }
   }
 
   const checkCurrentScrollSection = () => {
@@ -52,21 +59,25 @@
   }
 
   onMount(() => {
-    initScrollSections();
+    onResize();
     onScroll();
     window.addEventListener("scroll", onScroll);
     window.addEventListener("resize", onResize);
+    isMounted = true;
   })
 
   onDestroy(() => {
     if (typeof window !== "undefined") {
       window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("resize", onResize)
     }
   })
 
   const handleMenu = () => {
     openMenu = !openMenu
   }
+
+  $: isMobile = screenSize <= 768;
 </script>
 
 <header class="jm-header" class:jm-header--appear-fixed="{isScrollDown === true}"
@@ -76,8 +87,11 @@
       <a href="/" class="jm-header__brand-link z-50">
         <span class="text-white">JMA</span>
       </a>
+      {#if !isMobile}
       <HeaderNav t={t} currentSection={currentSection} />
+      {:else}
       <HeaderNavMobile t={t} currentSection={currentSection} active={openMenu} isScrollDown={isScrollDown} />
+      {/if}
       <button class="block visible h-auto md:hidden md:invisible md:h-0 z-50" on:click={handleMenu}>
         <MenuIcon open={openMenu} />
       </button>

@@ -3,25 +3,28 @@
 
     export let t;
     export let currentSection;
-    export let active = false;
+    export let active;
     export let isScrollDown = false;
 
     $: currentActualSection = active ? currentSection: "";
 </script>
 
-<nav class="jm-header-mobile md:hidden md:invisible md:h-0" class:active class:isScrollDown>
+<nav class="jm-header-mobile md:hidden md:invisible md:h-0" class:active class:disabled={active === false} class:isScrollDown>
     <HeaderNavItems t={t} currentSection={currentActualSection} classes="flex gap-4 flex-col" />
 </nav>
 
 <style>
     .jm-header-mobile {
-        @apply w-full absolute flex justify-center items-center  invisible h-auto z-20 py-4 uppercase transition-all;
+        @apply w-full absolute flex justify-center items-center invisible h-auto z-20 py-4 uppercase transition-all;
         background: rgb(0, 34, 64);
         background: linear-gradient(
                 90deg,
                 rgba(0, 34, 64, 1) 0%,
                 rgba(0, 68, 128, 1) 95%
         );
+    }
+
+    .jm-header-mobile.disabled {
         top: -2rem;
         animation-duration: 0.6s;
         animation-name: hideNavbar;
