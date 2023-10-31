@@ -20,7 +20,7 @@
     <div on:click|stopPropagation class="flex flex-col">
         <div class="flex flex-row justify-between items-start gap-x-1">
             <h2>{title}</h2>
-            <button autofocus on:click={handleClose} class="px-2 border-2 border-red-500 rounded-full hover:bg-red-400 hover:opacity-70">x</button>
+            <button autofocus on:click={handleClose} class="px-2 border-2 border-red-300 rounded-full bg-red-400 hover:opacity-70 select-none">x</button>
         </div>
         <slot />
     </div>
@@ -45,7 +45,7 @@
         padding: 1.5rem 1rem;
     }
     dialog[open] {
-        animation: zoom 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        animation: zoom 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     @keyframes zoom {
         from {
@@ -56,7 +56,7 @@
         }
     }
     dialog[open]::backdrop {
-        animation: fade 0.2s ease-out;
+        animation: fade 0.5s ease-out;
     }
     @keyframes fade {
         from {

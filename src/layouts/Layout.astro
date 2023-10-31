@@ -1,8 +1,7 @@
 ---
 import Header from "@components/layout/Header.svelte";
-import "../styles/main.css";
-import MenuIcon from "../components/icons/MenuIcon.astro";
-import Footer from "../components/layout/Footer.astro";
+import "@styles/main.css";
+import Footer from "@components/layout/Footer.astro";
 interface Props {
   title: string;
 }
@@ -34,9 +33,7 @@ const { title, lang } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <Header client:load lang={lang}>
-    <MenuIcon slot="icon" classList="w-8 h-8" />
-  </Header>
+  <Header client:load lang={lang} />
   <slot />
   <Footer />
   <style is:global>

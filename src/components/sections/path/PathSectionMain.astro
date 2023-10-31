@@ -5,12 +5,15 @@ const props = Astro.props;
 const { sectionId, title, items } = props;
 ---
 
-<section id={sectionId}>
+<section id={sectionId} class="pt-6">
   <h3>{title}</h3>
   {
     items.map((item, index) => {
       return (
-        <div class="jm-path__section-card">
+        <div
+          class="jm-path__section-card"
+          class:list={index !== items.length - 1 ? "mb-8" : "mb-2"}
+        >
           <PathCard data={item} />
           {index !== items.length - 1 ? <hr /> : <Fragment />}
         </div>
@@ -22,7 +25,7 @@ const { sectionId, title, items } = props;
 
 <style>
   .jm-path__section-card {
-    @apply flex flex-col gap-4 mt-5 mb-8;
+    @apply flex flex-col gap-4 mt-5;
   }
 
   h3 {

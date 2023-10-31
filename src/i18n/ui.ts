@@ -115,7 +115,7 @@ export const ui = {
     "projects.ageofkarts.description":
       "Age Of Karts. Videojuego de carreras de karts históricos, realizado en C++, Bullet (librería de físicas), OpenGL (motor gráfico própio basado en OpenGL), Raknet (partida online) y SFML (gestión de eventos). Grupo de 6 estudiantes de Ingeniería Multimedia en la UA. Twitter @SocketWar0. Canal de Youtube: <a href='https://www.youtube.com/channel/UCATVwJlJnV1g6ozQ5axnmYw' target='_blank'>https://www.youtube.com/channel/UCATVwJlJnV1g6ozQ5axnmYw</a>",
     "projects.football.title":
-      "Juego de fútbol Web - Utilizando Canvas y Vanilla js",
+      "Juego de fútbol Web - Utilizando Canvas y Vanilla JS",
     "projects.football.subtitle": "Página web",
     "projects.football.description":
       "Juego de fútbol para Web. Trabajando con Lean Canvas #HTML #CSS #JAVASCRIPT Enlace: <a href='https://www.jmartdev.ovh/games/football/' target='_blank'>https://www.jmartdev.ovh/games/football/</a>",
@@ -156,7 +156,7 @@ export const ui = {
     "projects.dragonware.title": "DragonWare - Web de compras online con Wix",
     "projects.dragonware.subtitle": "Página web",
     "projects.dragonware.description": `Primera página web orientada a la compra online. Tienda desarrollada a través de Wix. Enlace: <a href="http://dragonwareshop.wixsite.com/dragonwareinc/" target="_blank">http://dragonwareshop.wixsite.com/dragonwareinc/</a>`,
-    "projects.ownmind.title": "OwnMind - Red social con vanilla js",
+    "projects.ownmind.title": "OwnMind - Red social con Javascript",
     "projects.ownmind.subtitle": "Página web",
     "projects.ownmind.description":
       "Programación Hipermedia 2. Página web/red social OwnMind #JAVASCRIPT #CSS #HTML #AJAX",
@@ -189,6 +189,8 @@ export const ui = {
     "footer.specialization.apps": "Desarrollo apps móviles",
     "footer.specialization.games": "Desarrollo videojuegos",
     "footer.consultation.title": "Consultas",
+    "footer.consultation.email": "Email",
+    "footer.consultation.linkedin": "Linkedin",
   },
   en: {
     "layout.title": "Javier Martinez Arias | Developer | Portfolio",
@@ -341,7 +343,7 @@ export const ui = {
       "DragonWare - Online Shopping Website with Wix",
     "projects.dragonware.subtitle": "Web page",
     "projects.dragonware.description": `First website aimed at online shopping. Store developed through Wix. Link: <a href="http://dragonwareshop.wixsite.com/dragonwareinc/" target="_blank">http://dragonwareshop.wixsite.com/dragonwareinc/</a>`,
-    "projects.ownmind.title": "OwnMind - Social network with vanilla js",
+    "projects.ownmind.title": "OwnMind - Social network with js",
     "projects.ownmind.subtitle": "Web page",
     "projects.ownmind.description":
       "Hypermedia Programming 2. OwnMind website/social network #JAVASCRIPT #CSS #HTML #AJAX",
@@ -363,5 +365,17 @@ export const ui = {
       "Web page for control and management of a fridge. Beginnings in Web programming #HTML #CSS #JAVASCRIPT",
     // contact
     "contact.title": "Contact me",
+    "contact.subtitle":
+      "Available for enquiries professional field, through the following means.\nI will reply as soon as possible!",
+    // footer
+    "footer.links.title": "Links",
+    "footer.specialization.title": "Specialization",
+    "footer.specialization.frontend": "Frontend",
+    "footer.specialization.web": "Web development",
+    "footer.specialization.apps": "Mobile app development",
+    "footer.specialization.games": "Video game development",
+    "footer.consultation.title": "Consultations",
+    "footer.consultation.email": "Email",
+    "footer.consultation.linkedin": "Linkedin",
   },
 } as const;

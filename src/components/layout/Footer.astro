@@ -1,86 +1,69 @@
 ---
-import LinkedInIcon from "../icons/LinkedInIcon.astro";
-import GithubIcon from "../icons/GithubIcon.astro";
-import EmailIcon from "../icons/EmailIcon.astro";
-import FooterAuthor from "./footer/FooterAuthor.svelte";
+import LinkedInIcon from "@components/icons/LinkedInIcon.astro";
+import GithubIcon from "@components/icons/GithubIcon.astro";
+import EmailIcon from "@components/icons/EmailIcon.astro";
+import FooterAuthor from "@components/layout/footer/FooterAuthor.svelte";
+import { translate } from "@stores/i18nStore";
+import {
+  footerSectionList,
+  iconsList,
+  languageList,
+} from "@static/footerItems";
+
+const t = translate.get();
 ---
 
 <footer class="jm-footer">
   <div class="jm-footer__container">
     <div class="jm-footer__content flex-wrap md:flex-nowrap">
-      <div class="w-full flex flex-col">
-        <h3>Links</h3>
-        <ul class="flex flex-col gap-6">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#about">Sobre mí</a></li>
-          <li><a href="#path">Trayectoria</a></li>
-          <li><a href="#projects">Proyectos</a></li>
-          <li><a href="#contact">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="w-full flex flex-col">
-        <h3>Especialización</h3>
-        <ul class="flex flex-col gap-4">
-          <li>Frontend</li>
-          <li>Desarrollo web</li>
-          <li>Desarrollo apps móviles</li>
-          <li>Desarrollo videjuegos</li>
-        </ul>
-      </div>
-      <div class="w-full flex flex-col">
-        <h3>Consultas</h3>
-        <ul class="flex flex-col gap-4">
-          <li><a href="mailto:jma96.elx@gmail.com">Email</a></li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/javier-mart%C3%ADnez-arias-6555b8166/"
-              >Linkedin</a
-            >
-          </li>
-        </ul>
-      </div>
+      {
+        footerSectionList.map((section) => (
+          <div class="jm-footer__section">
+            <h3>{t(section.title)}</h3>
+            <ul class="jm-footer__section-list">
+              {section.dataList.map((item) =>
+                item.href != null ? (
+                  <li class="jm-footer__section-list-item">
+                    <a href={item.href}>{t(item.title)}</a>
+                  </li>
+                ) : (
+                  <li>{t(item.title)}</li>
+                ),
+              )}
+            </ul>
+          </div>
+        ))
+      }
     </div>
-    <div
-      class="w-full flex flex-row flex-wrap justify-between items-center mt-20 gap-8"
-    >
+    <div class="jm-footer__icons-section">
       <ul class="jm-footer__contact-list">
-        <li class="jm-footer__contact-list-item">
-          <a href="mailto:jma96.elx@gmail.com">
-            <EmailIcon classList="w-5 h-5 fill-current" />
-          </a>
-        </li>
-        <li class="jm-footer__contact-list-item">
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/javier-mart%C3%ADnez-arias-6555b8166/"
-          >
-            <LinkedInIcon classList="w-5 h-5 fill-current" />
-          </a>
-        </li>
-        <li class="jm-footer__contact-list-item">
-          <a target="_blank" href="https://github.com/jma83">
-            <GithubIcon classList="w-5 h-5 fill-current" />
-          </a>
-        </li>
+        {
+          iconsList.map((iconItem) => (
+            <li class="jm-footer__contact-list-item">
+              <a href={iconItem.href} target="_blank">
+                {iconItem.iconName === "linkedin" ? (
+                  <LinkedInIcon size={iconItem.size} />
+                ) : iconItem.iconName === "email" ? (
+                  <EmailIcon size={iconItem.size} />
+                ) : (
+                  <GithubIcon size={iconItem.size} />
+                )}
+              </a>
+            </li>
+          ))
+        }
       </ul>
-      <div class="flex flex-row gap-4 mr-16 ml-8">
-        <div class="flex w-6 h-6 object-cover">
-          <a href="/">
-            <img
-              src="/src/images/path/studies/spanish_logo.avif"
-              alt="Spanish"
-            />
-          </a>
-        </div>
-        <div class="flex w-6 h-6 object-cover">
-          <a href="/en">
-            <img
-              src="/src/images/path/studies/english_logo.avif"
-              alt="English"
-            />
-          </a>
-        </div>
-      </div>
+      <ul class="jm-footer__language-list">
+        {
+          languageList.map((item) => (
+            <li class="jm-footer__language-list-item">
+              <a href={item.href}>
+                <img src={item.src} alt={item.alt} />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
     <FooterAuthor />
   </div>
@@ -106,12 +89,24 @@ import FooterAuthor from "./footer/FooterAuthor.svelte";
     @apply font-normal text-base w-full flex self-center gap-16;
   }
 
+  .jm-footer__section {
+    @apply w-full flex flex-col;
+  }
+
+  .jm-footer__section-list {
+    @apply flex flex-col gap-6;
+  }
+
+  .jm-footer__icons-section {
+    @apply w-full flex flex-col md:flex-row justify-between mt-20 gap-8 ml-2;
+  }
+
   .jm-footer__contact-list {
     @apply flex flex-row gap-4;
   }
 
   .jm-footer__contact-list-item {
-    @apply flex text-gray-400   cursor-pointer;
+    @apply flex text-gray-400 cursor-pointer;
   }
 
   .jm-footer__contact-list-item:hover {
@@ -122,6 +117,14 @@ import FooterAuthor from "./footer/FooterAuthor.svelte";
     @apply p-4 bg-gray-800 rounded-full;
   }
 
+  .jm-footer__language-list {
+    @apply flex flex-row gap-4 mr-16 ml-2;
+  }
+
+  .jm-footer__language-list-item {
+    @apply flex w-6 h-6 object-cover;
+  }
+
   a:hover {
     @apply underline;
   }
@@ -130,7 +133,7 @@ import FooterAuthor from "./footer/FooterAuthor.svelte";
     @apply text-2xl font-semibold mb-10;
   }
 
-  li {
+  .jm-footer__section-list-item {
     list-style: url("/src/images/arrow.svg") outside;
     margin-left: 1.5rem;
   }

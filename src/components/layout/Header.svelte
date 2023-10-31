@@ -2,9 +2,11 @@
   import { onDestroy, onMount } from "svelte";
   import HeaderNav from "@components/layout/HeaderNav.svelte";
   import {useTranslations} from "@i18n/utils";
+  import MenuIcon from "@components/icons/MenuIcon.svelte";
 
   export let lang;
   let isScrollDown = null; // Initialize isActive to false
+  let openMenu = false; // Initialize isActive to false
   let scrollSectionAbout = { scroll: 0, id: "about" };
   let scrollSectionPath = { scroll: 0, id: "path" };
   let scrollSectionProjects = { scroll: 0, id: "projects" };
@@ -53,6 +55,10 @@
       window.removeEventListener("scroll", onScroll)
     }
   })
+
+  const handleMenu = () => {
+    openMenu = !openMenu
+  }
 </script>
 
 <header class="jm-header" class:jm-header--appear-fixed="{isScrollDown === true}"
@@ -63,8 +69,8 @@
         <span class="text-white">JMA</span>
       </a>
       <HeaderNav t={t} currentSection={currentSection} />
-      <button class="block visible h-auto md:hidden md:invisible md:h-0">
-        <slot name="icon" />
+      <button class="block visible h-auto md:hidden md:invisible md:h-0" on:click={handleMenu}>
+        <MenuIcon open={openMenu} />
       </button>
     </div>
   </div>
