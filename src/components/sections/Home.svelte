@@ -1,6 +1,7 @@
 <script>
   import { useTranslations } from "@i18n/utils";
   import {onDestroy, onMount} from "svelte";
+  import ArrowDownIcon from "@components/icons/ArrowDownIcon.svelte";
   export let lang;
   let typingInterval;
   let currentIndex = 0;
@@ -61,16 +62,27 @@
 </script>
 
 <section class="jm-home">
-  <div class="jm-home__content">
+  <div class="jm-home__content z-40">
     <span class="jm-home__introduction text-base md:text-xl">{t("home.introduction")}</span>
     <h1 class="jm-home__title text-4xl md:text-6xl">Javier Martínez Arias</h1>
     <h2 class="jm-home__subtitle text-xl md:text-3xl">{t("home.subtitle.main")} {currentWord}</h2>
+    <a class="jm-home__triangle jm-home__triangle--movement" href="#about">
+      <ArrowDownIcon classList="w-2 h-2 fill-current" />
+    </a>
+  </div>
+
+  <div class="jm-home__circle-container-base">
+    <div class="jm-home__circle jm-home__bg z-10" />
+  </div>
+
+  <div class="jm-home__circle-container">
+    <div class="jm-home__circle jm-home__circle--movement z-0" />
   </div>
 </section>
 
 <style>
   .jm-home {
-    @apply w-full flex;
+    @apply w-full flex justify-center relative overflow-hidden;
 
     background: rgb(0, 34, 64);
     background: linear-gradient(
@@ -83,7 +95,7 @@
   }
 
   .jm-home__content {
-    @apply w-full flex flex-col justify-center items-center text-white text-center p-4 gap-6;
+    @apply w-full max-w-3xl flex relative flex-col justify-center items-center text-white text-center p-4 gap-6;
   }
 
   .jm-home__introduction {
@@ -97,5 +109,86 @@
 
   .jm-home__subtitle {
     @apply font-semibold uppercase;
+  }
+
+  .jm-home__circle-container {
+    @apply w-full absolute;
+    top: 30vh;
+  }
+
+  .jm-home__circle-container-base {
+    @apply w-full absolute;
+    top: 37vh;
+  }
+
+  .jm-home__circle-container {
+    min-width: 768px;
+  }
+
+  .jm-home__circle {
+    @apply w-full absolute ;
+    height: 500px;
+    border-radius: 50%;
+  }
+
+  .jm-home__circle--movement {
+    @apply opacity-30 ;
+    box-shadow: -1px -11px 45px 1px rgba(0,0,0,0.46);
+    /*animation-iteration-count: infinite;*/
+    /*animation-duration: 6s;*/
+    /*animation-name: translationY;*/
+  }
+
+  .jm-home__triangle {
+    @apply absolute bottom-0 mb-4 rounded-3xl p-2 shadow-2xl;
+  }
+
+  .jm-home__triangle--movement {
+    @apply opacity-80 ;
+    box-shadow: -1px -11px 45px 1px rgba(0,0,0,0.46);
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+
+    animation-name: translationYTriangle;
+  }
+
+  @keyframes rollingX {
+    0% {
+      transform: translateX(2vw) rotate(0deg);
+    }
+    100% {
+      transform: translateX(90vw) rotate(360deg);
+    }
+  }
+
+
+  @keyframes translationY {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes translationYTriangle {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+
+  .jm-home__bg {
+    background: rgb(0, 34, 64);
+    background: linear-gradient(
+            90deg,
+            rgba(0, 34, 64, 1) 0%,
+            rgba(0, 68, 128, 1) 95%
+    );
   }
 </style>

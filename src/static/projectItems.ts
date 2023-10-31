@@ -42,7 +42,7 @@ export interface IconProjectData extends IconData {
 
 const projectItems: IconProjectData[] = [
   {
-    src: "/images/projects/project_plogging-challenge.png",
+    src: "/src/images/projects/project_plogging-challenge.avif",
     alt: "Plogging Challenge app",
     title: "projects.plogging.title",
     subtitle: "projects.plogging.subtitle",
@@ -52,7 +52,7 @@ const projectItems: IconProjectData[] = [
     demo: false,
   },
   {
-    src: "/images/projects/project_rick-and-morty.png",
+    src: "/src/images/projects/project_rick-and-morty.avif",
     alt: "Rick and Morty hybrid app",
     title: "projects.rickpedia.title",
     subtitle: "projects.rickpedia.subtitle",
@@ -62,7 +62,7 @@ const projectItems: IconProjectData[] = [
     demo: false,
   },
   {
-    src: "/images/projects/project_fit-up.png",
+    src: "/src/images/projects/project_fit-up.avif",
     alt: "Fit Up Android app",
     title: "projects.fitup.title",
     subtitle: "projects.fitup.subtitle",
@@ -72,7 +72,7 @@ const projectItems: IconProjectData[] = [
     demo: false,
   },
   {
-    src: "/images/projects/project_books.png",
+    src: "/src/images/projects/project_books.avif",
     alt: "Books IOS app",
     title: "projects.books.title",
     subtitle: "projects.books.subtitle",
@@ -82,7 +82,7 @@ const projectItems: IconProjectData[] = [
     demo: false,
   },
   {
-    src: "/images/projects/project_movie-guessr.png",
+    src: "/src/images/projects/project_movie-guessr.avif",
     alt: "Movie Guessr game",
     title: "projects.moviegussr.title",
     subtitle: "projects.moviegussr.subtitle",
@@ -92,7 +92,7 @@ const projectItems: IconProjectData[] = [
     demo: true,
   },
   {
-    src: "/images/projects/project_volley-force.png",
+    src: "/src/images/projects/project_volley-force.avif",
     alt: "Volley Force game",
     title: "projects.volleyforce.title",
     subtitle: "projects.volleyforce.subtitle",
@@ -102,7 +102,7 @@ const projectItems: IconProjectData[] = [
     demo: true,
   },
   {
-    src: "/images/projects/project_hunger.png",
+    src: "/src/images/projects/project_hunger.avif",
     alt: "Hunger web game",
     title: "projects.hunger.title",
     subtitle: "projects.hunger.subtitle",
@@ -112,7 +112,7 @@ const projectItems: IconProjectData[] = [
     demo: true,
   },
   {
-    src: "/images/projects/project_three-in-line.png",
+    src: "/src/images/projects/project_three-in-line.avif",
     alt: "Three in line web game",
     title: "projects.line3.title",
     subtitle: "projects.line3.subtitle",
@@ -122,7 +122,7 @@ const projectItems: IconProjectData[] = [
     demo: true,
   },
   {
-    src: "/images/projects/project_age-of-karts.png",
+    src: "/src/images/projects/project_age-of-karts.avif",
     alt: "Age of Karts game",
     title: "projects.ageofkarts.title",
     subtitle: "projects.ageofkarts.subtitle",
@@ -132,7 +132,7 @@ const projectItems: IconProjectData[] = [
     demo: false,
   },
   {
-    src: "/images/projects/project_football.png",
+    src: "/src/images/projects/project_football.avif",
     alt: "Football web game",
     title: "projects.football.title",
     subtitle: "projects.football.subtitle",
@@ -141,7 +141,7 @@ const projectItems: IconProjectData[] = [
     demo: true,
   },
   {
-    src: "/images/projects/project_ar-hunters.png",
+    src: "/src/images/projects/project_ar-hunters.avif",
     alt: "AR Hunters game",
     title: "projects.arhunters.title",
     subtitle: "projects.arhunters.subtitle",
@@ -151,7 +151,7 @@ const projectItems: IconProjectData[] = [
     demo: false,
   },
   {
-    src: "/images/projects/project_lightning-video.png",
+    src: "/src/images/projects/project_lightning-video.avif",
     alt: "Lighting video editing",
     title: "projects.lighting.title",
     subtitle: "projects.lighting.subtitle",
@@ -160,7 +160,7 @@ const projectItems: IconProjectData[] = [
     demo: true,
   },
   {
-    src: "/images/projects/project_blender-models.png",
+    src: "/src/images/projects/project_blender-models.avif",
     alt: "Blender 3d models",
     title: "projects.models.title",
     subtitle: "projects.models.subtitle",
@@ -169,7 +169,7 @@ const projectItems: IconProjectData[] = [
     demo: false,
   },
   {
-    src: "/images/projects/project_pixar-animation.png",
+    src: "/src/images/projects/project_pixar-animation.avif",
     alt: "Pixar animation game",
     title: "projects.pixar.title",
     subtitle: "projects.pixar.subtitle",
@@ -178,7 +178,7 @@ const projectItems: IconProjectData[] = [
     demo: true,
   },
   {
-    src: "/images/projects/project_pixel-brawl.png",
+    src: "/src/images/projects/project_pixel-brawl.avif",
     alt: "Pixel brawl game",
     title: "projects.pixel.title",
     subtitle: "projects.pixel.subtitle",
@@ -187,7 +187,7 @@ const projectItems: IconProjectData[] = [
     demo: false,
   },
   {
-    src: "/images/projects/project_saloon-scene.png",
+    src: "/src/images/projects/project_saloon-scene.avif",
     alt: "Saloon 3d scene",
     title: "projects.saloon.title",
     subtitle: "projects.saloon.subtitle",
@@ -196,7 +196,7 @@ const projectItems: IconProjectData[] = [
     demo: false,
   },
   {
-    src: "/images/projects/project_lego-scene.png",
+    src: "/src/images/projects/project_lego-scene.avif",
     alt: "Lego 3d scene",
     title: "projects.lego.title",
     subtitle: "projects.lego.subtitle",
@@ -205,7 +205,7 @@ const projectItems: IconProjectData[] = [
     demo: false,
   },
   {
-    src: "/images/projects/project_hardware-zone.png",
+    src: "/src/images/projects/project_hardware-zone.avif",
     alt: "HardwareZone web",
     title: "projects.hardware.title",
     subtitle: "projects.hardware.subtitle",
@@ -214,7 +214,7 @@ const projectItems: IconProjectData[] = [
     demo: false,
   },
   {
-    src: "/images/projects/project_dragon-ware.png",
+    src: "/src/images/projects/project_dragon-ware.avif",
     alt: "DragonWare web",
     title: "projects.dragonware.title",
     subtitle: "projects.dragonware.subtitle",
@@ -223,7 +223,7 @@ const projectItems: IconProjectData[] = [
     demo: true,
   },
   {
-    src: "/images/projects/project_own-mind.png",
+    src: "/src/images/projects/project_own-mind.avif",
     alt: "OwnMind web",
     title: "projects.ownmind.title",
     subtitle: "projects.ownmind.subtitle",
@@ -232,7 +232,7 @@ const projectItems: IconProjectData[] = [
     demo: true,
   },
   {
-    src: "/images/projects/project_picstories.png",
+    src: "/src/images/projects/project_picstories.avif",
     alt: "PicStories web",
     title: "projects.picstories.title",
     subtitle: "projects.picstories.subtitle",
@@ -241,7 +241,7 @@ const projectItems: IconProjectData[] = [
     demo: false,
   },
   {
-    src: "/images/projects/project_frozen-hearts.png",
+    src: "/src/images/projects/project_frozen-hearts.avif",
     alt: "Frozen Hearts game",
     title: "projects.frozenhearts.title",
     subtitle: "projects.frozenhearts.subtitle",
@@ -250,7 +250,7 @@ const projectItems: IconProjectData[] = [
     demo: "https://drive.google.com/file/d/0B-zG7KrRq1YlaVFnb0xFaTZtc1U/view?resourcekey=0-lvrUry6hANIAercqRPnpKA",
   },
   {
-    src: "/images/projects/project_olympic.png",
+    src: "/src/images/projects/project_olympic.avif",
     alt: "Olympic web",
     title: "projects.olympic.title",
     subtitle: "projects.olympic.subtitle",
@@ -259,7 +259,7 @@ const projectItems: IconProjectData[] = [
     demo: false,
   },
   {
-    src: "/images/projects/project_fridge.png",
+    src: "/src/images/projects/project_fridge.avif",
     alt: "Fridge web",
     title: "projects.fridge.title",
     subtitle: "projects.fridge.subtitle",

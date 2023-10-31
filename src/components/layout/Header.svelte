@@ -17,8 +17,16 @@
 
 
   const onScroll = () => {
-    isScrollDown = window.scrollY > 500;
     checkCurrentScrollSection();
+
+    if (window.scrollY === 0) {
+      isScrollDown = null;
+      return;
+    }
+    if (isScrollDown === null && window.scrollY <= 500){
+      return;
+    }
+    isScrollDown = window.scrollY > 500;
   }
 
   const checkCurrentScrollSection = () => {
@@ -36,6 +44,7 @@
 
   onMount(() => {
     initScrollSections();
+    onScroll();
     document.addEventListener("scroll", onScroll);
   })
 
@@ -46,11 +55,11 @@
   })
 </script>
 
-<header class="jm-header" class:jm-header--appear-fixed="{isScrollDown}"
+<header class="jm-header" class:jm-header--appear-fixed="{isScrollDown === true}"
         class:jm-header__disappear-fixed="{isScrollDown === false}">
   <div class="jm-header__container md:px-4">
     <div class="jm-header__content items-center md:items-baseline">
-      <a href="/public" class="jm-header__brand-link">
+      <a href="/" class="jm-header__brand-link">
         <span class="text-white">JMA</span>
       </a>
       <HeaderNav t={t} currentSection={currentSection} />

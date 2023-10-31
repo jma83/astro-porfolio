@@ -7,5 +7,8 @@ import svelte from "@astrojs/svelte";
 export default defineConfig({
   integrations: [tailwind({
     applyBaseStyles: false
-  }), svelte()]
+  }), svelte()],
+  image: {
+    domains: ["astro.build"],
+  }
 });
