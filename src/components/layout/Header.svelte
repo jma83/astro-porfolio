@@ -20,6 +20,7 @@
 
 
   const onScroll = () => {
+    openMenu = false;
     checkCurrentScrollSection();
 
     if (window.scrollY === 0) {
