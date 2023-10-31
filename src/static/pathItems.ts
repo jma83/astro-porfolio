@@ -5,6 +5,8 @@ import {
 } from "../types/Path";
 import {
   capacitorLogo,
+  cypressLogo,
+  jestLogo,
   nuxtLogo,
   springLogo,
   tailwindLogo,
@@ -71,6 +73,8 @@ export const getPathExperienceItems = (
       cssLogo,
       tailwindLogo,
       capacitorLogo,
+      cypressLogo,
+      jestLogo,
     ],
     icon: {
       src: "/src/images/path/experience/mamby_logo.avif",

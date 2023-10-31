@@ -41,7 +41,7 @@ export const bootstrapLogo: IconData = {
 };
 
 export const cypressLogo: IconData = {
-  src: "/src/images/path/tech/cypress_logo.jpeg",
+  src: "/src/images/path/tech/cypress_logo.avif",
   alt: "Cypress",
 };
 

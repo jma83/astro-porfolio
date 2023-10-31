@@ -1,8 +1,9 @@
 <script>
   import { onDestroy, onMount } from "svelte";
-  import HeaderNav from "@components/layout/HeaderNav.svelte";
+  import HeaderNav from "@components/layout/header/HeaderNavDesktop.svelte";
   import {useTranslations} from "@i18n/utils";
   import MenuIcon from "@components/icons/MenuIcon.svelte";
+  import HeaderNavMobile from "@components/layout/header/HeaderNavMobile.svelte";
 
   export let lang;
   let isScrollDown = null; // Initialize isActive to false
@@ -31,6 +32,11 @@
     isScrollDown = window.scrollY > 500;
   }
 
+  const onResize = () => {
+    initScrollSections();
+    openMenu = false;
+  }
+
   const checkCurrentScrollSection = () => {
     const scrollY = window.scrollY + 250;
     currentSection = scrollSections.find((section) => (scrollY > section.scroll)).id;
@@ -47,7 +53,8 @@
   onMount(() => {
     initScrollSections();
     onScroll();
-    document.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll);
+    window.addEventListener("resize", onResize);
   })
 
   onDestroy(() => {
@@ -65,11 +72,12 @@
         class:jm-header__disappear-fixed="{isScrollDown === false}">
   <div class="jm-header__container md:px-4">
     <div class="jm-header__content items-center md:items-baseline">
-      <a href="/" class="jm-header__brand-link">
+      <a href="/" class="jm-header__brand-link z-50">
         <span class="text-white">JMA</span>
       </a>
       <HeaderNav t={t} currentSection={currentSection} />
-      <button class="block visible h-auto md:hidden md:invisible md:h-0" on:click={handleMenu}>
+      <HeaderNavMobile t={t} currentSection={currentSection} active={openMenu} isScrollDown={isScrollDown} />
+      <button class="block visible h-auto md:hidden md:invisible md:h-0 z-50" on:click={handleMenu}>
         <MenuIcon open={openMenu} />
       </button>
     </div>

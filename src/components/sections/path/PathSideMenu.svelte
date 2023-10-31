@@ -25,7 +25,7 @@
   onMount(() => {
     initScrollSections();
     onScroll();
-    document.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll);
   })
 
   onDestroy(() => {
