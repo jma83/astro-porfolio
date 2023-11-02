@@ -57,12 +57,12 @@ export const iconsList = [
 
 export const languageList = [
   {
-    src: "/src/images/path/studies/spanish_logo.avif",
+    src: "/images/path/studies/spanish_logo.avif",
     alt: "Spanish",
     href: "/",
   },
   {
-    src: "/src/images/path/studies/english_logo.avif",
+    src: "/images/path/studies/english_logo.avif",
     alt: "English",
     href: "/en",
   },

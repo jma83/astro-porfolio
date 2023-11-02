@@ -10,7 +10,7 @@
       "@static/*": ["src/static/*"],
       "@stores/*": ["src/stores/*"],
       "@styles/*": ["src/styles/*"],
-      "@types/*": ["src/types/*"],
+      "@types/*": ["src/types/*"]
     }
   }
 }

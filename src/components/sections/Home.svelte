@@ -66,7 +66,7 @@
     <span class="jm-home__introduction text-base md:text-xl">{t("home.introduction")}</span>
     <h1 class="jm-home__title text-4xl md:text-6xl">Javier Martínez Arias</h1>
     <h2 class="jm-home__subtitle text-xl md:text-3xl">{t("home.subtitle.main")} {currentWord}</h2>
-    <a class="jm-home__triangle jm-home__triangle--movement" href="#about">
+    <a class="jm-home__triangle jm-home__triangle--movement" aria-label={t("home.accessible.scrollDown")} href="#about">
       <ArrowDownIcon classList="w-2 h-2 fill-current" />
     </a>
   </div>

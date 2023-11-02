@@ -15,6 +15,7 @@ export const ui = {
     "home.subtitle.web": "Páginas web",
     "home.subtitle.app": "Apps móviles",
     "home.subtitle.videogames": "Videojuegos",
+    "home.accessible.scrollDown": "Empezar a descubrir más",
     // about
     "about.title": "Sobre mí",
     "about.description1":
@@ -205,6 +206,7 @@ export const ui = {
     "home.subtitle.web": "Web pages",
     "home.subtitle.app": "Mobile apps",
     "home.subtitle.videogames": "Videogames",
+    "home.accessible.scrollDown": "Start discovering more",
     // about
     "about.title": "About me",
     "about.description1":
@@ -367,6 +369,8 @@ export const ui = {
     "contact.title": "Contact me",
     "contact.subtitle":
       "Available for professional consultation, through the following channels.<br />I will reply as soon as possible!",
+    "contact.accessible.linkedin": "Go to Linkedin profile",
+    "contact.accessible.email": "Send email",
     // footer
     "footer.links.title": "Links",
     "footer.specialization.title": "Specialization",

@@ -5,10 +5,13 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind({
-    applyBaseStyles: false
-  }), svelte()],
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    svelte(),
+  ],
   image: {
     domains: ["astro.build"],
-  }
+  },
 });

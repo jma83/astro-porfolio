@@ -37,7 +37,9 @@ const getHref = (href) => {
               {section.dataList.map((item) =>
                 item.href != null ? (
                   <li class="jm-footer__section-list-item">
-                    <a href={getHref(item.href)}>{t(item.title)}</a>
+                    <a href={getHref(item.href)} aria-label={t(item.title)}>
+                      {t(item.title)}
+                    </a>
                   </li>
                 ) : (
                   <li>{t(item.title)}</li>
@@ -53,7 +55,11 @@ const getHref = (href) => {
         {
           iconsList.map((iconItem) => (
             <li class="jm-footer__contact-list-item">
-              <a href={iconItem.href} target="_blank">
+              <a
+                href={iconItem.href}
+                target="_blank"
+                aria-label={iconItem.iconName}
+              >
                 {iconItem.iconName === "linkedin" ? (
                   <LinkedInIcon size={iconItem.size} />
                 ) : iconItem.iconName === "email" ? (
@@ -147,7 +153,7 @@ const getHref = (href) => {
   }
 
   .jm-footer__section-list-item {
-    list-style: url("/src/images/arrow.svg") outside;
+    list-style: url("/images/arrow.svg") outside;
     margin-left: 1.5rem;
   }
 </style>

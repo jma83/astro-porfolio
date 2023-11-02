@@ -97,7 +97,7 @@
       {:else}
       <HeaderNavMobile t={t} currentSection={currentSection} homePath={homeHref} active={openMenu} isScrollDown={isScrollDown} />
       {/if}
-      <button class="block visible h-auto md:hidden md:invisible md:h-0 z-50" on:click={handleMenu}>
+      <button class="block visible h-auto md:hidden md:invisible md:h-0 z-50" aria-label="Menu" on:click={handleMenu}>
         <MenuIcon open={openMenu} />
       </button>
     </div>

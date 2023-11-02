@@ -32,7 +32,7 @@ export const getPathStudiesItems = (t: Function): PathCardMainData[] => [
     location: t("path.upsa.location"),
     description: t("path.upsa.description"),
     icon: {
-      src: "/src/images/path/studies/upsa_logo.avif",
+      src: "/images/path/studies/upsa_logo.avif",
       alt: "UPSA Logo",
     },
   },
@@ -42,7 +42,7 @@ export const getPathStudiesItems = (t: Function): PathCardMainData[] => [
     location: t("path.ua.location"),
     description: t("path.ua.description"),
     icon: {
-      src: "/src/images/path/studies/ua_logo.avif",
+      src: "/images/path/studies/ua_logo.avif",
       alt: "UA Logo",
     },
   },
@@ -51,7 +51,7 @@ export const getPathStudiesItems = (t: Function): PathCardMainData[] => [
     title: t("path.vk.title"),
     location: t("path.vk.location"),
     icon: {
-      src: "/src/images/path/studies/vk_logo.avif",
+      src: "/images/path/studies/vk_logo.avif",
       alt: "IES Victoria Kent Logo",
     },
   },
@@ -77,7 +77,7 @@ export const getPathExperienceItems = (
       jestLogo,
     ],
     icon: {
-      src: "/src/images/path/experience/mamby_logo.avif",
+      src: "/images/path/experience/mamby_logo.avif",
       alt: "Everis logo",
     },
   },
@@ -87,7 +87,7 @@ export const getPathExperienceItems = (
     description: t("path.everis2.description"),
     dateRange: t("path.everis2.dateRange"),
     icon: {
-      src: "/src/images/path/experience/everis_logo.avif",
+      src: "/images/path/experience/everis_logo.avif",
       alt: "Everis logo",
     },
     techIcons: [javaLogo, jsLogo, springLogo, oracleLogo],
@@ -98,7 +98,7 @@ export const getPathExperienceItems = (
     description: t("path.everis.description"),
     dateRange: t("path.everis.dateRange"),
     icon: {
-      src: "/src/images/path/experience/everis_logo.avif",
+      src: "/images/path/experience/everis_logo.avif",
       alt: "Everis logo",
     },
     techIcons: [javaLogo, jsLogo, cobolLogo, db2Logo, sqlServerLogo],
@@ -110,7 +110,7 @@ export const getPathExperienceItems = (
     dateRange: t("path.aire2.dateRange"),
     techIcons: [htmlLogo, cssLogo, jsLogo, phpLogo],
     icon: {
-      src: "/src/images/path/experience/airenetworks_logo.avif",
+      src: "/images/path/experience/airenetworks_logo.avif",
       alt: "Aire Networks logo",
     },
   },
@@ -120,7 +120,7 @@ export const getPathExperienceItems = (
     description: t("path.aire.description"),
     dateRange: t("path.aire.dateRange"),
     icon: {
-      src: "/src/images/path/experience/airenetworks_logo.avif",
+      src: "/images/path/experience/airenetworks_logo.avif",
       alt: "Aire Networks logo",
     },
     techIcons: [htmlLogo, cssLogo, jsLogo, phpLogo],
@@ -133,7 +133,7 @@ export const getPathLanguagesItems = (t: Function): PathLanguageCardData[] => [
     certificate: t("path.spanish.certificate"),
     date: "·",
     icon: {
-      src: "/src/images/path/studies/spanish_logo.avif",
+      src: "/images/path/studies/spanish_logo.avif",
       alt: "Spanish logo",
     },
   },
@@ -142,7 +142,7 @@ export const getPathLanguagesItems = (t: Function): PathLanguageCardData[] => [
     date: "2015",
     certificate: t("path.english.certificate"),
     icon: {
-      src: "/src/images/path/studies/english_logo.avif",
+      src: "/images/path/studies/english_logo.avif",
       alt: "English logo",
     },
   },
@@ -151,7 +151,7 @@ export const getPathLanguagesItems = (t: Function): PathLanguageCardData[] => [
     date: "2012",
     certificate: t("path.valencian.certificate"),
     icon: {
-      src: "/src/images/path/studies/valencian_logo.avif",
+      src: "/images/path/studies/valencian_logo.avif",
       alt: "Valencian logo",
     },
   },
