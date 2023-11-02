@@ -2,6 +2,7 @@
     export let t;
     export let currentSection;
     export let classes;
+    export let homePath;
 
     $: isAbout = currentSection === "about";
     $: isProjects = currentSection === "projects";
@@ -12,7 +13,7 @@
 
 <ul class={classes}>
     <li class="jm-header__list-item" class:active={isHome}>
-        <a href="/#" class="jm-header__list-item-link"><span>{t("nav.home")}</span></a>
+        <a href={homePath} class="jm-header__list-item-link"><span>{t("nav.home")}</span></a>
     </li>
     <li class="jm-header__list-item" class:active={isAbout}>
         <a href="#about" class="jm-header__list-item-link"><span>{t("nav.about")}</span></a>

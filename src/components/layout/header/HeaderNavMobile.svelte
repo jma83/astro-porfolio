@@ -2,6 +2,7 @@
     import HeaderNavItems from "@components/layout/header/HeaderNavItems.svelte";
 
     export let t;
+    export let homePath;
     export let currentSection;
     export let active;
     export let isScrollDown = false;
@@ -10,12 +11,13 @@
 </script>
 
 <nav class="jm-header-mobile md:hidden md:invisible md:h-0" class:active class:disabled={active === false} class:isScrollDown>
-    <HeaderNavItems t={t} currentSection={currentActualSection} classes="flex gap-4 flex-col" />
+    <HeaderNavItems homePath={homePath} t={t} currentSection={currentActualSection} classes="flex gap-4 flex-col" />
 </nav>
 
 <style>
     .jm-header-mobile {
-        @apply w-full absolute flex justify-center items-center invisible h-auto z-20 py-4 uppercase transition-all;
+        @apply w-full absolute flex justify-center items-center invisible h-auto z-20 py-4 transition-all;
+        @apply uppercase text-base;
         background: rgb(0, 34, 64);
         background: linear-gradient(
                 90deg,

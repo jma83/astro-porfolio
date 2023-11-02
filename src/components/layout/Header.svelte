@@ -1,9 +1,10 @@
 <script>
-  import { onDestroy, onMount } from "svelte";
+  import {onDestroy, onMount} from "svelte";
   import HeaderNav from "@components/layout/header/HeaderNavDesktop.svelte";
   import {useTranslations} from "@i18n/utils";
   import MenuIcon from "@components/icons/MenuIcon.svelte";
   import HeaderNavMobile from "@components/layout/header/HeaderNavMobile.svelte";
+  import {defaultLang} from "@i18n/ui";
 
   export let lang;
   let isScrollDown = null; // Initialize isActive to false
@@ -17,8 +18,9 @@
   let currentSection = "home";
   let screenSize = 1920;
   let isMounted = false;
+  const homeBase = "/";
+  const hash = "#";
 
-  $: t = useTranslations(lang);
 
 
   const onScroll = () => {
@@ -78,19 +80,22 @@
   }
 
   $: isMobile = screenSize <= 768;
+  $: homeHref = defaultLang !== lang ? `${homeBase}${lang}${hash}` : `${homeBase}${hash}`;
+  $: t = useTranslations(lang);
+
 </script>
 
 <header class="jm-header" class:jm-header--appear-fixed="{isScrollDown === true}"
         class:jm-header__disappear-fixed="{isScrollDown === false}">
   <div class="jm-header__container md:px-4">
     <div class="jm-header__content items-center md:items-baseline">
-      <a href="/" class="jm-header__brand-link z-50">
+      <a href={homeHref} class="jm-header__brand-link z-50">
         <span class="text-white">JMA</span>
       </a>
       {#if !isMobile}
-      <HeaderNav t={t} currentSection={currentSection} />
+      <HeaderNav t={t} currentSection={currentSection} homePath={homeHref} />
       {:else}
-      <HeaderNavMobile t={t} currentSection={currentSection} active={openMenu} isScrollDown={isScrollDown} />
+      <HeaderNavMobile t={t} currentSection={currentSection} homePath={homeHref} active={openMenu} isScrollDown={isScrollDown} />
       {/if}
       <button class="block visible h-auto md:hidden md:invisible md:h-0 z-50" on:click={handleMenu}>
         <MenuIcon open={openMenu} />
