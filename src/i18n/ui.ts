@@ -179,7 +179,7 @@ export const ui = {
     // contact
     "contact.title": "Contacta conmigo",
     "contact.subtitle":
-      "Disponible para consultas ámbito profesional, a través de los siguientes medios.\n" +
+      "Disponible para consultas en el ámbito profesional, a través de los siguientes medios.<br />" +
       "¡Responderé lo antes posible!",
     // footer
     "footer.links.title": "Links",
@@ -366,7 +366,7 @@ export const ui = {
     // contact
     "contact.title": "Contact me",
     "contact.subtitle":
-      "Available for enquiries professional field, through the following means.\nI will reply as soon as possible!",
+      "Available for professional consultation, through the following channels.<br />I will reply as soon as possible!",
     // footer
     "footer.links.title": "Links",
     "footer.specialization.title": "Specialization",

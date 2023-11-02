@@ -8,10 +8,7 @@ const t = translate.get();
 <section class="jm-contact" id="contact">
   <div class="jm-contact__container">
     <h2 class="text-center">{t("contact.title")}</h2>
-    <p class="mt-8 mb-2 flex self-center">
-      Disponible para consultas ámbito profesional, a través de los siguientes
-      medios.<br /> ¡Responderé lo antes posible!
-    </p>
+    <p class="mt-8 mb-2 flex self-center" set:html={t("contact.subtitle")} />
     <div class="jm-contact__content">
       <a href="mailto:jma96.elx@gmail.com" class="jm-contact__card">
         <span class="p-4 rounded-full bg-primary-500">
