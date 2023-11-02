@@ -1,10 +1,10 @@
 <script>
-  import {onDestroy, onMount} from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import HeaderNav from "@components/layout/header/HeaderNavDesktop.svelte";
-  import {useTranslations} from "@i18n/utils";
+  import { useTranslations } from "@i18n/utils";
   import MenuIcon from "@components/icons/MenuIcon.svelte";
   import HeaderNavMobile from "@components/layout/header/HeaderNavMobile.svelte";
-  import {defaultLang} from "@i18n/ui";
+  import { defaultLang } from "@i18n/ui";
 
   export let lang;
   let isScrollDown = null; // Initialize isActive to false
@@ -21,10 +21,8 @@
   const homeBase = "/";
   const hash = "#";
 
-
-
   const onScroll = () => {
-    if (isMounted) {
+    if (isMounted && openMenu) {
       openMenu = false;
     }
     checkCurrentScrollSection();
@@ -33,32 +31,41 @@
       isScrollDown = null;
       return;
     }
-    if (isScrollDown === null && window.scrollY <= 500){
+    if (isScrollDown === null && window.scrollY <= 500) {
       return;
     }
     isScrollDown = window.scrollY > 500;
-  }
+  };
 
   const onResize = () => {
     screenSize = window.innerWidth;
     initScrollSections();
-    if (isMounted) {
-      openMenu = false;
+    if (isMounted && openMenu) {
+      openMenu = null;
     }
-  }
+  };
 
   const checkCurrentScrollSection = () => {
     const scrollY = window.scrollY + 250;
-    currentSection = scrollSections.find((section) => (scrollY > section.scroll)).id;
-  }
+    currentSection = scrollSections.find(
+      (section) => scrollY > section.scroll,
+    ).id;
+  };
 
   const initScrollSections = () => {
     scrollSectionAbout.scroll = document.getElementById("about").offsetTop;
     scrollSectionPath.scroll = document.getElementById("path").offsetTop;
-    scrollSectionProjects.scroll = document.getElementById("projects").offsetTop;
+    scrollSectionProjects.scroll =
+      document.getElementById("projects").offsetTop;
     scrollSectionContact.scroll = document.getElementById("contact").offsetTop;
-    scrollSections = [scrollSectionContact, scrollSectionProjects, scrollSectionPath, scrollSectionAbout, scrollSectionHome];
-  }
+    scrollSections = [
+      scrollSectionContact,
+      scrollSectionProjects,
+      scrollSectionPath,
+      scrollSectionAbout,
+      scrollSectionHome,
+    ];
+  };
 
   onMount(() => {
     onResize();
@@ -66,38 +73,51 @@
     window.addEventListener("scroll", onScroll);
     window.addEventListener("resize", onResize);
     isMounted = true;
-  })
+  });
 
   onDestroy(() => {
     if (typeof window !== "undefined") {
-      window.removeEventListener("scroll", onScroll)
-      window.removeEventListener("resize", onResize)
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
     }
-  })
+  });
 
   const handleMenu = () => {
-    openMenu = !openMenu
-  }
+    openMenu = !openMenu;
+  };
 
   $: isMobile = screenSize <= 768;
-  $: homeHref = defaultLang !== lang ? `${homeBase}${lang}${hash}` : `${homeBase}${hash}`;
+  $: homeHref =
+    defaultLang !== lang ? `${homeBase}${lang}${hash}` : `${homeBase}${hash}`;
   $: t = useTranslations(lang);
-
 </script>
 
-<header class="jm-header" class:jm-header--appear-fixed="{isScrollDown === true}"
-        class:jm-header__disappear-fixed="{isScrollDown === false}">
+<header
+  class="jm-header"
+  class:jm-header--appear-fixed={isScrollDown === true}
+  class:jm-header__disappear-fixed={isScrollDown === false}
+>
   <div class="jm-header__container md:px-4">
     <div class="jm-header__content items-center md:items-baseline">
       <a href={homeHref} class="jm-header__brand-link z-50">
         <span class="text-white">JMA</span>
       </a>
       {#if !isMobile}
-      <HeaderNav t={t} currentSection={currentSection} homePath={homeHref} />
+        <HeaderNav {t} {currentSection} homePath={homeHref} />
       {:else}
-      <HeaderNavMobile t={t} currentSection={currentSection} homePath={homeHref} active={openMenu} isScrollDown={isScrollDown} />
+        <HeaderNavMobile
+          {t}
+          {currentSection}
+          homePath={homeHref}
+          active={openMenu}
+          {isScrollDown}
+        />
       {/if}
-      <button class="block visible h-auto md:hidden md:invisible md:h-0 z-50" aria-label="Menu" on:click={handleMenu}>
+      <button
+        class="visible z-50 block h-auto md:invisible md:hidden md:h-0"
+        aria-label="Menu"
+        on:click={handleMenu}
+      >
         <MenuIcon open={openMenu} />
       </button>
     </div>
@@ -106,12 +126,12 @@
 
 <style>
   .jm-header {
-    @apply w-full absolute text-white top-0 left-0 z-50 transition-all;
+    @apply absolute left-0 top-0 z-50 w-full text-white transition-all;
     background: rgb(0, 34, 64);
     background: linear-gradient(
-            90deg,
-            rgba(0, 34, 64, 1) 0%,
-            rgba(0, 68, 128, 1) 95%
+      90deg,
+      rgba(0, 34, 64, 1) 0%,
+      rgba(0, 68, 128, 1) 95%
     );
 
     animation-duration: 0.25s;
@@ -157,16 +177,16 @@
   }
 
   .jm-header__container {
-    @apply w-full pr-4 flex justify-center items-start;
+    @apply flex w-full items-start justify-center pr-4;
   }
 
   .jm-header__content {
-    @apply w-full max-w-6xl flex justify-between;
-    @apply font-normal text-base;
+    @apply flex w-full max-w-6xl justify-between;
+    @apply text-base font-normal;
   }
 
   .jm-header__brand-link {
-    @apply p-4 relative text-2xl font-extrabold;
+    @apply relative p-4 text-2xl font-extrabold;
   }
 
   .jm-header__brand-link:after {
@@ -174,7 +194,7 @@
   }
 
   .jm-header__navigation-bar {
-    @apply hidden invisible h-0;
+    @apply invisible hidden h-0;
     /*  md:block md:visible md:h-auto */
   }
 </style>
