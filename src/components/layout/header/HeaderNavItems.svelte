@@ -3,6 +3,7 @@
   export let currentSection;
   export let classes;
   export let homePath;
+  export let isMobile = true;
 
   $: navItems = [
     { id: "home", href: homePath, name: t("nav.home") },
@@ -16,8 +17,9 @@
 <ul class={classes}>
   {#each navItems as navItem (navItem.id)}
     <li
-      class="jm-header__list-item md:hover:active"
+      class="jm-header__list-item"
       class:active={currentSection === navItem.id}
+      class:isMobile
     >
       <a href={navItem.href} class="jm-header__list-item-link">
         <span>{navItem.name}</span>
@@ -44,6 +46,9 @@
     content: "";
   }
 
+  .jm-header__list-item:hover:not(.isMobile)
+    > .jm-header__list-item-link
+    span:before,
   .jm-header__list-item.active > .jm-header__list-item-link span:before {
     visibility: visible;
     transform: scaleX(1);

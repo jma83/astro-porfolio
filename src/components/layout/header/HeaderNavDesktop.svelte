@@ -6,6 +6,12 @@
   export let homePath;
 </script>
 
-<nav class="hidden invisible md:block md:visible md:h-auto;">
-  <HeaderNavItems homePath={homePath} t={t} currentSection={currentSection} classes={'flex gap-4 flex-row'} />
+<nav class="md:h-auto; invisible hidden md:visible md:block">
+  <HeaderNavItems
+    {homePath}
+    {t}
+    {currentSection}
+    classes={"flex gap-4 flex-row"}
+    isMobile={false}
+  />
 </nav>
