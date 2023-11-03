@@ -177,6 +177,10 @@ export const ui = {
     "projects.fridge.subtitle": "Página web",
     "projects.fridge.description":
       "Página Web para control y gestión de un frigorífico. Comienzos en programación Web #HTML #CSS #JAVASCRIPT",
+    "projects.todolist.title": "Todo List con Svelte",
+    "projects.todolist.subtitle": "Página web",
+    "projects.todolist.description":
+      "Aplicación básica de creación de tareas y clasificación de si están finalizadas o no, con SvelteKit. Probando rendimiento y funcionamiento de Svelte.",
     // contact
     "contact.title": "Contacta conmigo",
     "contact.subtitle":
@@ -268,6 +272,10 @@ export const ui = {
     "path.aire.dateRange": "May 2018 - July 2018 (3 months)",
     // projects
     "projects.title": "Personal Projects",
+    "projects.todolist.title": "Todo List with Svelte",
+    "projects.todolist.subtitle": "Web Page",
+    "projects.todolist.description":
+      "Basic application for creating tasks and sorting whether they are ready or not, with SvelteKit. Testing Svelte performance and operation",
     "projects.plogging.title":
       "Plogging Challenge - App on Flutter for Android and IOS!",
     "projects.plogging.subtitle": "Android and IOS App",

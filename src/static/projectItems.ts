@@ -1,8 +1,9 @@
-import type IconData from "../types/IconData.ts";
+import type IconData from "@types/IconData.ts";
 import {
   flutterLogo,
   openglLogo,
   reactLogo,
+  svelteLogo,
   vueLogo,
 } from "@static/pathTechFrameworkItems.ts";
 import {
@@ -41,6 +42,16 @@ export interface IconProjectData extends IconData {
 }
 
 const projectItems: IconProjectData[] = [
+  {
+    src: "/images/projects/project_todo-list-svelte.avif",
+    alt: "Todo list App",
+    title: "projects.todolist.title",
+    subtitle: "projects.todolist.subtitle",
+    description: "projects.todolist.description",
+    pathTech: [svelteLogo],
+    github: "https://github.com/jma83/svelte-todo",
+    demo: "https://svelte-todo-rouge.vercel.app/",
+  },
   {
     src: "/images/projects/project_plogging-challenge.avif",
     alt: "Plogging Challenge app",
@@ -89,7 +100,7 @@ const projectItems: IconProjectData[] = [
     description: "projects.moviegussr.description",
     pathTech: [vueLogo, htmlLogo, cssLogo, jsLogo],
     github: "https://github.com/jma83/WordGuesser",
-    demo: true,
+    demo: "https://movie-guessr.onrender.com/",
   },
   {
     src: "/images/projects/project_volley-force.avif",
@@ -99,7 +110,7 @@ const projectItems: IconProjectData[] = [
     description: "projects.volleyforce.description",
     pathTech: [unityLogo, cSharpLogo],
     github: "https://github.com/jma83/VolleyBall_Project",
-    demo: true,
+    demo: "https://www.jmartdev.ovh/games/volleyball",
   },
   {
     src: "/images/projects/project_hunger.avif",
@@ -109,7 +120,7 @@ const projectItems: IconProjectData[] = [
     description: "projects.hunger.description",
     pathTech: [reactLogo, cssLogo],
     github: "https://github.com/jma83/AhorcadoWebReact",
-    demo: true,
+    demo: "https://www.jmartdev.ovh/games/hunger",
   },
   {
     src: "/images/projects/project_three-in-line.avif",
@@ -119,7 +130,7 @@ const projectItems: IconProjectData[] = [
     description: "projects.line3.description",
     pathTech: [htmlLogo, cssLogo, jsLogo],
     github: "https://github.com/jma83/TresEnLinea",
-    demo: true,
+    demo: "https://www.jmartdev.ovh/games/tictactoe",
   },
   {
     src: "/images/projects/project_age-of-karts.avif",
@@ -138,7 +149,7 @@ const projectItems: IconProjectData[] = [
     subtitle: "projects.football.subtitle",
     description: "projects.football.description",
     pathTech: [htmlLogo, cssLogo, jsLogo],
-    demo: true,
+    demo: "https://www.jmartdev.ovh/games/football",
   },
   {
     src: "/images/projects/project_ar-hunters.avif",
@@ -148,7 +159,7 @@ const projectItems: IconProjectData[] = [
     description: "projects.arhunters.description",
     pathTech: [unityLogo, cSharpLogo],
     github: "https://github.com/jma83/TFG_AR",
-    demo: false,
+    demo: "https://www.youtube.com/watch?v=kTjyDpU0oDU",
   },
   {
     src: "/images/projects/project_lightning-video.avif",
@@ -157,7 +168,7 @@ const projectItems: IconProjectData[] = [
     subtitle: "projects.lighting.subtitle",
     description: "projects.lighting.description",
     pathTech: [aeLogo, prLogo],
-    demo: true,
+    demo: "https://www.youtube.com/watch?v=IcIqs7DkU_s",
   },
   {
     src: "/images/projects/project_blender-models.avif",
@@ -175,7 +186,7 @@ const projectItems: IconProjectData[] = [
     subtitle: "projects.pixar.subtitle",
     description: "projects.pixar.description",
     pathTech: [dsmax],
-    demo: true,
+    demo: "https://www.youtube.com/watch?v=zq93Zc0yXWY",
   },
   {
     src: "/images/projects/project_pixel-brawl.avif",
@@ -220,7 +231,7 @@ const projectItems: IconProjectData[] = [
     subtitle: "projects.dragonware.subtitle",
     description: "projects.dragonware.description",
     pathTech: [htmlLogo, cssLogo],
-    demo: true,
+    demo: "https://dragonwareshop.wixsite.com/dragonwareinc",
   },
   {
     src: "/images/projects/project_own-mind.avif",
@@ -229,7 +240,7 @@ const projectItems: IconProjectData[] = [
     subtitle: "projects.ownmind.subtitle",
     description: "projects.ownmind.description",
     pathTech: [htmlLogo, cssLogo, jsLogo],
-    demo: true,
+    demo: false,
   },
   {
     src: "/images/projects/project_picstories.avif",
@@ -258,15 +269,15 @@ const projectItems: IconProjectData[] = [
     pathTech: [htmlLogo, cssLogo, phpLogo],
     demo: false,
   },
-  {
-    src: "/images/projects/project_fridge.avif",
-    alt: "Fridge web",
-    title: "projects.fridge.title",
-    subtitle: "projects.fridge.subtitle",
-    description: "projects.fridge.description",
-    pathTech: [htmlLogo, cssLogo, jsLogo],
-    demo: false,
-  },
+  // {
+  //   src: "/images/projects/project_fridge.avif",
+  //   alt: "Fridge web",
+  //   title: "projects.fridge.title",
+  //   subtitle: "projects.fridge.subtitle",
+  //   description: "projects.fridge.description",
+  //   pathTech: [htmlLogo, cssLogo, jsLogo],
+  //   demo: false,
+  // },
 ];
 
 export default projectItems;

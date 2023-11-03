@@ -3,15 +3,14 @@
   import PlayIcon from "@components/icons/PlayIcon.svelte";
   import SeeMoreIcon from "@components/icons/SeeMoreIcon.svelte";
   import Tooltip from "@components/shared/Tooltip.svelte";
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 
   export let data;
   export let t;
 
   const handleShowInfo = () => {
-    console.log("hooaaa")
-    dispatch('showInfo', { cardData: data });
+    dispatch("showInfo", { cardData: data });
   };
 
   const {
@@ -27,24 +26,24 @@
 </script>
 
 <div class="jm-card">
-  <img src={src} alt={alt} class="object-cover" class:list={classes} />
+  <img {src} {alt} class="object-cover" class:list={classes} />
   <div class="jm-card__bg"></div>
   <div class="jm-card__content md:px-16">
     <h3>{t(title)}</h3>
     <p>{t(subtitle)}</p>
-    <ul class="flex flex-row items-center rounded-full bg-gray-700 p-2 mt-2">
+    <ul class="mt-2 flex flex-row items-center rounded-full bg-gray-700 p-2">
       {#each pathTech as img (img.alt)}
         <li>
           <div>
-            <img src={img.src} alt={img.alt} class="w-5 mx-2" />
+            <img src={img.src} alt={img.alt} class="mx-2 w-5" />
           </div>
         </li>
       {/each}
     </ul>
-    <div class="flex flex-row justify-around items-center gap-8 mt-6">
+    <div class="mt-6 flex flex-row items-center justify-around gap-8">
       {#if github}
         <Tooltip message="Github">
-          <div class="bg-gray-100 rounded-full p-1 hover:opacity-75">
+          <div class="rounded-full bg-gray-100 p-1 hover:opacity-75">
             <a href={github} target="_blank">
               <GithubIcon />
             </a>
@@ -54,15 +53,19 @@
 
       {#if demo}
         <Tooltip message="Play demo">
-          <div class="bg-gray-100 rounded-full p-1 hover:opacity-75">
-            <a href="/" target="_blank">
+          <div class="rounded-full bg-gray-100 p-1 hover:opacity-75">
+            <a href={demo} target="_blank">
               <PlayIcon />
             </a>
           </div>
         </Tooltip>
       {/if}
       <Tooltip message="See more">
-        <button type="button" class="bg-gray-100 rounded-full p-1 hover:opacity-75" on:click={handleShowInfo}>
+        <button
+          type="button"
+          class="rounded-full bg-gray-100 p-1 hover:opacity-75"
+          on:click={handleShowInfo}
+        >
           <SeeMoreIcon />
         </button>
       </Tooltip>
@@ -72,26 +75,26 @@
 
 <style>
   .jm-card {
-    @apply w-full border border-gray-900 relative flex justify-center;
+    @apply relative flex w-full justify-center border border-gray-900;
     min-height: 350px;
   }
 
   .jm-card__content {
-    @apply w-full h-full top-0 left-0 absolute px-4 flex flex-col justify-center items-center text-center z-20 gap-1;
+    @apply absolute left-0 top-0 z-20 flex h-full w-full flex-col items-center justify-center gap-1 px-4 text-center;
     @apply invisible opacity-0 transition duration-200;
   }
 
   .jm-card__bg {
-    @apply w-full h-full absolute top-0 left-0 bg-primary-500 z-10;
+    @apply absolute left-0 top-0 z-10 h-full w-full bg-primary-500;
     @apply invisible opacity-0 transition duration-200;
   }
 
   .jm-card__content > h3 {
-    @apply text-white font-semibold text-lg;
+    @apply text-lg font-semibold text-white;
   }
 
   .jm-card__content > p {
-    @apply text-white font-normal text-base;
+    @apply text-base font-normal text-white;
   }
 
   .jm-card:hover > .jm-card__bg {
