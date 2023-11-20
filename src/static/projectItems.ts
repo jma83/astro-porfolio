@@ -43,6 +43,16 @@ export interface IconProjectData extends IconData {
 
 const projectItems: IconProjectData[] = [
   {
+    src: "/images/projects/project_fav-films.avif",
+    alt: "FavFilms Web",
+    title: "projects.favfilms.title",
+    subtitle: "projects.favfilms.subtitle",
+    description: "projects.favfilms.description",
+    pathTech: [reactLogo],
+    github: "https://github.com/jma83/react-fav-movies",
+    demo: "https://svelte-todo-rouge.vercel.app/",
+  },
+  {
     src: "/images/projects/project_todo-list-svelte.avif",
     alt: "Todo list App",
     title: "projects.todolist.title",
@@ -269,15 +279,15 @@ const projectItems: IconProjectData[] = [
     pathTech: [htmlLogo, cssLogo, phpLogo],
     demo: false,
   },
-  // {
-  //   src: "/images/projects/project_fridge.avif",
-  //   alt: "Fridge web",
-  //   title: "projects.fridge.title",
-  //   subtitle: "projects.fridge.subtitle",
-  //   description: "projects.fridge.description",
-  //   pathTech: [htmlLogo, cssLogo, jsLogo],
-  //   demo: false,
-  // },
+  {
+    src: "/images/projects/project_fridge.avif",
+    alt: "Fridge web",
+    title: "projects.fridge.title",
+    subtitle: "projects.fridge.subtitle",
+    description: "projects.fridge.description",
+    pathTech: [htmlLogo, cssLogo, jsLogo],
+    demo: false,
+  },
 ];
 
 export default projectItems;
