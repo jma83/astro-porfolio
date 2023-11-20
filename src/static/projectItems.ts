@@ -50,7 +50,7 @@ const projectItems: IconProjectData[] = [
     description: "projects.favfilms.description",
     pathTech: [reactLogo],
     github: "https://github.com/jma83/react-fav-movies",
-    demo: "https://svelte-todo-rouge.vercel.app/",
+    demo: "https://fav-films.vercel.app/",
   },
   {
     src: "/images/projects/project_todo-list-svelte.avif",
