@@ -181,7 +181,7 @@ export const ui = {
     "projects.todolist.subtitle": "Página web",
     "projects.todolist.description":
       "Aplicación básica de creación de tareas y clasificación de si están finalizadas o no, con SvelteKit. Probando rendimiento y funcionamiento de Svelte.",
-    "projects.favfilms.title": "FavFilms",
+    "projects.favfilms.title": "FavFilms - Web con React",
     "projects.favfilms.subtitle": "Página web",
     "projects.favfilms.description":
       "Web que realiza peticiones de búsqueda de películas a una api y permite añadirlas a tu lista de favoritas. Probando rendimiento y funcionamiento de React.",
@@ -377,7 +377,7 @@ export const ui = {
     "projects.fridge.subtitle": "Web page",
     "projects.fridge.description":
       "Web page for control and management of a fridge. Beginnings in Web programming #HTML #CSS #JAVASCRIPT",
-    "projects.favfilms.title": "FavFilms",
+    "projects.favfilms.title": "FavFilms - Web con React",
     "projects.favfilms.subtitle": "Web page",
     "projects.favfilms.description":
       "Web that performs search requests for movies to an api and allows you to add them to your favourites list. Testing performance and operation of React.",
