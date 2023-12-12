@@ -21,7 +21,7 @@ const pathMenuItems = getPathMenuItems(t);
 
 <section class="jm-path" id="path">
   <div class="jm-path__container">
-    <PathSideMenu menuItems={pathMenuItems} t={t} client:load />
+    <PathSideMenu menuItems={pathMenuItems} client:load />
     <main class="jm-path__content">
       <h2 class="jm-path__title">{t("path.title")}</h2>
       <PathSectionMain
@@ -47,15 +47,15 @@ const pathMenuItems = getPathMenuItems(t);
 
 <style>
   .jm-path {
-    @apply w-full flex justify-center items-center bg-white py-8 mb-4;
+    @apply flex w-full items-center justify-center bg-white py-8;
   }
 
   .jm-path__container {
-    @apply w-full max-w-6xl flex flex-col flex-grow justify-start gap-x-16;
+    @apply flex w-full max-w-6xl flex-grow flex-col justify-start gap-x-16;
   }
 
   .jm-path__content {
-    @apply flex flex-col justify-between pt-4 pb-8 px-4 gap-y-4;
+    @apply flex flex-col justify-between gap-y-4 px-4 pb-8 pt-4;
   }
 
   .jm-path__title {

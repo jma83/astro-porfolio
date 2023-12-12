@@ -2,11 +2,14 @@
 import Header from "@components/layout/Header.svelte";
 import "@styles/main.css";
 import Footer from "@components/layout/Footer.astro";
+import { currentLang } from "@stores/i18nStore";
+
 interface Props {
   title: string;
 }
 
-const { title, lang } = Astro.props;
+const { title } = Astro.props;
+const lang = currentLang.get();
 ---
 
 <!doctype html>
@@ -33,7 +36,7 @@ const { title, lang } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <Header client:load lang={lang} />
+  <Header client:load />
   <slot />
   <Footer />
   <style is:global>

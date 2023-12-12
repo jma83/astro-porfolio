@@ -5,8 +5,9 @@
   import MenuIcon from "@components/icons/MenuIcon.svelte";
   import HeaderNavMobile from "@components/layout/header/HeaderNavMobile.svelte";
   import { defaultLang } from "@i18n/ui";
+  import { currentLang } from "@stores/i18nStore";
 
-  export let lang;
+  const lang = currentLang.get();
   let isScrollDown = null; // Initialize isActive to false
   let openMenu = null; // Initialize isActive to false
   let scrollSectionAbout = { scroll: 0, id: "about" };

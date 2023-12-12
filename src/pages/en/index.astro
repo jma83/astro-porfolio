@@ -1,25 +1,26 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Home from "@components/sections/Home.svelte";
-import About from "@components/sections/About.astro";
-import Path from "@components/sections/Path.astro";
-import Projects from "@components/sections/Projects.svelte";
-import { translate } from "@stores/i18nStore";
-import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import Layout from "../../layouts/Layout.astro";
+import Home from "../../components/sections/Home.svelte";
+import About from "../../components/sections/About.astro";
+import Path from "../../components/sections/Path.astro";
+import Projects from "../../components/sections/Projects.svelte";
+import { translate, currentLang } from "../../stores/i18nStore";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
-import projectItems from "@static/projectItems.ts";
-import Contact from "@components/sections/Contact.astro";
+import projectItems from "../../static/projectItems.ts";
+import Contact from "../../components/sections/Contact.astro";
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+const language = getLangFromUrl(Astro.url);
+currentLang.set(language);
+const t = useTranslations(language);
 translate.set(t);
 ---
 
-<Layout title={t("layout.title")} lang={lang}>
-  <Home client:load lang={lang} />
+<Layout title={t("layout.title")}>
+  <Home client:load />
   <About />
   <hr />
   <Path />
-  <Projects client:load items={projectItems} lang={lang} />
+  <Projects client:load items={projectItems} />
   <Contact />
 </Layout>

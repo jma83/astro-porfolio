@@ -3,13 +3,14 @@
   import { useTranslations } from "@i18n/utils";
   import ModalProject from "@components/sections/projects/ModalProject.svelte";
   import { onMount } from "svelte";
+  import { currentLang } from "@stores/i18nStore";
+
   export let items = [];
 
-  export let lang;
   let t;
   let showModal = false;
   let modalData = null;
-  $: t = useTranslations(lang);
+  $: t = useTranslations(currentLang.get());
 
   onMount(() => {});
 

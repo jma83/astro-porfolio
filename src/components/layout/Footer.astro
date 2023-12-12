@@ -3,21 +3,20 @@ import LinkedInIcon from "@components/icons/LinkedInIcon.astro";
 import GithubIcon from "@components/icons/GithubIcon.astro";
 import EmailIcon from "@components/icons/EmailIcon.astro";
 import FooterAuthor from "@components/layout/footer/FooterAuthor.svelte";
-import { translate } from "@stores/i18nStore";
+import { translate, currentLang } from "@stores/i18nStore";
 import {
   footerSectionList,
   iconsList,
   languageList,
 } from "@static/footerItems";
-import { getLangFromUrl } from "@i18n/utils";
 import { defaultLang } from "../../i18n/ui";
 
 const t = translate.get();
 const homeBase = "/";
 const hash = "#";
+const lang = currentLang.get();
 
 const getHref = (href) => {
-  const lang = getLangFromUrl(Astro.url);
   return href === homeBase && defaultLang !== lang
     ? `${href}${lang}${hash}`
     : href === homeBase
@@ -90,7 +89,7 @@ const getHref = (href) => {
 
 <style>
   .jm-footer {
-    @apply w-full text-white p-8 flex justify-center;
+    @apply flex w-full justify-center p-8 text-white;
     background: rgb(0, 8, 15);
     background: linear-gradient(
       90deg,
@@ -100,16 +99,16 @@ const getHref = (href) => {
   }
 
   .jm-footer__container {
-    @apply w-full max-w-6xl flex flex-col py-24;
+    @apply flex w-full max-w-6xl flex-col py-24;
   }
 
   .jm-footer__content {
     @apply w-full justify-between;
-    @apply font-normal text-base w-full flex self-center gap-16;
+    @apply flex w-full gap-16 self-center text-base font-normal;
   }
 
   .jm-footer__section {
-    @apply w-full flex flex-col;
+    @apply flex w-full flex-col;
   }
 
   .jm-footer__section-list {
@@ -117,7 +116,7 @@ const getHref = (href) => {
   }
 
   .jm-footer__icons-section {
-    @apply w-full flex flex-col md:flex-row justify-between mt-20 gap-8 ml-2;
+    @apply ml-2 mt-20 flex w-full flex-col justify-between gap-8 md:flex-row;
   }
 
   .jm-footer__contact-list {
@@ -125,7 +124,7 @@ const getHref = (href) => {
   }
 
   .jm-footer__contact-list-item {
-    @apply flex text-gray-400 cursor-pointer;
+    @apply flex cursor-pointer text-gray-400;
   }
 
   .jm-footer__contact-list-item:hover {
@@ -133,15 +132,15 @@ const getHref = (href) => {
   }
 
   .jm-footer__contact-list-item > a {
-    @apply p-4 bg-gray-800 rounded-full;
+    @apply rounded-full bg-gray-800 p-4;
   }
 
   .jm-footer__language-list {
-    @apply flex flex-row gap-4 mr-16 ml-2;
+    @apply ml-2 mr-16 flex flex-row gap-4;
   }
 
   .jm-footer__language-list-item {
-    @apply flex w-6 h-6 object-cover;
+    @apply flex h-6 w-6 object-cover;
   }
 
   a:hover {
@@ -149,7 +148,7 @@ const getHref = (href) => {
   }
 
   h3 {
-    @apply text-2xl font-semibold mb-10;
+    @apply mb-10 text-2xl font-semibold;
   }
 
   .jm-footer__section-list-item {

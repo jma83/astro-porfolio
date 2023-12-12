@@ -1,25 +1,25 @@
 <script>
   import { useTranslations } from "@i18n/utils";
-  import {onDestroy, onMount} from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import ArrowDownIcon from "@components/icons/ArrowDownIcon.svelte";
-  export let lang;
+  import { currentLang } from "@stores/i18nStore";
+
   let typingInterval;
   let currentIndex = 0;
-  let currentWord = 'Frontend';
+  let currentWord = "Frontend";
   let currentCharacter = currentWord.length;
   let isTyping = true;
 
-  $: t = useTranslations(lang);
-  let words = []
-
+  $: t = useTranslations(currentLang.get());
+  let words = [];
 
   const removeInterval = () => {
-    clearInterval(typingInterval)
-  }
+    clearInterval(typingInterval);
+  };
 
   const initInterval = () => {
     typingInterval = setInterval(startTyping, 250);
-  }
+  };
 
   const proceedTyping = () => {
     if (currentCharacter < words[currentIndex].length) {
@@ -31,8 +31,8 @@
     removeInterval();
     setTimeout(() => {
       initInterval();
-    }, 1000)
-  }
+    }, 1000);
+  };
 
   const proceedRemoving = () => {
     if (currentCharacter > 0) {
@@ -42,7 +42,7 @@
     }
     currentIndex = (currentIndex + 1) % words.length;
     isTyping = true;
-  }
+  };
 
   function startTyping() {
     if (isTyping) {
@@ -52,21 +52,35 @@
   }
 
   onMount(() => {
-    words = [t("home.subtitle.frontend"), t("home.subtitle.web"), t("home.subtitle.app"), t("home.subtitle.videogames")];
+    words = [
+      t("home.subtitle.frontend"),
+      t("home.subtitle.web"),
+      t("home.subtitle.app"),
+      t("home.subtitle.videogames"),
+    ];
     initInterval();
-  })
+  });
 
   onDestroy(() => {
     removeInterval();
-  })
+  });
 </script>
 
 <section class="jm-home">
   <div class="jm-home__content z-40">
-    <span class="jm-home__introduction text-base md:text-xl">{t("home.introduction")}</span>
+    <span class="jm-home__introduction text-base md:text-xl"
+      >{t("home.introduction")}</span
+    >
     <h1 class="jm-home__title text-4xl md:text-6xl">Javier Martínez Arias</h1>
-    <h2 class="jm-home__subtitle text-xl md:text-3xl">{t("home.subtitle.main")} {currentWord}</h2>
-    <a class="jm-home__triangle jm-home__triangle--movement" aria-label={t("home.accessible.scrollDown")} href="#about">
+    <h2 class="jm-home__subtitle text-xl md:text-3xl">
+      {t("home.subtitle.main")}
+      {currentWord}
+    </h2>
+    <a
+      class="jm-home__triangle jm-home__triangle--movement"
+      aria-label={t("home.accessible.scrollDown")}
+      href="#about"
+    >
       <ArrowDownIcon classList="w-2 h-2 fill-current" />
     </a>
   </div>
@@ -82,7 +96,7 @@
 
 <style>
   .jm-home {
-    @apply w-full flex justify-center relative overflow-hidden;
+    @apply relative flex w-full justify-center overflow-hidden;
 
     background: rgb(0, 34, 64);
     background: linear-gradient(
@@ -95,11 +109,11 @@
   }
 
   .jm-home__content {
-    @apply w-full max-w-3xl flex relative flex-col justify-center items-center text-white text-center p-4 gap-6;
+    @apply relative flex w-full max-w-3xl flex-col items-center justify-center gap-6 p-4 text-center text-white;
   }
 
   .jm-home__introduction {
-    @apply font-extrabold text-base uppercase tracking-widest text-primary-500;
+    @apply text-base font-extrabold uppercase tracking-widest text-primary-500;
     letter-spacing: 0.25rem;
   }
 
@@ -112,12 +126,12 @@
   }
 
   .jm-home__circle-container {
-    @apply w-full absolute;
+    @apply absolute w-full;
     top: 30vh;
   }
 
   .jm-home__circle-container-base {
-    @apply w-full absolute;
+    @apply absolute w-full;
     top: 37vh;
   }
 
@@ -126,14 +140,14 @@
   }
 
   .jm-home__circle {
-    @apply w-full absolute ;
+    @apply absolute w-full;
     height: 500px;
     border-radius: 50%;
   }
 
   .jm-home__circle--movement {
-    @apply opacity-30 ;
-    box-shadow: -1px -11px 45px 1px rgba(0,0,0,0.46);
+    @apply opacity-30;
+    box-shadow: -1px -11px 45px 1px rgba(0, 0, 0, 0.46);
     /*animation-iteration-count: infinite;*/
     /*animation-duration: 6s;*/
     /*animation-name: translationY;*/
@@ -144,8 +158,8 @@
   }
 
   .jm-home__triangle--movement {
-    @apply opacity-80 ;
-    box-shadow: -1px -11px 45px 1px rgba(0,0,0,0.46);
+    @apply opacity-80;
+    box-shadow: -1px -11px 45px 1px rgba(0, 0, 0, 0.46);
     animation-iteration-count: infinite;
     animation-duration: 2s;
 
@@ -160,7 +174,6 @@
       transform: translateX(90vw) rotate(360deg);
     }
   }
-
 
   @keyframes translationY {
     0% {
@@ -186,9 +199,9 @@
   .jm-home__bg {
     background: rgb(0, 34, 64);
     background: linear-gradient(
-            90deg,
-            rgba(0, 34, 64, 1) 0%,
-            rgba(0, 68, 128, 1) 95%
+      90deg,
+      rgba(0, 34, 64, 1) 0%,
+      rgba(0, 68, 128, 1) 95%
     );
   }
 </style>
