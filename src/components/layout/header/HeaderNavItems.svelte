@@ -34,6 +34,10 @@
     position: relative;
   }
 
+  .jm-header__list-item-link > span {
+    @apply text-gray-50;
+  }
+
   .jm-header__list-item.active {
     @apply font-semibold;
   }

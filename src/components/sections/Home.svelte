@@ -122,7 +122,7 @@
   }
 
   .jm-home__subtitle {
-    @apply font-semibold uppercase;
+    @apply font-semibold uppercase text-gray-50;
   }
 
   .jm-home__circle-container {
