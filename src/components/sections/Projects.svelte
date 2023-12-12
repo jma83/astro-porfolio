@@ -6,11 +6,12 @@
   import { currentLang } from "@stores/i18nStore";
 
   export let items = [];
+  const lang = currentLang.get();
 
   let t;
   let showModal = false;
   let modalData = null;
-  $: t = useTranslations(currentLang.get());
+  $: t = useTranslations(lang);
 
   onMount(() => {});
 

@@ -7,6 +7,12 @@ const { img, classes } = props;
 
 <Tooltip message={img.alt}>
   <div class="jm-path-tech-icon__container">
-    <img src={img.src} alt={img.alt} class:list={classes} />
+    <img
+      src={img.src}
+      alt={img.alt}
+      class:list={classes}
+      width="24"
+      height="24"
+    />
   </div>
 </Tooltip>

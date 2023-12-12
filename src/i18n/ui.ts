@@ -309,10 +309,10 @@ export const ui = {
     "projects.hunger.subtitle": "Web page",
     "projects.hunger.description":
       "Development of a hangman game website, with HTML, CSS, JS and React. Practical work done during the master's degree in mobile computing at UPSA.",
-    "projects.line3.title": "3 in a row",
+    "projects.line3.title": "Tic Tac Toe",
     "projects.line3.subtitle": "Web page",
     "projects.line3.description":
-      "Development of a website for the game 3 in a row, with HTML, CSS and JS. Player vs Player or Player vs AI. Practice carried out during the master's degree in mobile computing at the UPSA.",
+      "Development of a website for the game Tic tac toe, with HTML, CSS and JS. Player vs Player or Player vs AI. Practice carried out during the master's degree in mobile computing at the UPSA.",
     "projects.ageofkarts.title": "Age of Karts - Video game in C++ and OpenGL",
     "projects.ageofkarts.subtitle": "Video game",
     "projects.ageofkarts.description":

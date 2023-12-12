@@ -26,7 +26,14 @@
 </script>
 
 <div class="jm-card">
-  <img {src} {alt} class="object-cover" class:list={classes} />
+  <img
+    {src}
+    {alt}
+    class="object-cover"
+    class:list={classes}
+    width="958"
+    height="486"
+  />
   <div class="jm-card__bg"></div>
   <div class="jm-card__content md:px-16">
     <h3>{t(title)}</h3>
@@ -35,7 +42,13 @@
       {#each pathTech as img (img.alt)}
         <li>
           <div>
-            <img src={img.src} alt={img.alt} class="mx-2 w-5" />
+            <img
+              src={img.src}
+              alt={img.alt}
+              class="mx-2 w-5"
+              width="24"
+              height="24"
+            />
           </div>
         </li>
       {/each}

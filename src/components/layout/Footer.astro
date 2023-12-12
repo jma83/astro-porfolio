@@ -57,6 +57,7 @@ const getHref = (href) => {
               <a
                 href={iconItem.href}
                 target="_blank"
+                title={iconItem.iconName}
                 aria-label={iconItem.iconName}
               >
                 {iconItem.iconName === "linkedin" ? (
@@ -76,7 +77,13 @@ const getHref = (href) => {
           languageList.map((item) => (
             <li class="jm-footer__language-list-item">
               <a href={item.href}>
-                <img src={item.src} alt={item.alt} />
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  width="24"
+                  height="24"
+                  title={item.alt}
+                />
               </a>
             </li>
           ))
