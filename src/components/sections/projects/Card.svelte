@@ -117,4 +117,25 @@
   .jm-card:hover > .jm-card__content {
     @apply visible opacity-100;
   }
+
+  @keyframes show {
+    from {
+      opacity: 0.25;
+      scale: 50%;
+    }
+    to {
+      opacity: 1;
+      scale: 100%;
+    }
+  }
+
+  img {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 25% cover 30%;
+    animation-fill-mode: both;
+  }
 </style>

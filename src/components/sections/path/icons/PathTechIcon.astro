@@ -16,3 +16,26 @@ const { img, classes } = props;
     />
   </div>
 </Tooltip>
+
+<style>
+  @keyframes show {
+    from {
+      opacity: 0.25;
+      scale: 50%;
+    }
+    to {
+      opacity: 1;
+      scale: 100%;
+    }
+  }
+
+  img {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: show;
+
+    animation-range: entry 50% cover 50%;
+    animation-fill-mode: both;
+  }
+</style>
