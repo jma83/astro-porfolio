@@ -185,6 +185,10 @@ export const ui = {
     "projects.favfilms.subtitle": "Página web",
     "projects.favfilms.description":
       "Web que realiza peticiones de búsqueda de películas a una api y permite añadirlas a tu lista de favoritas. Probando rendimiento y funcionamiento de React.",
+    "projects.nuxt3crud.title": "TodoList - Web con Nuxt",
+    "projects.nuxt3crud.subtitle": "Página web",
+    "projects.nuxt3crud.description":
+      "Aplicación básica de creación de tareas, búsqueda y clasificación de si están finalizadas o no, con Nuxt3. Probando rendimiento y funcionamiento de Nuxt3. Añadiendo unit tests con Vue Test utils & Vitest.",
     // contact
     "contact.title": "Contacta conmigo",
     "contact.subtitle":
@@ -377,10 +381,14 @@ export const ui = {
     "projects.fridge.subtitle": "Web page",
     "projects.fridge.description":
       "Web page for control and management of a fridge. Beginnings in Web programming #HTML #CSS #JAVASCRIPT",
-    "projects.favfilms.title": "FavFilms - Web con React",
+    "projects.favfilms.title": "FavFilms - Web with React",
     "projects.favfilms.subtitle": "Web page",
     "projects.favfilms.description":
       "Web that performs search requests for movies to an api and allows you to add them to your favourites list. Testing performance and operation of React.",
+    "projects.nuxt3crud.title": "TodoList - Web with Nuxt",
+    "projects.nuxt3crud.subtitle": "Web Page",
+    "projects.nuxt3crud.description":
+      "Basic application for creating tasks, searching and sorting whether they are finished or not, with Nuxt3. Testing Nuxt3 performance and operation. Adding unit tests with Vue Test utils & Vitest.",
     // contact
     "contact.title": "Contact me",
     "contact.subtitle":

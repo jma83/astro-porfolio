@@ -50,6 +50,11 @@ export const jestLogo: IconData = {
   alt: "Jest",
 };
 
+export const vitestLogo: IconData = {
+  src: "/images/path/tech/vitest_logo.avif",
+  alt: "Vitest",
+};
+
 export const socketIoLogo: IconData = {
   src: "/images/path/tech/socketio_logo.avif",
   alt: "Socket.IO",
@@ -84,5 +89,6 @@ export const getPathTechFrameworksItems = (): IconData[] => [
   cypressLogo,
   socketIoLogo,
   jestLogo,
+  vitestLogo,
   openglLogo,
 ];

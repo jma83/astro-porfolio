@@ -1,9 +1,12 @@
+// @ts-ignore
 import type IconData from "@types/IconData.ts";
 import {
   flutterLogo,
+  nuxtLogo,
   openglLogo,
   reactLogo,
   svelteLogo,
+  vitestLogo,
   vueLogo,
 } from "@static/pathTechFrameworkItems.ts";
 import {
@@ -42,6 +45,16 @@ export interface IconProjectData extends IconData {
 }
 
 const projectItems: IconProjectData[] = [
+  {
+    src: "/images/projects/project_nuxt3-crud.avif",
+    alt: "TodoList Web - Nuxt3",
+    title: "projects.nuxt3crud.title",
+    subtitle: "projects.nuxt3crud.subtitle",
+    description: "projects.nuxt3crud.description",
+    pathTech: [nuxtLogo, vitestLogo],
+    github: "https://github.com/jma83/nuxt3-crud",
+    demo: "https://nuxt3-crud.vercel.app/",
+  },
   {
     src: "/images/projects/project_fav-films.avif",
     alt: "FavFilms Web",
