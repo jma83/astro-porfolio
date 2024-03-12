@@ -53,6 +53,11 @@ export const ui = {
     "path.english.certificate": "· First Certificate (B2) - Cambridge",
     "path.valencian.title": "Valenciano",
     "path.valencian.certificate": "· Mitjà (C1) - Junta Qualificadora (JQCV)",
+    "path.europcar.title": "Desarrollador Frontend",
+    "path.europcar.location": "Europcar Mobility Group",
+    "path.europcar.description":
+      "Desarrollo frontend de la aplicación web de Europcar con Nuxt.js, Vue.js, Typescript y CSS. Aplicación web internacional de alquiler de coches. Buenas prácticas y testing con Jest, Vue test utils, Playright, etc.",
+    "path.europcar.dateRange": "enero 2024 - Actualidad",
     "path.mamby.title": "Desarrollador Frontend",
     "path.mamby.location": "Mamby Investments",
     "path.mamby.description":
@@ -256,9 +261,14 @@ export const ui = {
     "path.english.certificate": "· First Certificate (B2) - Cambridge",
     "path.valencian.title": "Valencian",
     "path.valencian.certificate": "· Mitjà (C1) - Junta Qualificadora (JQCV)",
+    "path.europcar.title": "Frontend Developer",
+    "path.europcar.location": "Europcar Mobility Group",
+    "path.europcar.description":
+      "Frontend development of Europcar web application with Nuxt.js, Vue.js, Typescript and CSS. International car rental web application. Best practices and testing with Jest, Vue test utils, Playright, etc.",
+    "path.europcar.dateRange": "January 2024 - Present",
     "path.mamby.title": "Frontend Developer",
     "path.mamby.location": "Mamby Investments",
-    "path.mamby.dateRange": "march 2021 - september 2023 (2 years y 7 months)",
+    "path.mamby.dateRange": "March 2021 - September 2023 (2 years y 7 months)",
     "path.mamby.description":
       "Frontend development of a web application with Nuxt.js, Vue.js, Typescript and CSS. Implementation of a content creation platform.",
     "path.everis2.title": "Java Web Developer",

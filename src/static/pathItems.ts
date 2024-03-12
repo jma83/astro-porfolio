@@ -11,6 +11,7 @@ import {
   springLogo,
   tailwindLogo,
   vueLogo,
+  vueTestUtilsLogo,
 } from "./pathTechFrameworkItems.ts";
 import {
   cobolLogo,
@@ -61,6 +62,25 @@ export const getPathExperienceItems = (
   t: Function,
 ): PathExperienceCardData[] => [
   {
+    title: t("path.europcar.title"),
+    location: t("path.europcar.location"),
+    description: t("path.europcar.description"),
+    dateRange: t("path.europcar.dateRange"),
+    techIcons: [
+      nuxtLogo,
+      vueLogo,
+      tsLogo,
+      htmlLogo,
+      cssLogo,
+      jestLogo,
+      vueTestUtilsLogo,
+    ],
+    icon: {
+      src: "/images/path/experience/emobg_logo.avif",
+      alt: "Europcar logo",
+    },
+  },
+  {
     title: t("path.mamby.title"),
     location: t("path.mamby.location"),
     description: t("path.mamby.description"),
@@ -78,7 +98,7 @@ export const getPathExperienceItems = (
     ],
     icon: {
       src: "/images/path/experience/mamby_logo.avif",
-      alt: "Everis logo",
+      alt: "Mamby logo",
     },
   },
   {

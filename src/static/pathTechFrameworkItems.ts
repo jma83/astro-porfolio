@@ -5,6 +5,11 @@ export const vueLogo: IconData = {
   alt: "Vue",
 };
 
+export const vueTestUtilsLogo: IconData = {
+  src: "/images/path/tech/vue_logo.avif",
+  alt: "Vue Test Utils",
+};
+
 export const nuxtLogo: IconData = {
   src: "/images/path/tech/nuxt_logo.avif",
   alt: "Nuxtjs",
@@ -89,6 +94,7 @@ export const getPathTechFrameworksItems = (): IconData[] => [
   cypressLogo,
   socketIoLogo,
   jestLogo,
+  vueTestUtilsLogo,
   vitestLogo,
   openglLogo,
 ];
