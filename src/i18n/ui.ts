@@ -111,7 +111,7 @@ export const ui = {
     "projects.hunger.title": "Ahorcado - Juego para web en JS!",
     "projects.hunger.subtitle": "Página web",
     "projects.hunger.description":
-      "Desarrollo de una página web del juego del ahorcado, con HTML, CSS, JS y React. Práctica realizada durante el máster en informática móvil en la UPSA.",
+      "Desarrollo de una página web del juego del ahorcado; con HTML, CSS, JS y Vuejs. También disponible <a href='https://github.com/jma83/AhorcadoWebReact'>Version en React</a>. Práctica realizada durante el máster en informática móvil en la UPSA.",
     "projects.line3.title": "3 en raya",
     "projects.line3.subtitle": "Página web",
     "projects.line3.description":
@@ -318,11 +318,11 @@ export const ui = {
     "projects.volleyforce.title": "VolleyForce - Game in 1 week in Unity",
     "projects.volleyforce.subtitle": "Video game",
     "projects.volleyforce.description":
-      "Development of a VolleyBall video game in a week with Unity. Challenge started from: <a href='https://www.mediavida.com/foro/gamedev/mv-retos-gamedev-edicion-i-641479' >https://www.mediavida.com/foro/gamedev/mv-retos-gamedev-edicion-i-641479</a>. Links to play it: <a href='https://bit.ly/2w8wzWM' >https://bit.ly/2w8wzWM</a> <a href='http://www.jmartdev.ovh/games/volleyball/'>http://www.jmartdev.ovh/games/volleyball/< /a>",
+      "Development of a VolleyBall video game in a week with Unity. Challenge started from: <a href='https://www.mediavida.com/foro/gamedev/mv-retos-gamedev-edicion-i-641479'>https://www.mediavida.com/foro/gamedev/mv-retos-gamedev-edicion-i-641479</a>. Links to play it: <a href='https://bit.ly/2w8wzWM'>https://bit.ly/2w8wzWM</a> <a href='http://www.jmartdev.ovh/games/volleyball/'>http://www.jmartdev.ovh/games/volleyball/< /a>",
     "projects.hunger.title": "Hangman - Web game in JS!",
     "projects.hunger.subtitle": "Web page",
     "projects.hunger.description":
-      "Development of a hangman game website, with HTML, CSS, JS and React. Practical work done during the master's degree in mobile computing at UPSA.",
+      "Development of a hangman game website; using HTML, CSS, JS and Vuejs. Also available in <a href='https://github.com/jma83/AhorcadoWebReact'>React Version</a>. Practical work done during the master's degree in mobile computing at UPSA.",
     "projects.line3.title": "Tic Tac Toe",
     "projects.line3.subtitle": "Web page",
     "projects.line3.description":

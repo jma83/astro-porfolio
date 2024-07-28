@@ -133,7 +133,7 @@ const projectItems: IconProjectData[] = [
     description: "projects.volleyforce.description",
     pathTech: [unityLogo, cSharpLogo],
     github: "https://github.com/jma83/VolleyBall_Project",
-    demo: "https://www.jmartdev.ovh/games/volleyball",
+    demo: false,
   },
   {
     src: "/images/projects/project_hunger.avif",
@@ -141,9 +141,9 @@ const projectItems: IconProjectData[] = [
     title: "projects.hunger.title",
     subtitle: "projects.hunger.subtitle",
     description: "projects.hunger.description",
-    pathTech: [reactLogo, cssLogo],
-    github: "https://github.com/jma83/AhorcadoWebReact",
-    demo: "https://www.jmartdev.ovh/games/hunger",
+    pathTech: [vueLogo, cssLogo],
+    github: "https://github.com/jma83/AhorcadoWeb",
+    demo: "https://ahorcado-web.vercel.app/",
   },
   {
     src: "/images/projects/project_three-in-line.avif",
@@ -153,7 +153,7 @@ const projectItems: IconProjectData[] = [
     description: "projects.line3.description",
     pathTech: [htmlLogo, cssLogo, jsLogo],
     github: "https://github.com/jma83/TresEnLinea",
-    demo: "https://www.jmartdev.ovh/games/tictactoe",
+    demo: "https://tres-en-linea-online.vercel.app/",
   },
   {
     src: "/images/projects/project_age-of-karts.avif",
@@ -281,7 +281,7 @@ const projectItems: IconProjectData[] = [
     subtitle: "projects.frozenhearts.subtitle",
     description: "projects.frozenhearts.description",
     pathTech: [cPlusLogo],
-    demo: "https://drive.google.com/file/d/0B-zG7KrRq1YlaVFnb0xFaTZtc1U/view?resourcekey=0-lvrUry6hANIAercqRPnpKA",
+    demo: "https://drive.google.com/drive/folders/1RxTcfvfwnLX7TJaNV3lpg545sA1ndHeB?usp=sharing",
   },
   {
     src: "/images/projects/project_olympic.avif",
