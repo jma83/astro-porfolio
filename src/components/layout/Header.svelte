@@ -8,15 +8,16 @@
   import { currentLang } from "@stores/i18nStore";
 
   const lang = currentLang.get();
-  let isScrollDown = null; // Initialize isActive to false
-  let openMenu = null; // Initialize isActive to false
+  let isScrollDown = null;
+  let openMenu = null;
   let scrollSectionAbout = { scroll: 0, id: "about" };
   let scrollSectionPath = { scroll: 0, id: "path" };
   let scrollSectionProjects = { scroll: 0, id: "projects" };
   let scrollSectionContact = { scroll: 0, id: "contact" };
   let scrollSectionHome = { scroll: 0, id: "home" };
+  let defaultSection = scrollSectionHome.id;
   let scrollSections = [];
-  let currentSection = "home";
+  let currentSection = defaultSection;
   let screenSize = 1920;
   let isMounted = false;
   const homeBase = "/";
@@ -25,6 +26,9 @@
   const onScroll = () => {
     if (isMounted && openMenu) {
       openMenu = false;
+    }
+    if (!isMounted) {
+      initScrollSections();
     }
     checkCurrentScrollSection();
 
@@ -47,18 +51,23 @@
   };
 
   const checkCurrentScrollSection = () => {
-    const scrollY = window.scrollY + 250;
+    const minScrollY = 250;
+    if (window.scrollY < minScrollY) {
+      currentSection = defaultSection;
+      return;
+    }
+    const scrollY = window.scrollY + minScrollY;
     currentSection = scrollSections.find(
       (section) => scrollY > section.scroll,
-    ).id;
+    )?.id || defaultSection;
   };
 
   const initScrollSections = () => {
-    scrollSectionAbout.scroll = document.getElementById("about").offsetTop;
-    scrollSectionPath.scroll = document.getElementById("path").offsetTop;
+    scrollSectionAbout.scroll = document.getElementById("about")?.offsetTop || 0;
+    scrollSectionPath.scroll = document.getElementById("path")?.offsetTop || 0;
     scrollSectionProjects.scroll =
-      document.getElementById("projects").offsetTop;
-    scrollSectionContact.scroll = document.getElementById("contact").offsetTop;
+      document.getElementById("projects")?.offsetTop || 0;
+    scrollSectionContact.scroll = document.getElementById("contact")?.offsetTop || 0;
     scrollSections = [
       scrollSectionContact,
       scrollSectionProjects,
@@ -73,6 +82,10 @@
     onScroll();
     window.addEventListener("scroll", onScroll);
     window.addEventListener("resize", onResize);
+    setTimeout(() => {
+      initScrollSections();
+      checkCurrentScrollSection();
+    }, 250);
     isMounted = true;
   });
 
