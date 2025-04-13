@@ -2,13 +2,10 @@
 import LinkedInIcon from "@components/icons/LinkedInIcon.astro";
 import GithubIcon from "@components/icons/GithubIcon.astro";
 import EmailIcon from "@components/icons/EmailIcon.astro";
-import FooterAuthor from "@components/layout/footer/FooterAuthor.svelte";
+import FooterAuthor from "./footer/FooterAuthor.svelte";
+import LanguageSelector from "./language/LanguageSelector.svelte";
 import { translate, currentLang } from "@stores/i18nStore";
-import {
-  footerSectionList,
-  iconsList,
-  languageList,
-} from "@static/footerItems";
+import { footerSectionList, iconsList } from "@static/footerItems";
 import { defaultLang } from "../../i18n/ui";
 
 const t = translate.get();
@@ -72,23 +69,7 @@ const getHref = (href) => {
           ))
         }
       </ul>
-      <ul class="jm-footer__language-list">
-        {
-          languageList.map((item) => (
-            <li class="jm-footer__language-list-item">
-              <a href={item.href}>
-                <img
-                  src={item.src}
-                  alt={item.alt}
-                  width="24"
-                  height="24"
-                  title={item.alt}
-                />
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      <LanguageSelector />
     </div>
     <FooterAuthor />
   </div>
@@ -140,14 +121,6 @@ const getHref = (href) => {
 
   .jm-footer__contact-list-item > a {
     @apply rounded-full bg-gray-800 p-4;
-  }
-
-  .jm-footer__language-list {
-    @apply ml-2 mr-16 flex flex-row gap-4;
-  }
-
-  .jm-footer__language-list-item {
-    @apply flex h-6 w-6 object-cover;
   }
 
   a:hover {

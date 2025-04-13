@@ -1,4 +1,6 @@
 <script>
+  import LanguageSelector from "@components/layout/language/LanguageSelector.svelte";
+
   export let t;
   export let currentSection;
   export let classes;
@@ -14,19 +16,22 @@
   ];
 </script>
 
-<ul class={classes}>
-  {#each navItems as navItem (navItem.id)}
-    <li
-      class="jm-header__list-item"
-      class:active={currentSection === navItem.id}
-      class:isMobile
-    >
-      <a href={navItem.href} class="jm-header__list-item-link">
-        <span>{navItem.name}</span>
-      </a>
+  <ul class={classes}>
+    {#each navItems as navItem (navItem.id)}
+      <li
+        class="jm-header__list-item"
+        class:active={currentSection === navItem.id}
+        class:isMobile
+      >
+        <a href={navItem.href} class="jm-header__list-item-link">
+          <span>{navItem.name}</span>
+        </a>
+      </li>
+    {/each}
+    <li class="jm-header__language-selector">
+      <LanguageSelector />
     </li>
-  {/each}
-</ul>
+  </ul>
 
 <style>
   .jm-header__list-item-link {
@@ -56,5 +61,9 @@
   .jm-header__list-item.active > .jm-header__list-item-link span:before {
     visibility: visible;
     transform: scaleX(1);
+  }
+
+  .jm-header__language-selector {
+    @apply flex self-end;
   }
 </style>

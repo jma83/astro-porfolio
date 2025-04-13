@@ -54,16 +54,3 @@ export const iconsList = [
     size: 20,
   },
 ];
-
-export const languageList = [
-  {
-    src: "/images/path/studies/spanish_logo.avif",
-    alt: "Spanish",
-    href: "/",
-  },
-  {
-    src: "/images/path/studies/english_logo.avif",
-    alt: "English",
-    href: "/en",
-  },
-];

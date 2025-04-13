@@ -1,4 +1,4 @@
-export const defaultLang = "es";
+export const defaultLang = "en";
 export const showDefaultLang = false;
 
 export const ui = {
@@ -42,7 +42,7 @@ export const ui = {
     "path.upsa.description":
       "Especializado en el desarrollo de aplicaciones Android, IOS e híbridas",
     "path.ua.title": "Ingeniería Multimedia",
-    "path.ua.location": "Universidad Pontificia de Salamanca",
+    "path.ua.location": "Universidad de Alicante",
     "path.ua.description":
       "Especializado en desarrollo de páginas web, videojuegos y creación de contenidos multimedia (imágen, video, etc.)",
     "path.vk.title": "Bachillerato tecnológico",
