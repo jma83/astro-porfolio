@@ -62,6 +62,23 @@ export const getPathExperienceItems = (
   t: Function,
 ): PathExperienceCardData[] => [
   {
+    title: t("path.klikin.title"),
+    location: t("path.klikin.location"),
+    description: t("path.klikin.description"),
+    dateRange: t("path.klikin.dateRange"),
+    techIcons: [
+      vueLogo,
+      tsLogo,
+      htmlLogo,
+      cssLogo,
+      cypressLogo,
+    ],
+    icon: {
+      src: "/images/path/experience/klikin_logo.avif",
+      alt: "Klikin logo",
+    },
+  },
+  {
     title: t("path.europcar.title"),
     location: t("path.europcar.location"),
     description: t("path.europcar.description"),
